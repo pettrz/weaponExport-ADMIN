@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Redigera data</title>
+        <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="./../Style/bootstrap-theme.min.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen"/>
+        <script src="http://code.jquery.com/jquery-git.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
+        <script src="./../Scripts/dataform.js" defer="defer"></script>
+        <script src="./../Scripts/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <form>
+                Country: <input type="text" data-bind="value: country"><br />
+                Code: <input type="text" data-bind="value: code"><br />
+                Weapons: <input type="text" data-bind="value: weapons"><br />
+                Info: <input type="text" data-bind="value: info"><br />
+                Links: <input type="text" data-bind="value: links"><br />
+                Collection: <br />
+                Europe <input type="radio" name="collection" value="EU" data-bind="checked: collection">
+                Asia <input type="radio" name="collection" value="AS" data-bind="checked: collection">
+                North America <input type="radio" name="collection" value="NA" data-bind="checked: collection"><br />
+                Africa <input type="radio" name="collection" value="AF" data-bind="checked: collection">
+                Oceania <input type="radio" name="collection" value="OC" data-bind="checked: collection">
+                South America <input type="radio" name="collection" value="SA" data-bind="checked: collection"><br />
+                <input type="button" value="Submit" data-bind="click: postCountry"> <span id="confirm"></span>
+            </form>
+        </div>
+    </body>
+</html>
