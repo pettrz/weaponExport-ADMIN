@@ -1,14 +1,47 @@
-.padding-0{
-    padding-right:0;
-    padding-left:0;
-}
-.map{
-    margin-left: 0;
-    margin-right: 0;
+html, body {
+    height: 100%;
+    background-color: #C0C0C0;
 }
 
-.description{
-    height: 50%;
-    position: absolute;
-    bottom: 0;
+html {
+    display: table;
+    width: 100%;
+}
+
+body {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 200%;
+    font-family: "Verdana", Geneva, sans-serif;
+}
+
+input {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+
+}
+
+h1 {
+    //color: #444444;
+    font-weight: bold;
+    color: white;
+}
+
+.button {
+    background-color: #C0C0C0;
+    color: white;
+    width: 300px;
+    border: 3px solid #FFFFFF !important;
+}
+
+.button:hover {
+    background-color: #808080;
+}
+
+select {
+    padding: 15px;
+    text-align-last: center;
+    
 }

@@ -12,20 +12,31 @@
     </head>
     <body>
         <div>
+            <h1>Fill in here</h1>
+            <br />
             <form>
-                Country: <input type="text" data-bind="value: country"><br />
-                Code: <input type="text" data-bind="value: code"><br />
-                Weapons: <input type="text" data-bind="value: weapons"><br />
-                Info: <input type="text" data-bind="value: info"><br />
-                Links: <input type="text" data-bind="value: links"><br />
-                Collection: <br />
-                Europe <input type="radio" name="collection" value="EU" data-bind="checked: collection">
-                Asia <input type="radio" name="collection" value="AS" data-bind="checked: collection">
-                North America <input type="radio" name="collection" value="NA" data-bind="checked: collection"><br />
-                Africa <input type="radio" name="collection" value="AF" data-bind="checked: collection">
-                Oceania <input type="radio" name="collection" value="OC" data-bind="checked: collection">
-                South America <input type="radio" name="collection" value="SA" data-bind="checked: collection"><br />
-                <input type="button" value="Submit" data-bind="click: postCountry"> <span id="confirm"></span>
+                <input type="text" placeholder="Country"><br />
+                <input type="text" placeholder="Code"><br />
+                <input type="text" placeholder="Weapons"><br />
+                <input type="text" placeholder="Info"><br />
+                <input type="text" placeholder="Links"><br /><br />
+               
+
+                <select>
+                    <option name="collection" value="EU" data-bind="checked: collection">Europe</option>
+                    <option name="collection" value="AS" data-bind="checked: collection">Asia</option>
+                    <option name="collection" value="NA" data-bind="checked: collection">North America</option>
+                    <option name="collection" value="AF" data-bind="checked: collection">Africa</option>
+                    <option name="collection" value="OC" data-bind="checked: collection">Oceania</option>
+                    <option name="collection" value="SA" data-bind="checked: collection">South America</option>
+                </select>
+                <br /><br />
+
+                <input class="button" type="button" value="Submit" data-bind="click: postCountry"> <span id="confirm"></span>
+
+
+
+
             </form>
         </div>
     </body>
