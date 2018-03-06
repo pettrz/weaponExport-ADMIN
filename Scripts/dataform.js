@@ -14,8 +14,6 @@ xhttp.onreadystatechange = function() {
      }
 }
 
-
-
 var viewModel = {
     country: ko.observable(''),
     code: ko.observable(''),
@@ -24,23 +22,32 @@ var viewModel = {
     links: ko.observable(''),
     collection: ko.observable('EU'),
     postCountry: () => {
+        //xhttp.send()
         console.log(prepCountry());
-        //xhttp.send(prepCountry());
     },
 }
 
 ko.applyBindings(viewModel);
 
 var prepCountry = () => {
-    return (
-        'country=' + viewModel.country() +
-        '&code=' + viewModel.code() +
-        '&weapons=' + viewModel.weapons() +
-        '&info=' + viewModel.info() +
-        '&links=' + viewModel.links() +
-        '&collection=' + viewModel.collection()
-    )
-    
+
+    if (viewModel.country() != "" && viewModel.code() != "" && viewModel.weapons() != "" && viewModel.info() != "" && viewModel.links() != "") {
+        return (
+            'country=' + viewModel.country() +
+            '&code=' + viewModel.code() +
+            '&weapons=' + viewModel.weapons() +
+            '&info=' + viewModel.info() +
+            '&links=' + viewModel.links() +
+            '&collection=' + viewModel.collection() +
+
+            console.log('success')
+        )
+    }
+    else {
+        console.log('error');
+        document.getElementById('demo').innerHTML = 'Fill in textbox';
+    }
+        
     // return {
     //     country: viewModel.country(),
     //     code: viewModel.code(),
