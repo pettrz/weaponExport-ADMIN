@@ -24,8 +24,11 @@ input {
 }
 
 h1 {
-    //color: #444444;
     font-weight: bold;
+    color: white;
+}
+
+h3 {
     color: white;
 }
 
