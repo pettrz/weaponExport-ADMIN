@@ -48,3 +48,11 @@ select {
     text-align-last: center;
     
 }
+
+#demo {
+    color: #ba0000;
+}
+
+#confirm {
+    color: #008800;
+}
