@@ -14,6 +14,8 @@ xhttp.onreadystatechange = function() {
      }
 }
 
+
+
 var viewModel = {
     country: ko.observable(''),
     code: ko.observable(''),
@@ -22,7 +24,8 @@ var viewModel = {
     links: ko.observable(''),
     collection: ko.observable('EU'),
     postCountry: () => {
-        xhttp.send(prepCountry());
+        console.log(prepCountry());
+        //xhttp.send(prepCountry());
     },
 }
 
