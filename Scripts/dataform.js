@@ -8,6 +8,7 @@ xhttp.onreadystatechange = function() {
         viewModel.country('');
         viewModel.code('');
         viewModel.weapons('');
+        viewModel.gpi('');
         viewModel.info('');
         viewModel.links('');
         viewModel.collection('EU');
@@ -18,6 +19,7 @@ var viewModel = {
     country: ko.observable(''),
     code: ko.observable(''),
     weapons: ko.observable(''),
+    gpi: ko.observable(''),
     info: ko.observable(''),
     links: ko.observable(''),
     collection: ko.observable('EU'),
@@ -31,11 +33,12 @@ ko.applyBindings(viewModel);
 
 var prepCountry = () => {
 
-    if (viewModel.country() != "" && viewModel.code() != "" && viewModel.weapons() != "" && viewModel.info() != "" && viewModel.links() != "") {
+    if (viewModel.country() != "" && viewModel.code() != "" && viewModel.weapons() != "" && viewModel.gpi() != "" && viewModel.info() != "" && viewModel.links() != "") {
         return (
             'country=' + viewModel.country() +
             '&code=' + viewModel.code() +
             '&weapons=' + viewModel.weapons() +
+            '&gpi=' + viewModel.gpi() +
             '&info=' + viewModel.info() +
             '&links=' + viewModel.links() +
             '&collection=' + viewModel.collection() +
