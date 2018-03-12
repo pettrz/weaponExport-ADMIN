@@ -7,7 +7,7 @@ xhttp.onreadystatechange = function() {
         document.getElementById('confirm').innerHTML = 'Submitted!';
         viewModel.country('');
         viewModel.code('');
-        viewModel.weapons('');
+        viewModel.FHstatus('');
         viewModel.gpi('');
         viewModel.info('');
         viewModel.links('');
@@ -18,7 +18,7 @@ xhttp.onreadystatechange = function() {
 var viewModel = {
     country: ko.observable(''),
     code: ko.observable(''),
-    weapons: ko.observable(''),
+    FHstatus: ko.observable(''),
     gpi: ko.observable(''),
     info: ko.observable(''),
     links: ko.observable(''),
@@ -33,11 +33,11 @@ ko.applyBindings(viewModel);
 
 var prepCountry = () => {
 
-    if (viewModel.country() != "" && viewModel.code() != "" && viewModel.weapons() != "" && viewModel.gpi() != "" && viewModel.info() != "" && viewModel.links() != "") {
+    if (viewModel.country() != "" && viewModel.code() != "" && viewModel.FHstatus() != "" && viewModel.gpi() != "" && viewModel.info() != "" && viewModel.links() != "") {
         return (
             'country=' + viewModel.country() +
             '&code=' + viewModel.code() +
-            '&weapons=' + viewModel.weapons() +
+            '&FHstatus=' + viewModel.FHstatus() +
             '&gpi=' + viewModel.gpi() +
             '&info=' + viewModel.info() +
             '&links=' + viewModel.links() +
@@ -54,7 +54,7 @@ var prepCountry = () => {
     // return {
     //     country: viewModel.country(),
     //     code: viewModel.code(),
-    //     weapons: viewModel.weapons(),
+    //     FHstatus: viewModel.FHstatus(),
     //     info: viewModel.info(),
     //     links: viewModel.links(),
     //     collection: viewModel.collection(),
