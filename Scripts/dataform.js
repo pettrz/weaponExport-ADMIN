@@ -4,7 +4,7 @@ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById('confirm').innerHTML = 'Submitted!';
+        document.getElementById('confirm').innerHTML = 'Skickat';
         viewModel.country('');
         viewModel.code('');
         viewModel.FHstatus('');
@@ -48,7 +48,7 @@ var prepCountry = () => {
     }
     else {
         console.log('error');
-        document.getElementById('demo').innerHTML = 'Fill in textbox';
+        document.getElementById('fillTextbox').innerHTML = 'Fill in textbox';
     }
         
     // return {
