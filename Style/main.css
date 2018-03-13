@@ -43,16 +43,56 @@ h3 {
     background-color: #808080;
 }
 
+#buttonPadding{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 select {
     padding: 15px;
     text-align-last: center;
     
 }
 
-#demo {
+#fillTextbox {
     color: #ba0000;
 }
 
 #confirm {
     color: #008800;
 }
+
+#textBox{
+    width: 604px;
+    height: 350px;
+}
+
+#textareaPadding{
+    padding-top:20px;
+}
+
+/* Informationbox for each webb */
+::-webkit-input-placeholder {
+   text-align: center;
+   padding-top:20px;
+   padding-bottom: 20px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+   padding-top:20px;
+   padding-bottom: 20px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+   padding-top:20px;
+   padding-bottom: 20px;
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+   padding-top:20px;
+   padding-bottom: 20px;
+}
+

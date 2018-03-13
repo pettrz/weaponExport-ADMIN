@@ -14,29 +14,33 @@
 </head>
     <body>
         <div>
-            <h1>Fill in here</h1>
+            <h1>Fyll i nedan</h1>
             <br />
             <form>
-                <input type="text" placeholder="Country" data-bind="value: country" /><br />
-                <input type="text" placeholder="Code" data-bind="value: code" /><br />
-                <input type="text" placeholder="Status" data-bind="value: FHstatus" /><br />
-                <input type="text" placeholder="GPI-Rank" data-bind="value: gpi" /><br />
-                <input type="text" placeholder="Info" data-bind="value: info" /><br />
-                <input type="text" placeholder="Links" data-bind="value: links" /><br /><br />
+                <input type="text" placeholder="Land" data-bind="value: country" /><br />
+                <input type="text" placeholder="Landskod" data-bind="value: code" /><br />
+                <input type="text" placeholder="Demokratisk status" data-bind="value: FHstatus" /><br />
+                <input type="text" placeholder="GPI - ranking" data-bind="value: gpi" /><br />
+                <input type="text" placeholder="Länkar" data-bind="value: links" /><br />
 
-                    <h3>Select continent</h3>
-                    <select>
-                        <option name="collection" value="EU" data-bind="checked: collection">Europe</option>
-                        <option name="collection" value="AS" data-bind="checked: collection">Asia</option>
-                        <option name="collection" value="NA" data-bind="checked: collection">North America</option>
-                        <option name="collection" value="AF" data-bind="checked: collection">Africa</option>
-                        <option name="collection" value="OC" data-bind="checked: collection">Oceania</option>
-                        <option name="collection" value="SA" data-bind="checked: collection">South America</option>
-                    </select>
-                    <br /><br />
-
-                    <input class="button" type="submit" value="Submit" data-bind="click: postCountry" /> <span id="confirm"></span>
-                    <p id="demo"></p>
+                <h3>Välj världsdel</h3>
+                <select>
+                    <option name="collection" value="EU" data-bind="checked: collection">Europa</option>
+                    <option name="collection" value="AS" data-bind="checked: collection">Asien</option>
+                    <option name="collection" value="NA" data-bind="checked: collection">Nordamerika</option>
+                    <option name="collection" value="AF" data-bind="checked: collection">Afrika</option>
+                    <option name="collection" value="OC" data-bind="checked: collection">Oceanien</option>
+                    <option name="collection" value="SA" data-bind="checked: collection">Sydamerika</option>
+                </select><br/>
+                <div id="textareaPadding">
+                    <textarea id="textBox" type="text" placeholder="Information" data-bind="value: info"></textarea><br/>
+                </div>
+                
+                <div id="buttonPadding" >
+                    <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
+                </div>
+                
+                <p id="fillTextbox"></p>
 
             </form>
         </div>
