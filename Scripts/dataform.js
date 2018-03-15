@@ -60,3 +60,18 @@ var prepCountry = () => {
     //     collection: viewModel.collection(),
     // }
 }
+
+$(document).ready(function() {
+    var max_links      = 100; 
+    var wrapper         = $(".linkfield"); 
+    var add_button      = $(".button"); 
+    
+    var x = 1; 
+    $(add_button).click(function(e){
+        e.preventDefault();
+        if(x < max_links){ 
+            x++; 
+            $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>');
+        }
+    });
+});

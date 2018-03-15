@@ -21,7 +21,10 @@
                 <input type="text" placeholder="Landskod" data-bind="value: code" /><br />
                 <input type="text" placeholder="Demokratisk status" data-bind="value: FHstatus" /><br />
                 <input type="text" placeholder="GPI - ranking" data-bind="value: gpi" /><br />
-                <input type="text" placeholder="Länkar" data-bind="value: links" /><br />
+                <div class="linkfield">
+                    <button class="button">Lägg till flera länkar</button>
+                    <div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>
+                </div>
 
                 <h3>Välj världsdel</h3>
                 <select>
