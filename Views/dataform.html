@@ -21,20 +21,12 @@
                 <input type="text" placeholder="Landskod" data-bind="value: code" /><br />
                 <input type="text" placeholder="Demokratisk status" data-bind="value: FHstatus" /><br />
                 <input type="text" placeholder="GPI - ranking" data-bind="value: gpi" /><br />
-                <div class="linkfield">
-                    <button class="button">Lägg till flera länkar</button>
-                    <div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>
+                <button class="button">Lägg till flera länkar</button>
+                <div id="linkArea">
+                    <input type="text" placeholder="Länk" data-bind="value: links" /><br />
                 </div>
-
                 <h3>Välj världsdel</h3>
-                <select>
-                    <option name="collection" value="EU" data-bind="checked: collection">Europa</option>
-                    <option name="collection" value="AS" data-bind="checked: collection">Asien</option>
-                    <option name="collection" value="NA" data-bind="checked: collection">Nordamerika</option>
-                    <option name="collection" value="AF" data-bind="checked: collection">Afrika</option>
-                    <option name="collection" value="OC" data-bind="checked: collection">Oceanien</option>
-                    <option name="collection" value="SA" data-bind="checked: collection">Sydamerika</option>
-                </select><br/>
+                <select data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection"></select><br/>
                 <div id="textareaPadding">
                     <textarea id="textBox" type="text" placeholder="Information" data-bind="value: info"></textarea><br/>
                 </div>

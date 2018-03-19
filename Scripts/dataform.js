@@ -11,8 +11,13 @@ xhttp.onreadystatechange = function() {
         viewModel.gpi('');
         viewModel.info('');
         viewModel.links('');
-        viewModel.collection('EU');
+        viewModel.Collection('EU');
      }
+}
+
+Collection = function(code, name){
+    this.collectionCode = code;
+    this.collectionName = name;
 }
 
 var viewModel = {
@@ -22,7 +27,15 @@ var viewModel = {
     gpi: ko.observable(''),
     info: ko.observable(''),
     links: ko.observable(''),
-    collection: ko.observable('EU'),
+    collections: ko.observableArray([
+        new Collection('AF', 'Afrika'),
+        new Collection('AS', 'Asien'),
+        new Collection('EU', 'Europa'),
+        new Collection('NA', 'Nordamerika'),
+        new Collection('OC', 'Oceanien'),
+        new Collection('SA', 'Sydamerika'),
+    ]),
+    selectedCollection : ko.observable(''),
     postCountry: () => {
         //xhttp.send()
         console.log(prepCountry());
@@ -33,45 +46,29 @@ ko.applyBindings(viewModel);
 
 var prepCountry = () => {
 
-    if (viewModel.country() != "" && viewModel.code() != "" && viewModel.FHstatus() != "" && viewModel.gpi() != "" && viewModel.info() != "" && viewModel.links() != "") {
-        return (
-            'country=' + viewModel.country() +
-            '&code=' + viewModel.code() +
-            '&FHstatus=' + viewModel.FHstatus() +
-            '&gpi=' + viewModel.gpi() +
-            '&info=' + viewModel.info() +
-            '&links=' + viewModel.links() +
-            '&collection=' + viewModel.collection() +
+    return {
+        country: viewModel.country(),
+        code: viewModel.code(),
+        FHstatus: viewModel.FHstatus(),
+        info: viewModel.info(),
+        links: viewModel.links(),
+        collection: viewModel.selectedCollection().collectionCode,
+    }
 
-            console.log('success')
-        )
-    }
-    else {
-        console.log('error');
-        document.getElementById('fillTextbox').innerHTML = 'Fill in textbox';
-    }
-        
-    // return {
-    //     country: viewModel.country(),
-    //     code: viewModel.code(),
-    //     FHstatus: viewModel.FHstatus(),
-    //     info: viewModel.info(),
-    //     links: viewModel.links(),
-    //     collection: viewModel.collection(),
+    // if (viewModel.country() != "" && viewModel.code() != "" && viewModel.FHstatus() != "" && viewModel.gpi() != "" && viewModel.info() != "" && viewModel.links() != "") {
+    //     console.log('success')
+    //     return (
+    //         'country=' + viewModel.country() +
+    //         '&code=' + viewModel.code() +
+    //         '&FHstatus=' + viewModel.FHstatus() +
+    //         '&gpi=' + viewModel.gpi() +
+    //         '&info=' + viewModel.info() +
+    //         '&links=' + viewModel.links() +
+    //         '&Collection=' + viewModel.Collection()
+    //     )
+    // }
+    // else {
+    //     console.log('error');
+    //     document.getElementById('fillTextbox').innerHTML = 'Fill in textbox';
     // }
 }
-
-$(document).ready(function() {
-    var max_links      = 100; 
-    var wrapper         = $(".linkfield"); 
-    var add_button      = $(".button"); 
-    
-    var x = 1; 
-    $(add_button).click(function(e){
-        e.preventDefault();
-        if(x < max_links){ 
-            x++; 
-            $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>');
-        }
-    });
-});

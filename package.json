@@ -1,0 +1,18 @@
+{
+  "name": "vapenkarta_admin",
+  "version": "1.0.0",
+  "description": "Admin page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://petter-t41718.visualstudio.com/Project-Vapenkarta/_git/Vapenkarta_Admin"
+  },
+  "author": "Team Chaos",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.2.0"
+  }
+}
