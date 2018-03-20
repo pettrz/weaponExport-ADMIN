@@ -9,35 +9,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/dataform.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
-
-
 </head>
-    <body>
-        <div>
-            <h1>Fyll i nedan</h1>
-            <br />
-            <form>
-                <input type="text" placeholder="Land" data-bind="value: country" /><br />
-                <input type="text" placeholder="Landskod" data-bind="value: code" /><br />
-                <input type="text" placeholder="Demokratisk status" data-bind="value: FHstatus" /><br />
-                <input type="text" placeholder="GPI - ranking" data-bind="value: gpi" /><br />
-                <button class="button">Lägg till flera länkar</button>
-                <div id="linkArea">
-                    <input type="text" placeholder="Länk" data-bind="value: links" /><br />
-                </div>
-                <h3>Välj världsdel</h3>
-                <select data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection"></select><br/>
-                <div id="textareaPadding">
-                    <textarea id="textBox" type="text" placeholder="Information" data-bind="value: info"></textarea><br/>
-                </div>
-                
-                <div id="buttonPadding" >
-                    <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
-                </div>
-                
-                <p id="fillTextbox"></p>
-
-            </form>
-        </div>
-    </body>
+<body>
+    <div>
+        <h1>Fyll i nedan</h1>
+        <br />
+        <form>
+            <p data-bind="css: {error: country.hasError}">
+                <input type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'"/>
+                <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
+            </p>
+            <input type="text" placeholder="Landskod" data-bind="value: code" /><br />
+            <input type="text" placeholder="Demokratisk status" data-bind="value: FHstatus" /><br />
+            <input type="text" placeholder="GPI - ranking" data-bind="value: gpi" /><br />
+            <button class="button">Lägg till flera länkar</button>
+            <div id="linkArea">
+                <input type="text" placeholder="Länk" data-bind="value: links" /><br />
+            </div>
+            <h3>Välj världsdel</h3>
+            <select data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection"></select><br/>
+            <div id="textareaPadding">
+                <textarea id="textBox" type="text" placeholder="Information" data-bind="value: info"></textarea><br/>
+            </div>
+            
+            <div id="buttonPadding" >
+                <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
+            </div>
+        </form>
+    </div>
+</body>
 </html>

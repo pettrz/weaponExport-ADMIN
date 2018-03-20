@@ -20,8 +20,25 @@ Collection = function(code, name){
     this.collectionName = name;
 }
 
+ko.extenders.required = function(target, overrideMessage) {
+    target.hasError = ko.observable();
+    target.validationMessage = ko.observable();
+
+    function validate(newValue) {
+        target.hasError(newValue ? false : true);
+        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+    }
+
+    // validate(target());
+
+    target.subscribe(validate);
+    
+    return target;
+}
+
 var viewModel = {
-    country: ko.observable(''),
+    self: this,
+    country: ko.observable('').extend({required: "Please enter a country"}),
     code: ko.observable(''),
     FHstatus: ko.observable(''),
     gpi: ko.observable(''),
@@ -37,7 +54,7 @@ var viewModel = {
     ]),
     selectedCollection : ko.observable(''),
     postCountry: () => {
-        //xhttp.send()
+        //xhttp.send(prepCountry());
         console.log(prepCountry());
     },
 }
@@ -45,30 +62,18 @@ var viewModel = {
 ko.applyBindings(viewModel);
 
 var prepCountry = () => {
-
-    return {
-        country: viewModel.country(),
-        code: viewModel.code(),
-        FHstatus: viewModel.FHstatus(),
-        info: viewModel.info(),
-        links: viewModel.links(),
-        collection: viewModel.selectedCollection().collectionCode,
+    if (viewModel.country().hasError()) {
+        console.log(viewModel.country.errors())
+    } else {
+        console.log(prepCountry());
     }
 
-    // if (viewModel.country() != "" && viewModel.code() != "" && viewModel.FHstatus() != "" && viewModel.gpi() != "" && viewModel.info() != "" && viewModel.links() != "") {
-    //     console.log('success')
-    //     return (
-    //         'country=' + viewModel.country() +
-    //         '&code=' + viewModel.code() +
-    //         '&FHstatus=' + viewModel.FHstatus() +
-    //         '&gpi=' + viewModel.gpi() +
-    //         '&info=' + viewModel.info() +
-    //         '&links=' + viewModel.links() +
-    //         '&Collection=' + viewModel.Collection()
-    //     )
-    // }
-    // else {
-    //     console.log('error');
-    //     document.getElementById('fillTextbox').innerHTML = 'Fill in textbox';
+    // return {
+    //     country: viewModel.country(),
+    //     code: viewModel.code(),
+    //     FHstatus: viewModel.FHstatus(),
+    //     info: viewModel.info(),
+    //     links: viewModel.links(),
+    //     collection: viewModel.selectedCollection().collectionCode,
     // }
 }
