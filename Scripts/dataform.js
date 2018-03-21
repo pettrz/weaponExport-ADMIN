@@ -11,6 +11,7 @@ xhttp.onreadystatechange = function() {
         viewModel.gpi('');
         viewModel.info('');
         viewModel.links('');
+        viewModel.title('');
         viewModel.collection('EU');
      }
 }
@@ -22,6 +23,7 @@ var viewModel = {
     gpi: ko.observable(''),
     info: ko.observable(''),
     links: ko.observable(''),
+    title: ko.observable(''),
     collection: ko.observable('EU'),
     postCountry: () => {
         //xhttp.send()
@@ -41,6 +43,7 @@ var prepCountry = () => {
             '&gpi=' + viewModel.gpi() +
             '&info=' + viewModel.info() +
             '&links=' + viewModel.links() +
+            '&title=' + viewModel.title() +
             '&collection=' + viewModel.collection() +
 
             console.log('success')
@@ -72,7 +75,7 @@ $(document).ready(function() {
         if(x < max_links){ 
             x++; 
             $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>',
-                            '<div><input type="text" placeholder="Titel" data-bind="value: titles" /><br /></div>');
+                            '<div><input type="text" placeholder="Titel" data-bind="value: title" /><br /></div>');
         }
     });
 });
