@@ -5,14 +5,7 @@ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         document.getElementById('confirm').innerHTML = 'Skickat';
-        viewModel.country('');
-        viewModel.code('');
-        viewModel.FHstatus('');
-        viewModel.gpi('');
-        viewModel.info('');
-        viewModel.links('');
-        viewModel.Collection('EU');
-     }
+    }
 }
 
 Collection = function(code, name){
@@ -29,7 +22,7 @@ ko.extenders.required = function(target, overrideMessage) {
         target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
     }
 
-    // validate(target());
+    validate(target());
 
     target.subscribe(validate);
     
@@ -39,11 +32,11 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     country: ko.observable('').extend({required: "Please enter a country"}),
-    code: ko.observable(''),
-    FHstatus: ko.observable(''),
-    gpi: ko.observable(''),
-    info: ko.observable(''),
-    links: ko.observable(''),
+    code: ko.observable('').extend({required: "Please enter a code"}),
+    FHstatus: ko.observable('').extend({required: "Please enter an FH status"}),
+    gpi: ko.observable('').extend({required: "Please enter a gpi"}),
+    info: ko.observable('').extend({required: "Please enter info"}),
+    links: ko.observable('').extend({required: "Please enter one or more links"}),
     collections: ko.observableArray([
         new Collection('AF', 'Afrika'),
         new Collection('AS', 'Asien'),
@@ -57,23 +50,19 @@ var viewModel = {
         //xhttp.send(prepCountry());
         console.log(prepCountry());
     },
+    buttonToggle: ko.observable('visible'),
 }
 
 ko.applyBindings(viewModel);
 
 var prepCountry = () => {
-    if (viewModel.country().hasError()) {
-        console.log(viewModel.country.errors())
-    } else {
-        console.log(prepCountry());
+    
+    return {
+        country: viewModel.country(),
+        code: viewModel.code(),
+        FHstatus: viewModel.FHstatus(),
+        info: viewModel.info(),
+        links: viewModel.links(),
+        collection: viewModel.selectedCollection().collectionCode,
     }
-
-    // return {
-    //     country: viewModel.country(),
-    //     code: viewModel.code(),
-    //     FHstatus: viewModel.FHstatus(),
-    //     info: viewModel.info(),
-    //     links: viewModel.links(),
-    //     collection: viewModel.selectedCollection().collectionCode,
-    // }
 }
