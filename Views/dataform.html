@@ -13,6 +13,7 @@
 
 </head>
     <body>
+        <div class="container">
         <div>
             <h1>Fyll i nedan</h1>
             <br />
@@ -22,8 +23,11 @@
                 <input type="text" placeholder="Demokratisk status" data-bind="value: FHstatus" /><br />
                 <input type="text" placeholder="GPI - ranking" data-bind="value: gpi" /><br />
                 <div class="linkfield">
-                    <button class="button">Lägg till flera länkar</button>
-                    <div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>
+                    <button class="buttonLinks">Lägg till flera länkar</button>
+                    <div class="row">
+                        <div id="linkcol" class=" offset-sm-2 col-sm-4"><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>
+                        <div id="linkcol" class="col-sm-4 offset-sm-2 "><input type="text" placeholder="Titel" data-bind="value: title" /><br /></div>
+                    </div>
                 </div>
 
                 <h3>Välj världsdel</h3>
@@ -46,6 +50,7 @@
                 <p id="fillTextbox"></p>
 
             </form>
+        </div>
         </div>
     </body>
 </html>
