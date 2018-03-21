@@ -105,3 +105,11 @@ select {
 .buttonLinks:hover {
     background-color: #808080;
 }
+
+#linkcol input{
+    width: 100%;
+}
+
+#linkcol{
+    padding:0;
+}

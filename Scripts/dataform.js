@@ -71,7 +71,8 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_links){ 
             x++; 
-            $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>');
+            $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>',
+                            '<div><input type="text" placeholder="Titel" data-bind="value: titles" /><br /></div>');
         }
     });
 });
