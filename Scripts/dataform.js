@@ -64,7 +64,7 @@ var prepCountry = () => {
 $(document).ready(function() {
     var max_links      = 100; 
     var wrapper         = $(".linkfield"); 
-    var add_button      = $(".button"); 
+    var add_button      = $(".buttonLinks"); 
     
     var x = 1; 
     $(add_button).click(function(e){
