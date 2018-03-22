@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     background-color: #333131;
     text-align: center;
+
 }
 #countryForm{
     background-color: #C0C0C0;
@@ -22,6 +23,11 @@ h1 {
 }
 h3 {
     color: white;
+}
+
+#headerForm{
+    text-align: center;
+    padding: 50px;
 }
 .button {
     background-color: #C0C0C0;
@@ -115,5 +121,6 @@ button:focus{
 }
 
 .form-group{
-padding-left: 10px;
+    padding-left: 10px;
+    text-align: left !important;
 }
