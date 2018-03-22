@@ -67,15 +67,15 @@
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
                                     <div class="col-md-4" style="text-align: center">
-                                        <div class="col-sm-12">
+                                        <!-- <div class="col-sm-12">
                                             
                                             <button id="buttonAdd" class="buttonLinks"><i class="far fa-plus-square fa-2x"></i></button>
                                             
                                             
-                                            <button id="buttonDelete" class="buttonLinks" onclick="removerow(input)"><i class="far fa-minus-square fa-2x"></i></button>
+                                            <button id="buttonDelete" class="buttonLinks"><i class="far fa-minus-square fa-2x"></i></button>
                                             
-                                        </div>
-                                        <div id="card-wrapper">
+                                        </div> -->
+                                        <!-- <div id="card-wrapper">
                                             <div id="linkCard" class="card">
                                                 <div class="card-header" style="text-align: center;">
                                                     Länk 
@@ -90,7 +90,19 @@
                                                         </li>
                                                     </ul>
                                             </div>
+                                        </div> -->
+
+                                        <div class="optionBox">
+                                                <div class="block">
+                                                        <span class="add">Add Option</span><i class="far fa-plus-square fa-2x"></i>
+                                                    </div>
+                                            <div class="block">
+                                                <input placeholder="Titel" data-bind="value: title" type="text" />
+                                                <input placeholder="Länk" data-bind="value: links" type="text" /> 
+                                            </div>
+                                            
                                         </div>
+                                
 
                                     </div>
                                     
@@ -117,5 +129,7 @@
                 </div>
             </div>
         </div>
+
+        
     </body>
 </html>
