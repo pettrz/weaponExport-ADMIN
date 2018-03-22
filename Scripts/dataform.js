@@ -66,16 +66,17 @@ var prepCountry = () => {
 
 $(document).ready(function() {
     var max_links      = 100; 
-    var wrapper         = $(".linkfield"); 
-    var add_button      = $(".buttonLinks"); 
+    var wrapper         = $("#card-wrapper"); 
+    var add_button      = $("#buttonAdd"); 
     
     var x = 1; 
     $(add_button).click(function(e){
         e.preventDefault();
         if(x < max_links){ 
             x++; 
-            $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>',
-                            '<div><input type="text" placeholder="Titel" data-bind="value: title" /><br /></div>');
+            $(wrapper).append('<div class="card"><div class="card-header" style="text-align: center;">Länk 1</div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div>');
         }
     });
 });
+
+
