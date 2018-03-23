@@ -109,15 +109,17 @@ $(document).ready(function() {
        
         if(x < max){
             
-            $('.block:last').before('<div class="block"><input placeholder="Titel" data-bind="value: title" type="text" /><br/><input placeholder="Länk" data-bind="value: links" type="text" /><span class="remove">Remove Option</span><i class="far fa-minus-square fa-2x"></i></div>');
+            $('.block:last').before('<div class="block"><div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk <i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i></div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div></div>');
             $('.optionBox').on('click','.remove',function() {
-                $(this).parent().remove();
+                $(this).parent().parent().remove();
            });
             x++;
         }
         else{
             e.preventDefault();
         }
+
+        // $('.block:last').before('<div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk </div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div>');
         
     });   
 });
