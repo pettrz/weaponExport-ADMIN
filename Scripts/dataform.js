@@ -65,17 +65,63 @@ var prepCountry = () => {
 }
 
 $(document).ready(function() {
-    var max_links      = 100; 
-    var wrapper         = $(".linkfield"); 
-    var add_button      = $(".buttonLinks"); 
+    // var max_links      = 3; 
+    // var wrapper         = $("#card-wrapper"); 
+    // var add_button      = $("#buttonAdd"); 
     
-    var x = 1; 
-    $(add_button).click(function(e){
-        e.preventDefault();
-        if(x < max_links){ 
-            x++; 
-            $(wrapper).append('<div><input type="text" placeholder="Länk" data-bind="value: links" /><br /></div>',
-                            '<div><input type="text" placeholder="Titel" data-bind="value: title" /><br /></div>');
+    // var x = 1; 
+    // $(add_button).click(function(e){
+    //     e.preventDefault();
+    //     if(x < max_links){ 
+    //         x++; 
+    //         $(wrapper).append('<div class="card"><div class="card-header" style="text-align: center;">Länk</div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div>');
+    //     }
+    // });
+
+
+
+    //   var min_links       = 1;
+    // var remove_button   = $("#buttonDelete"); 
+    // var wrapper         = $("#card-wrapper"); 
+
+    // $(remove_button).click(function(e){
+    //     e.preventDefault();
+    //     if(x > min_links){ 
+    //         x--; 
+    //          $(wrapper).remove('<div class="card"><div class="card-header" style="text-align: center;">Länk</div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div>');
+    //     }
+    // });
+    // function remove(x){
+    //     if(x>min_links){
+    //         var elem = document.getElementById('card-wrapper');
+    //         elem.parentNode.removeChild(elem);
+    //         return false;
+    //     }
+    // }
+    
+        // $("#buttonDelete").click(function(){
+        //     $("#buttonDelete").remove();
+        // });
+    var max = 100;
+    var  x = 1;
+
+    $('.add').click(function() {
+       
+        if(x < max){
+            
+            $('.block:last').before('<div class="block"><div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk <i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i></div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div></div>');
+            $('.optionBox').on('click','.remove',function() {
+                $(this).parent().parent().remove();
+           });
+            x++;
         }
-    });
+        else{
+            e.preventDefault();
+        }
+
+        // $('.block:last').before('<div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk </div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div>');
+        
+    });   
 });
+
+
