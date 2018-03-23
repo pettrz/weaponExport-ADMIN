@@ -16,8 +16,7 @@ html {
 body {
     font-family: "Verdana", Geneva, sans-serif;
 }
-.form-control {
-}
+
 h1 {
     font-weight: bold;
     color: white;
@@ -44,9 +43,7 @@ h3 {
     padding-bottom: 20px;
     line-height: 50px;
 }
-select {
-    
-}
+
 #fillTextbox {
     color: #ba0000;
 }
@@ -58,11 +55,9 @@ select {
     min-width: 100%;
     min-height: 250px;
 }
-#textareaPadding{
-}
+
 /* Informationbox for each webb */
-::-webkit-input-placeholder {
-}
+
 :-moz-placeholder { /* Firefox 18- */
    text-align: center;  
    padding-top:20px;
@@ -92,11 +87,6 @@ button:focus{
 
 .buttonLinks:hover {
     color: #808080;
-}
-#linkcol input{
-}
-#linkcol{
- 
 }
 
 .list-group-item{
@@ -137,4 +127,9 @@ span {
     display: inline-block;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.navbar-nav li{
+    padding-left:20px;
+    padding-right:20px;
 }
