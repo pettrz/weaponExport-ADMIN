@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redigera data</title>
+    <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-git.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
+    <script src="./../Scripts/dataform.js" defer="defer"></script>
+    <script src="./../Scripts/bootstrap.min.js"></script>
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+
+
+<div class="col-lg-8 offset-lg-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarStyle">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown"> 
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Kartan
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+            <a class="dropdown-item active" href="index.html">Lägg till</a>
+            <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
+            <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Statistik
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+            <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
+            <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
+            <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Aktörer
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
+                <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
+                <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
+            </div>
+        </li>
+        </ul>
+    </div>
+    </nav>
+</div>
+
+
+
+                <div id="headerForm" class="col-lg-12">
+                    <h1>Ta bort en aktör</h1>
+                </div>
+                
+                
+ 
+                <div id="countryForm" class="col-lg-8 offset-lg-2">
+                    <form>
+                        <div class="form">
+                            <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="country">Land</label>
+                                <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="countryCode">Landskod</label>
+                                <input class="form-control" id="countryCode"type="text" placeholder="Landskod" data-bind="value: code" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="continent">Kontinent</label>
+                                <select class="form-control" id="continent">
+                                    <option disabled selected value style="display:none"> -- Välj kontinent --</option>
+                                    <option name="collection" value="EU" data-bind="checked: collection">Europa</option>
+                                    <option name="collection" value="AS" data-bind="checked: collection">Asien</option>
+                                    <option name="collection" value="NA" data-bind="checked: collection">Nordamerika</option>
+                                    <option name="collection" value="AF" data-bind="checked: collection">Afrika</option>
+                                    <option name="collection" value="OC" data-bind="checked: collection">Oceanien</option>
+                                    <option name="collection" value="SA" data-bind="checked: collection">Sydamerika</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="FHstatus">Freedom House status</label>
+                                <select class="form-control" id="FHstatus" data-bind="value: FHstatus">
+                                    <option disabled selected value style="display:none"> -- Välj status --</option>
+                                    <option>Fri</option>
+                                    <option>Delvist Fri</option>
+                                    <option>Ofri</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="GPI">GPI Rankning</label>
+                                <input class="form-control" id="GPI" type="text" placeholder="GPI Rankning" data-bind="value: gpi" />
+                            </div>
+                            <!-- <div class="linkfield">
+                                <button class="buttonLinks">Lägg till flera länkar</button>
+                                <div class="row">
+                                    <div id="linkcol" ><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /><br /></div>
+                                    <div id="linkcol" ><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /><br /></div>
+                                </div>
+                            </div> -->
+                            <div id="info-wrapper" class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-md-4" style="text-align: center">
+                                        <!-- <div class="col-sm-12">
+                                            
+                                            <button id="buttonAdd" class="buttonLinks"><i class="far fa-plus-square fa-2x"></i></button>
+                                            
+                                            
+                                            <button id="buttonDelete" class="buttonLinks"><i class="far fa-minus-square fa-2x"></i></button>
+                                            
+                                        </div> -->
+                                        <!-- <div id="card-wrapper">
+                                            <div id="linkCard" class="card">
+                                                <div class="card-header" style="text-align: center;">
+                                                    Länk 
+                                                </div>
+                                                
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <input class="form-control" type="text" placeholder="Titel" data-bind="value: title" />
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <input class="form-control" type="text" placeholder="Länk" data-bind="value: links" />
+                                                        </li>
+                                                    </ul>
+                                            </div>
+                                        </div> -->
+
+                                    <div class="optionBox">
+                                                <div class="block">
+                                                        <div class="add"><i class="far fa-plus-square fa-2x"></i></div>
+                                                    </div>
+                                            <div class="block">
+                                                <div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk </div><ul class="list-group list-group-flush"><li class="list-group-item"><input class="form-control" type="text" placeholder="Titel" data-bind="value: title" /></li><li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links" /></li></ul></div>
+                                            </div>
+                                            
+                                        </div>
+                                
+
+                                    </div>
+                                </div>
+                                    
+                                    
+                            
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info"></textarea>
+                                    </div>
+                                    <div id="buttonPadding" >
+                                            <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
+                                        </div>
+                                        <p id="fillTextbox"></p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        </div>
+
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
