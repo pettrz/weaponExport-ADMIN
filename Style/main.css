@@ -85,10 +85,6 @@ button:focus{
     outline: none !important;
 }
 
-.buttonLinks:hover {
-    color: #808080;
-}
-
 .list-group-item{
     padding: 0;
     border: none;
@@ -132,4 +128,27 @@ span {
 .navbar-nav li{
     padding-left:20px;
     padding-right:20px;
+}
+
+#navbarStyle{
+    background-color:#C0C0C0 !important;
+    font-weight: bold;
+    color:black;
+    padding:10px;
+    font-family: "Verdana", Geneva, sans-serif;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#dropdownStyle{
+    /* border-radius: 10px; */
+    background-color:#f2f2f2 !important;
+}
+
+#dropdownStyle a:hover{
+    background-color: #C0C0C0;
+}
+.dropdown-item.active, .dropdown-item:active{
+    background-color: #C0C0C0;
+    color:black;
 }
