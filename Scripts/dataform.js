@@ -63,6 +63,7 @@ var viewModel = {
         //xhttp.send(prepCountry());
         console.log(prepCountry());
     },
+    buttonToggle: ko.observable('visible'),
 }
 
 ko.applyBindings(viewModel);
