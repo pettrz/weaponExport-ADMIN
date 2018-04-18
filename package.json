@@ -1,0 +1,21 @@
+{
+  "name": "vapenkarta_admin",
+  "version": "1.0.0",
+  "description": "Admin page",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d -lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://petter-t41718.visualstudio.com/Project-Vapenkarta/_git/Vapenkarta_Admin"
+  },
+  "author": "Team Chaos",
+  "license": "ISC",
+  "dependencies": {
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
