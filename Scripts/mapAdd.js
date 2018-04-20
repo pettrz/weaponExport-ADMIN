@@ -4,14 +4,14 @@ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        // alert('Country has been added!')
-        // viewModel.country('');
-        // viewModel.code('');
-        // viewModel.selectedFHstatus('');
-        // viewModel.gpi('');
-        // viewModel.info('');
-        // viewModel.links([{title:'', link:''}]);
-        // viewModel.selectedCollection('');
+        alert('Country has been added!')
+        viewModel.country('');
+        viewModel.code('');
+        viewModel.selectedFHstatus('');
+        viewModel.gpi('');
+        viewModel.info('');
+        viewModel.links([{title:'', link:''}]);
+        viewModel.selectedCollection('');
         xhttp.open('POST', 'http://localhost:1137/add', true);
      }
 }
