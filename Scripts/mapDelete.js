@@ -4,12 +4,16 @@ getRequest.send();
 
 getRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+        
+        viewModel.selectedCollection(undefined);
+        viewModel.selectedCountry(undefined);
+        viewModel.countries([]);
+        viewModel.visibleCountries(undefined);
         console.log('returned all countries');
         var response = JSON.parse(this.response);
         
         for (var i = 0; i < response.length; i++) {  
             viewModel.countries.push(new Country(response[i]._id, response[i].country, response[i].collection));
-            console.log('pushed ' + response[i].country);
         }
     }
 }
@@ -18,8 +22,6 @@ deleteRequest = new XMLHttpRequest();
 deleteRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.response)
-        viewModel.selectedCollection('');
-        viewModel.selectedCountry('');
         getRequest.open('GET', 'http://localhost:1137/map', true);
         getRequest.send();
     }
@@ -56,6 +58,7 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     countries: ko.observableArray(),
+    visibleCountries: ko.observableArray(),
     selectedCountry: ko.observable().extend({required: "Please enter a country"}),
     collections: ko.observableArray([
         new Collection('AF', 'Afrika'),
@@ -74,53 +77,24 @@ var viewModel = {
     },
 }
 
-// function viewModel() {
-//     self = this;
-//     self.countries = ko.observableArray();
-//     // self.sortedCountries = function() {
-//     //     if (!self.selectedCollection.hasError()) {
-//     //         var list = [];
-    
-//     //         for (i = 0; i < self.countries.length; i++) {
-//     //             if (self.countries[i].Collection() == self.selectedCollection.Code())
-//     //                 list.push(self.countries[i]);
-//     //         }
-    
-//     //         return list;
-//     //     } else { return [] }
-//     // };
-//     self.selectedCountry = ko.observable().extend({required: "Please enter a country"});
-//     self.collections = ko.observableArray([
-//         new Collection('AF', 'Afrika'),
-//         new Collection('AS', 'Asien'),
-//         new Collection('EU', 'Europa'),
-//         new Collection('NA', 'Nordamerika'),
-//         new Collection('OC', 'Oceanien'),
-//         new Collection('SA', 'Sydamerika'),
-//     ]);
-//     self.selectedCollection = ko.observable().extend({required: "Please enter continent"});
-//     self.deleteCountry = function() {
-//         if(noErrors()) {
-//             requestPrep();
-//             deleteRequest.send();
-//         }
-//     }
-// };
-
 ko.applyBindings(viewModel);
 
-function sortedCountries() {
-    if (!self.selectedCollection().hasError()) {
+viewModel.selectedCollection.subscribe(function(value) {
+    console.log(value)
+    console.log(value != undefined);
+    if (value != undefined) {
         var list = [];
 
-        for (i = 0; i < viewModel.countries.length; i++) {
-            if (viewModel.countries[i].Collection == viewModel.selectedCollection.Code)
-                list.push(viewModel.countries[i]);
+        for (i = 0; i < viewModel.countries().length; i++) {
+            console.log('country: ' + viewModel.countries()[i].Collection);
+            console.log('collection: ' + viewModel.selectedCollection().Code);
+            if (viewModel.countries()[i].Collection ==  viewModel.selectedCollection().Code)
+                list.push(viewModel.countries()[i]);
         }
-
-        return list;
-    } else { return [{}]}
-}
+        viewModel.visibleCountries(list);
+    } else { 
+        viewModel.visibleCountries([]);
+}});
 
 function noErrors() {
     if (viewModel.selectedCountry.hasError() ||
@@ -143,30 +117,3 @@ var requestPrep = function() {
 
     deleteRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 }
-
-$(document).ready(function() {
-    var max = 100;
-    var  x = 1;
-
-    $('.add').click(function() {
-
-        if(x < max){
-
-            viewModel.links.push({title:'', link:''})
-
-            $('.block:last').before('<div class="block"><div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk' +
-            '<i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i></div><ul class="list-group list-group-flush"><li class="list-group-item">' +
-            '<input class="form-control" type="text" placeholder="Titel" data-bind="value: links()[' + x + '].title, valueUpdate: \'afterkeydown\'" /></li>' +
-            '<li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links()[' + x + '].link, valueUpdate: \'afterkeydown\'"/>' +
-            '</li></ul></div></div>');
-            $('.optionBox').on('click','.remove',function() {
-                $(this).parent().parent().remove();
-                viewModel.links.remove(viewModel.links()[x])
-           });
-            x++;
-        }
-        else{
-            e.preventDefault();
-        }
-    });
-});

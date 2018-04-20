@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redigera data</title>
+    <title>Ta bort data</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
@@ -66,7 +66,7 @@
                             <div class="form-group col-md-8" data-bind="visible: selectedCollection">
                                 <p data-bind="css: {error: selectedCountry.hasError}">
                                     <label for="country">Land</label>
-                                    <select class="form-control" id="country" data-bind="options: countries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" /></select>
+                                    <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" /></select>
                                     <span data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                                 </p>
                             </div>
@@ -74,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div id="buttonPadding" >
-                                            <input class="button" type="submit" value="Lägg till" data-bind="click: deleteCountry" />
+                                            <input class="button" type="submit" value="Ta bort" data-bind="click: deleteCountry" />
                                         </div>
                                     </div>
                                 </div>
