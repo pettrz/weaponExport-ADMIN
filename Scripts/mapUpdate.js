@@ -58,8 +58,8 @@ var viewModel = {
     info: ko.observable().extend({required: "Please enter info"}),
     FHstatuses: ko.observableArray([
         'Fri',
-        'Delvis Fri',
-        'Ej fri',
+        'Delvis fri',
+        'Inte fri',
     ]),
     selectedFHstatus: ko.observable().extend({required: "Please enter FH status"}),
     links: ko.observableArray([

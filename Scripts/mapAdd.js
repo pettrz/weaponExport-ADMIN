@@ -43,8 +43,8 @@ var viewModel = {
     code: ko.observable().extend({required: "Please enter a code"}),
     FHstatuses: ko.observableArray([
         'Fri',
-        'Delvis Fri',
-        'Ej fri',
+        'Delvis fri',
+        'Inte fri',
     ]),
     selectedFHstatus: ko.observable().extend({required: "Please enter FH status"}),
     gpi: ko.observable().extend({required: "Please enter a gpi"}),
@@ -97,30 +97,3 @@ var prepCountry = () => {
         '&collection=' + viewModel.selectedCollection().collectionCode
     )
 }
-
-$(document).ready(function() {
-    var max = 100;
-    var  x = 1;
-
-    $('.add').click(function() {
-
-        if(x < max){
-
-            viewModel.links.push({title:'', link:''})
-
-            $('.block:last').before('<div class="block"><div id="card-wrapper"><div id="linkCard" class="card"><div class="card-header" style="text-align: center;">Länk' +
-            '<i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i></div><ul class="list-group list-group-flush"><li class="list-group-item">' +
-            '<input class="form-control" type="text" placeholder="Titel" data-bind="value: links()[' + x + '].title, valueUpdate: \'afterkeydown\'" /></li>' +
-            '<li class="list-group-item"><input class="form-control" type="text" placeholder="Länk" data-bind="value: links()[' + x + '].link, valueUpdate: \'afterkeydown\'"/>' +
-            '</li></ul></div></div>');
-            $('.optionBox').on('click','.remove',function() {
-                $(this).parent().parent().remove();
-                viewModel.links.remove(viewModel.links()[x])
-           });
-            x++;
-        }
-        else{
-            e.preventDefault();
-        }
-    });
-});
