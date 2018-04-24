@@ -78,41 +78,45 @@
                                 </p>
                             </div>
                             <div class="form-group col-md-4">
-                            <p data-bind="css: {error: selectedFHstatus.hasError}">
-                                <label for="FHstatus">Freedom House status</label>
-                                <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
-                                <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
-                            </p>
+                                <p data-bind="css: {error: selectedFHstatus.hasError}">
+                                    <label for="FHstatus">Freedom House status</label>
+                                    <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
+                                    <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
+                                </p>
                             </div>
                             <div class="form-group col-md-4">
-                            <p data-bind="css: {error: gpi.hasError}">
-                                <label for="GPI">GPI Rankning</label>
-                                <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
-                                <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
-                            </p>
+                                <p data-bind="css: {error: gpi.hasError}">
+                                    <label for="GPI">GPI Rankning</label>
+                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
+                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                                </p>
                             </div>
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
                                     <div class="col-md-4" style="text-align: center">
-                                        
                                         <div class="optionBox">
                                             <div class="block">
-                                                <div class="add"><i class="far fa-plus-square fa-2x"></i></div>
+                                                <div class="add" data-bind="click: function() {links.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
                                             </div>
-                                            <div class="block">
-                                                <div id="card-wrapper">
-                                                    <div id="linkCard" class="card">
-                                                        <div class="card-header" style="text-align: center;">
-                                                            Länk 
+                                            <div data-bind="foreach: links">
+                                                <div class="block">
+                                                    <div id="card-wrapper">
+                                                        <div id="linkCard" class="card">
+                                                            <div class="card-header" style="text-align: center;">
+                                                                <p>Länk</p>
+                                                                <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item">
+                                                                    <input class="form-control" type="text" placeholder="Titel" data-bind="value: title, valueUpdate: 'afterkeydown'" />
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <input class="form-control" type="text" placeholder="Länk" data-bind="value: link, valueUpdate: 'afterkeydown'" />
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item">
-                                                                <input class="form-control" type="text" placeholder="Titel" data-bind="value: links()[0].title, valueUpdate: 'afterkeydown'" />
-                                                            </li>
-                                                            <li class="list-group-item">
-                                                                <input class="form-control" type="text" placeholder="Länk" data-bind="value: links()[0].link, valueUpdate: 'afterkeydown'" />
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
