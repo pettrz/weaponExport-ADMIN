@@ -43,8 +43,8 @@ var viewModel = {
     code: ko.observable().extend({required: "Please enter a code"}),
     FHstatuses: ko.observableArray([
         'Fri',
-        'Delvis Fri',
-        'Ej fri',
+        'Delvis fri',
+        'Inte fri',
     ]),
     selectedFHstatus: ko.observable().extend({required: "Please enter FH status"}),
     gpi: ko.observable().extend({required: "Please enter a gpi"}),
