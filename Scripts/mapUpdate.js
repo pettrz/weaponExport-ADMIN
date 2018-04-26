@@ -1,7 +1,9 @@
+//Sends correct data from database
 getRequest = new XMLHttpRequest();
 getRequest.open('GET', 'http://localhost:1137/map', true);
 getRequest.send();
 
+//Define request to get mapcontent from database with api
 getRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         
@@ -11,12 +13,14 @@ getRequest.onreadystatechange = function() {
         viewModel.visibleCountries(undefined);
         var response = JSON.parse(this.response);
         
+        //Creates list from viewModel
         for (var i = 0; i < response.length; i++) {  
             viewModel.countries.push(response[i]);
         }
     }
 }
 
+//Sends correct data from database
 updateRequest = new XMLHttpRequest();
 updateRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -25,12 +29,15 @@ updateRequest.onreadystatechange = function() {
     }
 }
 
-
+//Collection "class" 
 Collection = function(code, name){
+    //This code is sent to database 
     this.Code = code;
+    //This code is sent to GUI
     this.Name = name;
 }
 
+//Validation for inputs
 ko.extenders.required = function(target, overrideMessage) {
     target.hasError = ko.observable();
     target.validationMessage = ko.observable();
@@ -47,8 +54,10 @@ ko.extenders.required = function(target, overrideMessage) {
     return target;
 }
 
+//viewmodel for map - validation
 var viewModel = {
     self: this,
+    //Requires content in each input 
     countries: ko.observableArray(),
     visibleCountries: ko.observableArray(),
     selectedCountry: ko.observable().extend({required: "Please select country"}),
@@ -65,6 +74,7 @@ var viewModel = {
     links: ko.observableArray([
         {title:'', link:''},
     ]),
+    //Requires a selected continent
     collections: ko.observableArray([
         new Collection('AF', 'Afrika'),
         new Collection('AS', 'Asien'),
@@ -74,6 +84,7 @@ var viewModel = {
         new Collection('SA', 'Sydamerika'),
     ]),
     selectedCollection: ko.observable().extend({required: "Please select continent"}),
+    //Checks validation - if not: sends content
     updateCountry: function() {
         if(noErrors()) {
             requestPrep();
@@ -82,12 +93,15 @@ var viewModel = {
     },
 }
 
+//Sends validation through viewmodel
 ko.applyBindings(viewModel);
 
+//Retrieves content from selectedCollection
 viewModel.selectedCollection.subscribe(function(value) {
     if (value != undefined) {
         var list = [];
 
+        //Finds correct selectedCollection
         for (i = 0; i < viewModel.countries().length; i++) {
             if (viewModel.countries()[i].collection ==  viewModel.selectedCollection().Code)
                 list.push(viewModel.countries()[i]);
@@ -97,6 +111,7 @@ viewModel.selectedCollection.subscribe(function(value) {
         viewModel.visibleCountries([]);
 }});
 
+//Retrieves content from selectedCountry
 viewModel.selectedCountry.subscribe(function(value) {
     if (value != undefined) {
         viewModel.country(value.country);
@@ -108,6 +123,7 @@ viewModel.selectedCountry.subscribe(function(value) {
     }
 });
 
+//Checks errors in input
 function noErrors() {
     if (viewModel.selectedCountry.hasError() ||
         viewModel.selectedCollection.hasError() ||
@@ -120,6 +136,7 @@ function noErrors() {
             return false;
         }
     else {
+        //Edit confirmation
         if (confirm("Är du säker på att du vill redigera " + viewModel.selectedCountry().country + '?')) {
             return true;
         } else {
@@ -128,6 +145,7 @@ function noErrors() {
     }
 }
 
+//Sends content - updates map
 var requestPrep = function() {
     updateRequest.open('PUT', 'http://localhost:1137/edit/' + 
     viewModel.selectedCollection().Code + '/' + viewModel.selectedCountry()._id, true);
@@ -135,6 +153,7 @@ var requestPrep = function() {
     updateRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 }
 
+//Collects variables from viewModel
 var prepCountry = () => {
     return (
         'country=' + viewModel.country() +
