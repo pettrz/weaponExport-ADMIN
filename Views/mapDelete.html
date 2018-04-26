@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <!--metadata-->
     <title>Ta bort data</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
@@ -10,18 +11,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/mapDelete.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
+      <!--metadata ends-->
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
+                <!--navbar-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarStyle">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
+                            <!--navbar items-->
                             <li class="nav-item dropdown"> 
+                                  <!--map -->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kartan</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
@@ -30,6 +35,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
+                                <!--statistics-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Statistik</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
@@ -38,6 +44,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
+                                 <!--participants-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aktörer</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
@@ -48,14 +55,18 @@
                         </ul>
                     </div>
                 </nav>
+                <!--navbar ends-->
             </div>
+            <!--title-->
             <div id="headerForm" class="col-lg-12">
                 <h1>Ta bort land</h1>
             </div>
+            <!--delete form-->
             <div id="countryForm" class="col-lg-8 offset-lg-2">
                 <form>
                     <div class="form">
                         <div class="row">
+                            <!--continent-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedCollection.hasError}">
                                     <label for="continent">Kontinent</label>
@@ -63,6 +74,7 @@
                                     <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--country-->
                             <div class="form-group col-md-8" data-bind="visible: selectedCollection">
                                 <p data-bind="css: {error: selectedCountry.hasError}">
                                     <label for="country">Land</label>
@@ -72,17 +84,20 @@
                             </div>
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
+                                    <!--delete button-->
                                     <div class="col-md-8">
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Ta bort" data-bind="click: deleteCountry" />
                                         </div>
                                     </div>
+                                    <!--delete button ends-->
                                 </div>
                             </div> 
                         </div>
                     </div>
                 </form>
             </div>
+            <!--delete form ends-->
         </div>
     </div>        
 </body>
