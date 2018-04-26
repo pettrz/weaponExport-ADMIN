@@ -1,7 +1,9 @@
+//Sends correct data from database
 xhttp = new XMLHttpRequest();
 xhttp.open('POST', 'http://localhost:1137/add', true);
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+//Define request to get mapcontent from database with api
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         alert('Country has been added!')
@@ -16,11 +18,15 @@ xhttp.onreadystatechange = function() {
      }
 }
 
+//Collection "class" 
 Collection = function(code, name){
+    //This code is sent to database 
     this.collectionCode = code;
+    //This code is sent to GUI
     this.collectionName = name;
 }
 
+//Validation for inputs
 ko.extenders.required = function(target, overrideMessage) {
     target.hasError = ko.observable();
     target.validationMessage = ko.observable();
@@ -37,8 +43,10 @@ ko.extenders.required = function(target, overrideMessage) {
     return target;
 }
 
+//viewmodel for map - validation
 var viewModel = {
     self: this,
+    //Requires content in each input 
     country: ko.observable().extend({required: "Please enter a country"}),
     code: ko.observable().extend({required: "Please enter a code"}),
     FHstatuses: ko.observableArray([
@@ -52,6 +60,7 @@ var viewModel = {
     links: ko.observableArray([
         {title:'', link:''},
     ]),
+    //Requires a selected continent
     collections: ko.observableArray([
         new Collection('AF', 'Afrika'),
         new Collection('AS', 'Asien'),
@@ -63,6 +72,7 @@ var viewModel = {
     selectedCollection: ko.observable().extend({required: "Please enter continent"}),
     postCountry: function() {
 
+        //Checks validation - if not: sends content
         if (noErrors()) {
             console.log(prepCountry());
             xhttp.send(prepCountry());
@@ -70,8 +80,10 @@ var viewModel = {
     },
 }
 
+//Sends validation through viewmodel
 ko.applyBindings(viewModel);
 
+//Checks errors in input
 function noErrors() {
     if (viewModel.country.hasError() ||
         viewModel.code.hasError() ||
@@ -86,6 +98,7 @@ function noErrors() {
         return true
     }
 }
+//Collects variables from viewModel
 var prepCountry = () => {
     return (
         'country=' + viewModel.country() +
