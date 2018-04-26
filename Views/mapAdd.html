@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redigera data</title>
+    <!--metadata-->
+    <title>Lägg till data</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
@@ -10,26 +11,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/mapAdd.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
+    <!--metadata ends-->
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
+                <!--navbar-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarStyle">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item dropdown"> 
+                            <!--navbar items-->
+                            <li class="nav-item dropdown">
+                                <!--map -->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kartan</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
-                                    <a class="dropdown-item active" href="index.html">Lägg till</a>
+                                    <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
                                     <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
+                                <!--statistics-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Statistik</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
@@ -38,6 +44,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
+                                <!--participants-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aktörer</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
@@ -48,14 +55,18 @@
                         </ul>
                     </div>
                 </nav>
+                <!--navbar ends-->
             </div>
+            <!--title-->
             <div id="headerForm" class="col-lg-12">
                 <h1>Lägg till land</h1>
             </div>
+            <!--add form-->
             <div id="countryForm" class="col-lg-8 offset-lg-2">
                 <form>
                     <div class="form">
                         <div class="row">
+                            <!--country-->
                             <div class="form-group col-md-8">
                                 <p data-bind="css: {error: country.hasError}">
                                     <label for="country">Land</label>
@@ -63,6 +74,7 @@
                                     <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--country code-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: code.hasError}">
                                     <label for="countryCode">Landskod</label>
@@ -70,6 +82,7 @@
                                     <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--continent-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedCollection.hasError}">
                                     <label for="continent">Kontinent</label>
@@ -77,6 +90,7 @@
                                     <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--Freedom House-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedFHstatus.hasError}">
                                     <label for="FHstatus">Freedom House status</label>
@@ -84,6 +98,7 @@
                                     <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--GPI-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: gpi.hasError}">
                                     <label for="GPI">GPI Rankning</label>
@@ -91,13 +106,17 @@
                                     <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--infotext in infobox-->
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
+                                    <!--links-->
                                     <div class="col-md-4" style="text-align: center">
                                         <div class="optionBox">
+                                            <!--add links-->
                                             <div class="block">
                                                 <div class="add" data-bind="click: function() {links.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
                                             </div>
+                                            <!--add links ends-->
                                             <div data-bind="foreach: links">
                                                 <div class="block">
                                                     <div id="card-wrapper">
@@ -109,9 +128,11 @@
                                                                 </div>
                                                             </div>
                                                             <ul class="list-group list-group-flush">
+                                                                <!--title-->
                                                                 <li class="list-group-item">
                                                                     <input class="form-control" type="text" placeholder="Titel" data-bind="value: title, valueUpdate: 'afterkeydown'" />
                                                                 </li>
+                                                                <!--link url-->
                                                                 <li class="list-group-item">
                                                                     <input class="form-control" type="text" placeholder="Länk" data-bind="value: link, valueUpdate: 'afterkeydown'" />
                                                                 </li>
@@ -122,6 +143,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!--links ends-->
+                                    <!--infotext-->
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <p data-bind="css: {error: info.hasError}">
@@ -129,17 +152,21 @@
                                                 <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                             </p>
                                         </div>
+                                        <!--send button-->
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
                                         </div>
-                                        <p id="fillTextbox"></p>
+                                        <!--send button ends-->
                                     </div>
+                                    <!--infotext ends-->
                                 </div>
                             </div> 
+                            <!--info in infobox ends-->
                         </div>
                     </div>
                 </form>
             </div>
+            <!--add form ends-->
         </div>
     </div>        
 </body>
