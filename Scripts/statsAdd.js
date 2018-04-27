@@ -1,26 +1,23 @@
+//init request
 xhttp = new XMLHttpRequest();
-xhttp.open('POST', 'http://localhost:1137/add', true);
+//Change this line if api url changes, routes should be the same
+xhttp.open('POST', 'http://localhost:1137/addstats', true);
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        alert('Country has been added!')
-        viewModel.country('');
+        alert('Point has been added!')
+        //clear VM
+        viewModel.year('');
         viewModel.code('');
-        viewModel.selectedFHstatus('');
-        viewModel.gpi('');
+        viewModel.value('');
         viewModel.info('');
-        viewModel.links([{title:'', link:''}]);
-        viewModel.selectedCollection('');
-        xhttp.open('POST', 'http://localhost:1137/add', true);
+        //open a new request when the last one finished to prep
+        xhttp.open('POST', 'http://localhost:1137/addstats', true);
      }
 }
 
-Collection = function(code, name){
-    this.collectionCode = code;
-    this.collectionName = name;
-}
-
+//Error checking via knockout
 ko.extenders.required = function(target, overrideMessage) {
     target.hasError = ko.observable();
     target.validationMessage = ko.observable();
@@ -37,48 +34,31 @@ ko.extenders.required = function(target, overrideMessage) {
     return target;
 }
 
+//.extend allows errorchecking
+//the required prop contains the message to be shown
 var viewModel = {
     self: this,
-    country: ko.observable().extend({required: "Please enter a country"}),
+    year: ko.observable().extend({required: "Please enter a year"}),
     code: ko.observable().extend({required: "Please enter a code"}),
-    FHstatuses: ko.observableArray([
-        'Fri',
-        'Delvis fri',
-        'Inte fri',
-    ]),
-    selectedFHstatus: ko.observable().extend({required: "Please enter FH status"}),
-    gpi: ko.observable().extend({required: "Please enter a gpi"}),
+    value: ko.observable().extend({required: "Please enter a value"}),
     info: ko.observable().extend({required: "Please enter info"}),
-    links: ko.observableArray([
-        {title:'', link:''},
-    ]),
-    collections: ko.observableArray([
-        new Collection('AF', 'Afrika'),
-        new Collection('AS', 'Asien'),
-        new Collection('EU', 'Europa'),
-        new Collection('NA', 'Nordamerika'),
-        new Collection('OC', 'Oceanien'),
-        new Collection('SA', 'Sydamerika'),
-    ]),
-    selectedCollection: ko.observable().extend({required: "Please enter continent"}),
-    postCountry: function() {
-
+    links: ko.observableArray([{statLink:'', statTitle:''}]),
+    postStat: function() {
         if (noErrors()) {
-            console.log(prepCountry());
-            xhttp.send(prepCountry());
+            console.log(prepPoint());
+            xhttp.send(prepPoint());
         }
     },
 }
 
 ko.applyBindings(viewModel);
 
+//Checks if inputs have errors, this could be improved
 function noErrors() {
-    if (viewModel.country.hasError() ||
+    if (viewModel.year.hasError() ||
         viewModel.code.hasError() ||
-        viewModel.selectedFHstatus.hasError() ||
-        viewModel.gpi.hasError() ||
         viewModel.info.hasError() ||
-        viewModel.selectedCollection.hasError()) {
+        viewModel.value.hasError()) {
             alert('Please check required fields')
             return false
         }
@@ -86,14 +66,14 @@ function noErrors() {
         return true
     }
 }
-var prepCountry = () => {
+
+//preps point to be sent
+function prepPoint() {
     return (
-        'country=' + viewModel.country() +
+        'year=' + viewModel.year() +
         '&code=' + viewModel.code().toUpperCase() +
-        '&FHstatus=' + viewModel.selectedFHstatus() +
-        '&gpi=' + viewModel.gpi() +
+        '&weapons=' + viewModel.value() +
         '&info=' + viewModel.info() +
-        '&links=' + JSON.stringify(viewModel.links()) +
-        '&collection=' + viewModel.selectedCollection().collectionCode
+        '&links=' + JSON.stringify(viewModel.links())
     )
 }
