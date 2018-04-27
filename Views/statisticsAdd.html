@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Redigera data</title>
+    <title>Lägg till data</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
@@ -50,17 +49,17 @@
                 </nav>
             </div>
             <div id="headerForm" class="col-lg-12">
-                <h1>Lägg till land</h1>
+                <h1>Lägg till datapunkt</h1>
             </div>
             <div id="countryForm" class="col-lg-8 offset-lg-2">
                 <form>
                     <div class="form">
                         <div class="row">
                             <div class="form-group col-md-8">
-                                <p data-bind="css: {error: country.hasError}">
-                                    <label for="country">Land</label>
-                                    <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
+                                <p data-bind="css: {error: year.hasError}">
+                                    <label for="year">Årtal</label>
+                                    <input class="form-control" id="year" type="number" placeholder="YYYY" data-bind="value: year, valueUpdate: 'afterkeydown'" />
+                                    <span data-bind="visible: year.hasError, text: year.validationMessage"></span>
                                 </p>
                             </div>
                             <div class="form-group col-md-4">
@@ -70,25 +69,11 @@
                                     <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                 </p>
                             </div>
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: selectedCollection.hasError}">
-                                    <label for="continent">Kontinent</label>
-                                    <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
-                                    <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
-                                </p>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: selectedFHstatus.hasError}">
-                                    <label for="FHstatus">Freedom House status</label>
-                                    <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
-                                    <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
-                                </p>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: gpi.hasError}">
-                                    <label for="GPI">GPI Rankning</label>
-                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
-                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                            <div class="form-group col-md-8">
+                                <p data-bind="css: {error: value.hasError}">
+                                    <label for="value">Värde (mdkr)</label>
+                                    <input class="form-control" id="value" type="number" placeholder="Värde" data-bind="value: value, valueUpdate: 'afterkeydown'" />
+                                    <span data-bind="visible: value.hasError, text: value.validationMessage"></span>
                                 </p>
                             </div>
                             <div id="info-wrapper" class="col-lg-12">
@@ -130,9 +115,8 @@
                                             </p>
                                         </div>
                                         <div id="buttonPadding" >
-                                            <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
+                                            <input class="button" type="submit" value="Lägg till" data-bind="click: postStat" /> <span id="confirm"></span>
                                         </div>
-                                        <p id="fillTextbox"></p>
                                     </div>
                                 </div>
                             </div> 
