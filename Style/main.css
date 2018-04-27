@@ -28,6 +28,10 @@ h3 {
 #headerForm{
     text-align: center;
     padding: 50px;
+    font-size: 30px;
+    color:white;
+    font-weight: bold;
+    padding-top: 120px;
 }
 
 #removeLink{
@@ -85,7 +89,6 @@ h3 {
     color: white;
 
     border: none;
-
 }
 
 button:focus{
@@ -138,9 +141,9 @@ span {
 }
 
 #navbarStyle{
-    background-color:#C0C0C0 !important;
+    /* background-color:#C0C0C0 !important; */
     font-weight: bold;
-    color:black;
+    color:white !important;
     padding:10px;
     font-family: "Verdana", Geneva, sans-serif;
     border-radius: 10px;
@@ -150,12 +153,27 @@ span {
 #dropdownStyle{
     /* border-radius: 10px; */
     background-color:#f2f2f2 !important;
+    
 }
 
+.dropdown-item{
+    font-size: 18px !important;
+}
 #dropdownStyle a:hover{
     background-color: #C0C0C0;
 }
 .dropdown-item.active, .dropdown-item:active{
     background-color: #C0C0C0;
     color:black;
+}
+a{
+    color:white;
+    font-size:26px;
+}
+a:hover{
+    color: #C0C0C0;
+}
+
+.activeTab{
+    text-decoration: underline;
 }
