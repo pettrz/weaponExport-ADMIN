@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <!--navbar-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarStyle">
+                <nav class="navbar navbar-expand-lg  " id="navbarStyle">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -27,7 +27,7 @@
                             <!--navbar items-->
                             <li class="nav-item dropdown">
                                 <!--map -->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kartan</a>
+                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
@@ -36,7 +36,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <!--statistics-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Statistik</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
@@ -45,7 +45,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <!--participants-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aktörer</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
@@ -59,7 +59,7 @@
             </div>
             <!--title-->
             <div id="headerForm" class="col-lg-12">
-                <h1>Lägg till land</h1>
+                LÄGG TILL LAND
             </div>
             <!--add form-->
             <div id="countryForm" class="col-lg-8 offset-lg-2">
@@ -67,19 +67,11 @@
                     <div class="form">
                         <div class="row">
                             <!--country-->
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-4">
                                 <p data-bind="css: {error: country.hasError}">
                                     <label for="country">Land</label>
                                     <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
                                     <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
-                                </p>
-                            </div>
-                            <!--country code-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: code.hasError}">
-                                    <label for="countryCode">Landskod</label>
-                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                 </p>
                             </div>
                             <!--continent-->
@@ -90,6 +82,22 @@
                                     <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--country code-->
+                            <div class="form-group col-md-4">
+                                <p data-bind="css: {error: code.hasError}">
+                                    <label for="countryCode">Landskod</label>
+                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
+                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                                </p>
+                            </div>
+                             <!--GPI-->
+                            <div class="form-group col-md-4">
+                                <p data-bind="css: {error: gpi.hasError}">
+                                    <label for="GPI">GPI Rankning</label>
+                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
+                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                                </p>
+                            </div>
                             <!--Freedom House-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedFHstatus.hasError}">
@@ -98,17 +106,10 @@
                                     <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
                                 </p>
                             </div>
-                            <!--GPI-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: gpi.hasError}">
-                                    <label for="GPI">GPI Rankning</label>
-                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
-                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
-                                </p>
-                            </div>
                             <!--infotext in infobox-->
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
+                                    <hr style="width:800px; height: 1px; background-color:white;">
                                     <!--links-->
                                     <div class="col-md-4" style="text-align: center">
                                         <div class="optionBox">
@@ -123,8 +124,8 @@
                                                         <div id="linkCard" class="card">
                                                             <div class="card-header" style="text-align: center;">
                                                                 <p>Länk</p>
-                                                                <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                                    <i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i>
+                                                                <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <i id="removeLink"class="remove far fa-minus-square fa-lg"></i>
                                                                 </div>
                                                             </div>
                                                             <ul class="list-group list-group-flush">
