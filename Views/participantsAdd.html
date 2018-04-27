@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--metadata-->
     <title>Lägg till data</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
@@ -10,20 +11,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/dataform.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
+    <!--metadata ends-->
 </head>
     <body>
         <div class="container">
             <div class="row">
 
-
 <div class="col-lg-8 offset-lg-2">
+    <!--navbar-->
     <nav class="navbar navbar-expand-lg  " id="navbarStyle">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto">
+            <!--navbar items-->
         <li class="nav-item dropdown"> 
+            <!--map -->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             KARTA
             </a>
@@ -34,6 +38,7 @@
             </div>
         </li>
         <li class="nav-item dropdown">
+            <!--statistics-->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             STATISTIK
             </a>
@@ -44,6 +49,7 @@
             </div>
         </li>
         <li class="nav-item dropdown">
+            <!--participants-->
             <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             AKTÖRER
             </a>
@@ -56,24 +62,26 @@
         </ul>
     </div>
     </nav>
+    <!--navbar ends-->
 </div>
 
 
 
+                <!--title-->
                 <div id="headerForm" class="col-lg-12">
                     LÄGG TILL EN AKTÖR
                 </div>
-                
-                
- 
+                <!--add form-->
                 <div id="countryForm" class="col-lg-8 offset-lg-2">
                     <form>
                         <div class="form">
                             <div class="row">
-                            <div class="form-group col-md-8">
-                                <label for="country">Land</label>
-                                <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country" />
-                            </div>
+                                <!--country-->
+                                <div class="form-group col-md-8">
+                                    <label for="country">Land</label>
+                                    <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country" />
+                                </div>
+                                
                             <div class="form-group col-md-4">
                                 <label for="countryCode">Landskod</label>
                                 <input class="form-control" id="countryCode"type="text" placeholder="Landskod" data-bind="value: code" />
