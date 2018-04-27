@@ -67,19 +67,11 @@
                     <div class="form">
                         <div class="row">
                             <!--country-->
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-4">
                                 <p data-bind="css: {error: country.hasError}">
                                     <label for="country">Land</label>
                                     <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
                                     <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
-                                </p>
-                            </div>
-                            <!--country code-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: code.hasError}">
-                                    <label for="countryCode">Landskod</label>
-                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                 </p>
                             </div>
                             <!--continent-->
@@ -90,20 +82,28 @@
                                     <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--country code-->
+                            <div class="form-group col-md-4">
+                                <p data-bind="css: {error: code.hasError}">
+                                    <label for="countryCode">Landskod</label>
+                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
+                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                                </p>
+                            </div>
+                             <!--GPI-->
+                            <div class="form-group col-md-4">
+                                <p data-bind="css: {error: gpi.hasError}">
+                                    <label for="GPI">GPI Rankning</label>
+                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
+                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                                </p>
+                            </div>
                             <!--Freedom House-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedFHstatus.hasError}">
                                     <label for="FHstatus">Freedom House status</label>
                                     <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
                                     <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
-                                </p>
-                            </div>
-                            <!--GPI-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: gpi.hasError}">
-                                    <label for="GPI">GPI Rankning</label>
-                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
-                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                                 </p>
                             </div>
                             <!--infotext in infobox-->
