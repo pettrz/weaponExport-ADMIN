@@ -67,19 +67,11 @@
                     <div class="form">
                         <div class="row">
                             <!--country-->
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-4">
                                 <p data-bind="css: {error: country.hasError}">
                                     <label for="country">Land</label>
                                     <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
                                     <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
-                                </p>
-                            </div>
-                            <!--country code-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: code.hasError}">
-                                    <label for="countryCode">Landskod</label>
-                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                 </p>
                             </div>
                             <!--continent-->
@@ -90,6 +82,22 @@
                                     <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                                 </p>
                             </div>
+                            <!--country code-->
+                            <div class="form-group col-md-4">
+                                <p data-bind="css: {error: code.hasError}">
+                                    <label for="countryCode">Landskod</label>
+                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
+                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                                </p>
+                            </div>
+                             <!--GPI-->
+                            <div class="form-group col-md-4">
+                                <p data-bind="css: {error: gpi.hasError}">
+                                    <label for="GPI">GPI Rankning</label>
+                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
+                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                                </p>
+                            </div>
                             <!--Freedom House-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedFHstatus.hasError}">
@@ -98,17 +106,10 @@
                                     <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
                                 </p>
                             </div>
-                            <!--GPI-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: gpi.hasError}">
-                                    <label for="GPI">GPI Rankning</label>
-                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
-                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
-                                </p>
-                            </div>
                             <!--infotext in infobox-->
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
+                                    <hr style="width:800px; height: 1px; background-color:white;">
                                     <!--links-->
                                     <div class="col-md-4" style="text-align: center">
                                         <div class="optionBox">
@@ -123,8 +124,8 @@
                                                         <div id="linkCard" class="card">
                                                             <div class="card-header" style="text-align: center;">
                                                                 <p>Länk</p>
-                                                                <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                                    <i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i>
+                                                                <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <i id="removeLink"class="remove far fa-minus-square fa-lg"></i>
                                                                 </div>
                                                             </div>
                                                             <ul class="list-group list-group-flush">
