@@ -109,6 +109,7 @@
                             <!--infotext in infobox-->
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
+                                    <hr style="width:800px; height: 1px; background-color:white;">
                                     <!--links-->
                                     <div class="col-md-4" style="text-align: center">
                                         <div class="optionBox">
@@ -123,8 +124,8 @@
                                                         <div id="linkCard" class="card">
                                                             <div class="card-header" style="text-align: center;">
                                                                 <p>Länk</p>
-                                                                <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                                    <i class="remove far fa-minus-square fa-lg" style="position: absolute; right: 10px;"></i>
+                                                                <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <i id="removeLink"class="remove far fa-minus-square fa-lg"></i>
                                                                 </div>
                                                             </div>
                                                             <ul class="list-group list-group-flush">

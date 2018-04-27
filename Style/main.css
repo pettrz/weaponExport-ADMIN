@@ -29,6 +29,13 @@ h3 {
     text-align: center;
     padding: 50px;
 }
+
+#removeLink{
+   position: absolute; 
+   right: 10px;
+  bottom: 80px;
+}
+
 .button {
     background-color: #C0C0C0;
     color: white;
