@@ -82,12 +82,9 @@
                                     <span data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                                 </p>
                             </div>
-                            <hr style="width:800px; height: 1px; background-color:white;">
-                            </div>
                             <!--country edit-->
                             <div data-bind="visible: selectedCountry">
-                                <div class="row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-8">
                                     <p data-bind="css: {error: country.hasError}">
                                         <label for="country">Land</label>
                                         <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
@@ -95,17 +92,15 @@
                                     </p>
                                 </div>
                                 <!--country code edit-->
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <p data-bind="css: {error: code.hasError}">
                                         <label for="countryCode">Landskod</label>
                                         <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
                                         <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                     </p>
                                 </div>
-                                </div>
-                                <div class="row">
                                 <!--Freedom House edit-->
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <p data-bind="css: {error: selectedFHstatus.hasError}">
                                         <label for="FHstatus">Freedom House status</label>
                                         <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
@@ -113,23 +108,21 @@
                                     </p>
                                 </div>
                                 <!--GPI edit-->
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <p data-bind="css: {error: gpi.hasError}">
                                         <label for="GPI">GPI Rankning</label>
                                         <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
                                         <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                                     </p>
                                 </div>
-                                </div>
                                 <!--infotext in infobox edit-->
                                 <div id="info-wrapper" class="col-lg-12">
                                     <div class="row">
-                                        <hr style="width:800px; height: 1px; background-color:white;">
                                         <!--links-->
                                         <div class="col-md-4" style="text-align: center">
                                             <div class="optionBox">
                                                 <!--edit links-->
-                                                <div class="block">
+                                                <div class="block" style="background-color: yellow">
                                                     <div class="add" data-bind="click: function() {links.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
                                                 </div>
                                                 <!--edit links ends-->
@@ -139,7 +132,7 @@
                                                             <div id="linkCard" class="card">
                                                                 <div class="card-header" style="text-align: center;">
                                                                     <p>Länk</p>
-                                                                    <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
                                                                         <i class="far fa-minus-square fa-2x"></i>
                                                                     </div>
                                                                 </div>
@@ -160,29 +153,26 @@
                                             </div>
                                         </div>
                                         <!--links ends-->
-                                         <!--infotext edit-->
-                                    <div class="col-md-8">     
+                                    </div>
+                                    <!--infotext edit-->
                                     <div class="form-group">
                                         <p data-bind="css: {error: info.hasError}">
-                                            <label>Information</label>
                                             <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
                                             <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                         </p>
                                     </div>
                                     <!--infotext edit ends-->
-                                    </div>
-                                    </div> 
                                     <!--uppdate button-->
-                                    <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-8">
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Uppdatera" data-bind="click: updateCountry" />
                                         </div>
                                     </div>
                                     <!--uppdate button ends-->
-                                    </div>
+                                </div>
                                 <!--info in infobox edit ends-->
                             </div>
+                        </div>
                     </div>
                 </form>
             </div>
