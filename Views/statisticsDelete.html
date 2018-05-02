@@ -21,7 +21,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
                             <!--navbar items-->
                             <li class="nav-item dropdown">
@@ -73,14 +73,16 @@
                                     <span data-bind="visible: selectedYear.hasError, text: selectedYear.validationMessage"></span>
                                 </p>
                             </div>
-                            <div class="col-md-8">
+                             </div>
+                                <div class="row">
                                 <!--send button-->
+                                <div class="col-md-12">
                                 <div id="buttonPadding" >
                                     <input class="button" type="submit" value="Ta Bort" data-bind="click: deleteStat" />
                                 </div>
+                                </div>
                                 <!--send button ends-->
-                            </div>
-                        </div>
+                                </div>                     
                     </div>
                 </form>
             </div>
