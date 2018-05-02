@@ -1,28 +1,19 @@
 html, body {
+    width: 100%;
     height: 100%;
     background-color: #333131;
     text-align: center;
+    color: white;
 }
 #countryForm{
     background-color: #C0C0C0;
     padding: 30px 50px;
     border-radius: 10px;
 }
-html {
-    
-    width: 100%;
-}
 body {
     font-family: "Verdana", Geneva, sans-serif;
 }
 
-h1 {
-    font-weight: bold;
-    color: white;
-}
-h3 {
-    color: white;
-}
 
 #headerForm{
     text-align: center;
@@ -181,18 +172,32 @@ span {
 
 /* Startpage */
 .page-column{
-
-    border: 4px white solid;
     height: 220px;
-    width: 100%;
 }
 
-.map-bg{background-image: url('./../Style/images/map-bg.png')};
-.stats-bg{background-image: url('./../Style/images/stats-bg.png')};
-.participants-bg{background-image: url('./../images/map-bg.png')};
+.page-column-overlay{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px white solid;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.map-bg, .stats-bg, .participants-bg{
+    background-position: center;
+}
 
-.dropdown:hover>.dropdown-menu {
+.map-bg{background-image: url('./../Style/images/map-bg.png');}
+.stats-bg{background-image: url('./../Style/images/stats-bg.png');}
+.participants-bg{background-image: url('./../images/participants-bg.png');}
+
+.dropdown:hover > .dropdown-menu {
     display: block;
 }
 
@@ -200,4 +205,11 @@ span {
     margin: 0;
     border: none;
     border-radius: 0 0 3px 3px;
+}
+
+#admin-header{
+    top: 5em;
+    right: 0;
+    left: 0;
+    position: absolute;
 }
