@@ -36,7 +36,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
     }
 
     validate(target());
@@ -49,11 +49,11 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     years: ko.observableArray(),
-    selectedYear: ko.observable().extend({required: "Please select a year"}),
-    year: ko.observable().extend({required: "Please enter a year"}),
-    code: ko.observable().extend({required: "Please enter a code"}),
-    weapons: ko.observable().extend({required: "Please enter a value"}),
-    info: ko.observable().extend({required: "Please enter info"}),
+    selectedYear: ko.observable().extend({required: "Välj ett årtal"}),
+    year: ko.observable().extend({required: "Fyll i ett årtal"}),
+    code: ko.observable().extend({required: "Fyll i en landskod"}),
+    weapons: ko.observable().extend({required: "Fyll i ett värde"}),
+    info: ko.observable().extend({required: "Fyll i info-texten"}),
     statLinks: ko.observableArray([{statLink:'', statTitle:''}]),
     updateStat: function() {
         if (noErrors()) {

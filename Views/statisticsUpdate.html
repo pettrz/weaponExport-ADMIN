@@ -15,140 +15,157 @@
     <body>
         <div class="container">
             <div class="row">
-
-
-<div class="col-lg-8 offset-lg-2">
-    <nav class="navbar navbar-expand-lg  " id="navbarStyle">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto">
-        <li class="nav-item dropdown"> 
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            KARTA
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
-            <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
-            <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
-            <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            STATISTIK
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
-            <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
-            <a class="dropdown-item active" href="statisticsUpdate.html">Redigera</a>
-            <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
-            </div>
-            <!--title-->
-            <div id="headerForm" class="col-lg-12">
-                REDIGERA ETT ÅRTAL
-            </div>
-            <!--add form-->
-            <div id="countryForm" class="col-lg-8 offset-lg-2">
-                <form>
-                    <div class="form">
-                        <div class="row">
-                            <!--selectable year-->
-                            <div class="form-group col-md-8">
-                                <p data-bind="css: {error: selectedYear.hasError}">
-                                    <label for="year">Årtal</label>
-                                    <select class="form-control" id="year" data-bind="options: years, optionsText: 'year', value: selectedYear, optionsCaption:'-- Välj Årtal --'" ></select>
-                                    <span data-bind="visible: selectedYear.hasError, text: selectedYear.validationMessage"></span>
-                                </p>
+                <div class="col-lg-8 offset-lg-2">
+                    <!--navbar-->
+                    <nav class="navbar navbar-expand-lg  " id="navbarStyle">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav mx-auto">
+                            <!--navbar items-->
+                        <li class="nav-item dropdown"> 
+                            <!--map-->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                            <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
+                            <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
+                            <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
                             </div>
-                            <div data-bind="visible: selectedYear">
-                                <div class="row">
-                                <!--editable year-->
-                                <div class="form-group col-md-8">
-                                    <p data-bind="css: {error: year.hasError}">
-                                        <label for="year">Årtal</label>
-                                        <input class="form-control" id="year" type="number" placeholder="YYYY" data-bind="value: year, valueUpdate: 'afterkeydown'" />
-                                        <span data-bind="visible: year.hasError, text: year.validationMessage"></span>
-                                    </p>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!--statistics-->
+                            <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                            <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
+                            <a class="dropdown-item active" href="statisticsUpdate.html">Redigera</a>
+                            <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
+                            </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <!--participants-->
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                                    <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
+                                    <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
+                                    <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
                                 </div>
-                                <!--country code-->
-                                <div class="form-group col-md-4">
-                                    <p data-bind="css: {error: code.hasError}">
-                                        <label for="countryCode">Landskod</label>
-                                        <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
-                                        <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
-                                    </p>
-                                </div>
-                                <!--value-->
-                                <div class="form-group col-md-8">
-                                    <p data-bind="css: {error: weapons.hasError}">
-                                        <label for="value">Värde (mdkr)</label>
-                                        <input class="form-control" id="value" type="number" placeholder="Värde" data-bind="value: weapons, valueUpdate: 'afterkeydown'" />
-                                        <span data-bind="visible: weapons.hasError, text: weapons.validationMessage"></span>
-                                    </p>
-                                </div>
-                            <!--infotext in infobox-->
-                            <div id="info-wrapper" class="col-lg-12">
-                                <div class="row">
-                                    <hr style="width:800px; height: 1px; background-color:white;">
-                                    <!--links-->
-                                    <div class="col-md-4" style="text-align: center">
-                                        <div class="optionBox">
-                                            <!--add links-->
-                                            <div class="block">
-                                                <div class="add" data-bind="click: function() {statLinks.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!--navbar ends-->
+                            </div>
+                            <!--title-->
+                            <div id="headerForm" class="col-lg-12">
+                                REDIGERA ETT ÅRTAL
+                            </div>
+                            <!--add form-->
+                            <div id="countryForm" class="col-lg-8 offset-lg-2">
+                                <form>
+                                    <div class="form">
+                                        <div class="row">
+                                            <!--selectable year-->
+                                            <div class="form-group col-md-12">
+                                                <p data-bind="css: {error: selectedYear.hasError}">
+                                                    <label for="year">Årtal</label>
+                                                    <select class="form-control" id="year" data-bind="options: years, optionsText: 'year', value: selectedYear, optionsCaption:'-- Välj Årtal --'" ></select>
+                                                    <span data-bind="visible: selectedYear.hasError, text: selectedYear.validationMessage"></span>
+                                                </p>
                                             </div>
-                                            <!--add links ends-->
-                                            <div data-bind="foreach: statLinks">
-                                                <div class="block">
-                                                    <div id="card-wrapper">
-                                                        <div id="linkCard" class="card">
-                                                            <div class="card-header" style="text-align: center;">
-                                                                <p>Länk</p>
-                                                                <div class="remove" data-bind="click: function() {viewModel.statLinks.remove($data);}">
-                                                                    <i class="remove far fa-minus-square fa-lg removeLink" style="position: absolute; right: 10px;"></i>
-                                                                </div>
-                                                            </div>
-                                                            <ul class="list-group list-group-flush">
-                                                                <!--title-->
-                                                                <li class="list-group-item">
-                                                                    <input class="form-control" type="text" placeholder="Titel" data-bind="value: statTitle, valueUpdate: 'afterkeydown'" />
-                                                                </li>
-                                                                <!--link url-->
-                                                                <li class="list-group-item">
-                                                                    <input class="form-control" type="text" placeholder="Länk" data-bind="value: statLink, valueUpdate: 'afterkeydown'" />
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                            <hr style="width:800px; height: 1px; background-color:white;">
+                                            </div>
+                                            <div data-bind="visible: selectedYear">
+                                                <div class="row">
+                                                <!--editable year-->
+                                                <div class="form-group col-md-4">
+                                                    <p data-bind="css: {error: year.hasError}">
+                                                        <label for="year">Årtal</label>
+                                                        <input class="form-control" id="year" type="number" placeholder="YYYY" data-bind="value: year, valueUpdate: 'afterkeydown'" />
+                                                        <span data-bind="visible: year.hasError, text: year.validationMessage"></span>
+                                                    </p>
+                                                </div>
+                                                <!--country code-->
+                                                <div class="form-group col-md-4">
+                                                    <p data-bind="css: {error: code.hasError}">
+                                                        <label for="countryCode">Landskod</label>
+                                                        <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
+                                                        <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                                                    </p>
+                                                </div>
+                                                <!--value-->
+                                                <div class="form-group col-md-4">
+                                                    <p data-bind="css: {error: weapons.hasError}">
+                                                        <label for="value">Värde (mdkr)</label>
+                                                        <input class="form-control" id="value" type="number" placeholder="Värde" data-bind="value: weapons, valueUpdate: 'afterkeydown'" />
+                                                        <span data-bind="visible: weapons.hasError, text: weapons.validationMessage"></span>
+                                                    </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <!--infotext in infobox-->
+                                            <div id="info-wrapper" class="col-lg-12">
+                                                <div class="row">
+                                                    <hr style="width:800px; height: 1px; background-color:white;">
+                                                    <!--links-->
+                                                    <div class="col-md-4" style="text-align: center">
+                                                        <div class="optionBox">
+                                                            <!--add links-->
+                                                            <div class="block">
+                                                                <div class="add" data-bind="click: function() {statLinks.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
+                                                            </div>
+                                                            <!--add links ends-->
+                                                            <div data-bind="foreach: statLinks">
+                                                                <div class="block">
+                                                                    <div id="card-wrapper">
+                                                                        <div id="linkCard" class="card">
+                                                                            <div class="card-header" style="text-align: center;">
+                                                                                <p>Länk</p>
+                                                                                <div class="remove" data-bind="click: function() {viewModel.statLinks.remove($data);}">
+                                                                                    <i class="remove far fa-minus-square fa-lg removeLink" style="position: absolute; right: 10px;"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                            <ul class="list-group list-group-flush">
+                                                                                <!--title-->
+                                                                                <li class="list-group-item">
+                                                                                    <input class="form-control" type="text" placeholder="Titel" data-bind="value: statTitle, valueUpdate: 'afterkeydown'" />
+                                                                                </li>
+                                                                                <!--link url-->
+                                                                                <li class="list-group-item">
+                                                                                    <input class="form-control" type="text" placeholder="Länk" data-bind="value: statLink, valueUpdate: 'afterkeydown'" />
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--links ends-->
+                                                    <!--infotext-->
+                                                    <div class="col-md-8">
+                                                        <br/>
+                                                        <div class="form-group">
+                                                            <p data-bind="css: {error: info.hasError}">
+                                                                <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
+                                                                <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
+                                                            </p>
+                                                        </div>
+                                                        <!--send button-->
+                                                        <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div id="buttonPadding" >
+                                                                <input class="button" type="submit" value="Uppdatera" data-bind="click: updateStat" /> <span id="confirm"></span>
+                                                        <!--infotext ends-->
+                                                        </div> 
+                                                        <!--info in infobox ends-->
+                                                </div>
+                                            </div>
+                                         </div>
                                     </div>
-                                    <!--links ends-->
-                                    <!--infotext-->
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <p data-bind="css: {error: info.hasError}">
-                                                <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
-                                                <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
-                                            </p>
-                                        </div>
-                                        <!--send button-->
-                                        <div id="buttonPadding" >
-                                            <input class="button" type="submit" value="Uppdatera" data-bind="click: updateStat" /> <span id="confirm"></span>
-                                        </div>
-                                        <!--send button ends-->
-                                    </div>
-                                    <!--infotext ends-->
-                                </div>
-                            </div> 
-                            <!--info in infobox ends-->
+                                </form>
+                            </div>
+                            <!--add form ends-->
                         </div>
-                    </div>
-                </form>
-            </div>
-            <!--add form ends-->
-        </div>
-    </div>        
-</body>
+                    </div>        
+    </body>
 </html>
