@@ -63,7 +63,7 @@ h3 {
 }
 #textBox{
     max-width: 100%;
-    min-width: 100%;
+    min-width: 420px;
     min-height: 250px;
 }
 
