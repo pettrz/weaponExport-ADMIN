@@ -44,7 +44,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
     }
 
     validate(target());
@@ -60,17 +60,17 @@ var viewModel = {
     //Requires content in each input 
     countries: ko.observableArray(),
     visibleCountries: ko.observableArray(),
-    selectedCountry: ko.observable().extend({required: "Please select country"}),
-    country: ko.observable().extend({required: "Please enter a country name"}),
-    code: ko.observable().extend({required: "Please enter a code"}),
-    gpi: ko.observable().extend({required: "Please enter a gpi"}),
-    info: ko.observable().extend({required: "Please enter info"}),
+    selectedCountry: ko.observable().extend({required: "Välj ett land"}),
+    country: ko.observable().extend({required: "Fyll i ett land"}),
+    code: ko.observable().extend({required: "Fyll i en landskod"}),
+    gpi: ko.observable().extend({required: "Fyll i GPI"}),
+    info: ko.observable().extend({required: "Fyll i info-texten"}),
     FHstatuses: ko.observableArray([
         'Fri',
         'Delvis fri',
         'Inte fri',
     ]),
-    selectedFHstatus: ko.observable().extend({required: "Please enter FH status"}),
+    selectedFHstatus: ko.observable().extend({required: "Fyll i FH status"}),
     links: ko.observableArray([
         {title:'', link:''},
     ]),
@@ -83,7 +83,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Please select continent"}),
+    selectedCollection: ko.observable().extend({required: "Välj en kontinent"}),
     //Checks validation - if not: sends content
     updateCountry: function() {
         if(noErrors()) {
@@ -132,7 +132,7 @@ function noErrors() {
         viewModel.selectedFHstatus.hasError() ||
         viewModel.gpi.hasError() ||
         viewModel.info.hasError()) {
-            alert('Please check required fields')
+            alert('Vänligen kolla igenom de obligatoriska fälten')
             return false;
         }
     else {
