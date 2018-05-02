@@ -24,7 +24,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
     }
 
     validate(target());
@@ -38,10 +38,10 @@ ko.extenders.required = function(target, overrideMessage) {
 //the required prop contains the message to be shown
 var viewModel = {
     self: this,
-    year: ko.observable().extend({required: "Please enter a year"}),
-    code: ko.observable().extend({required: "Please enter a code"}),
-    value: ko.observable().extend({required: "Please enter a value"}),
-    info: ko.observable().extend({required: "Please enter info"}),
+    year: ko.observable().extend({required: "Fyll i ett år"}),
+    code: ko.observable().extend({required: "Fyll i en landskod"}),
+    value: ko.observable().extend({required: "Fyll i ett värde"}),
+    info: ko.observable().extend({required: "Fyll i info-texten"}),
     links: ko.observableArray([{statLink:'', statTitle:''}]),
     postStat: function() {
         if (noErrors()) {
@@ -59,7 +59,7 @@ function noErrors() {
         viewModel.code.hasError() ||
         viewModel.info.hasError() ||
         viewModel.value.hasError()) {
-            alert('Please check required fields')
+            alert('Vänligen kolla igenom de obligatoriska fälten')
             return false
         }
     else {
