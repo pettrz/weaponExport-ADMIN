@@ -129,7 +129,7 @@
                                         <div class="col-md-4" style="text-align: center">
                                             <div class="optionBox">
                                                 <!--edit links-->
-                                                <div class="block" style="background-color: yellow">
+                                                <div class="block">
                                                     <div class="add" data-bind="click: function() {links.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
                                                 </div>
                                                 <!--edit links ends-->
@@ -139,7 +139,7 @@
                                                             <div id="linkCard" class="card">
                                                                 <div class="card-header" style="text-align: center;">
                                                                     <p>Länk</p>
-                                                                    <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
                                                                         <i class="far fa-minus-square fa-2x"></i>
                                                                     </div>
                                                                 </div>
@@ -161,7 +161,8 @@
                                         </div>
                                         <!--links ends-->
                                          <!--infotext edit-->
-                                    <div class="form-group col-md-4">
+                                    <div class="col-md-8">     
+                                    <div class="form-group">
                                         <p data-bind="css: {error: info.hasError}">
                                             <label>Information</label>
                                             <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
@@ -169,18 +170,19 @@
                                         </p>
                                     </div>
                                     <!--infotext edit ends-->
+                                    </div>
                                     </div> 
                                     <!--uppdate button-->
-                                    <div class="col-md-8">
+                                    <div class="row">
+                                    <div class="col-md-12">
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Uppdatera" data-bind="click: updateCountry" />
                                         </div>
                                     </div>
                                     <!--uppdate button ends-->
-                                </div>
+                                    </div>
                                 <!--info in infobox edit ends-->
                             </div>
-                       
                     </div>
                 </form>
             </div>
