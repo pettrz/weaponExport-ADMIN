@@ -41,7 +41,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
     }
 
     validate(target());
@@ -56,7 +56,7 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     years: ko.observableArray(),
-    selectedYear: ko.observable().extend({required: "Please select a year"}),
+    selectedYear: ko.observable().extend({required: "Fyll i ett år"}),
     deleteStat: function() {
         if (noErrors()) {
             requestPrep();
@@ -70,7 +70,7 @@ ko.applyBindings(viewModel);
 //Checks if inputs have errors, this could be improved
 function noErrors() {
     if (viewModel.selectedYear.hasError()) {
-            alert('Please check required fields')
+            alert('Vänligen kolla igenom de obligatoriska fälten')
             return false
         }
     else {
