@@ -2,7 +2,6 @@ html, body {
     height: 100%;
     background-color: #333131;
     text-align: center;
-
 }
 #countryForm{
     background-color: #C0C0C0;
@@ -167,11 +166,11 @@ span {
     color:black;
 }
 
-a{
+.navbar a{
     color:white;
     font-size:26px;
 }
-a:hover{
+.navbar a:hover{
     color: #C0C0C0;
 }
 
@@ -182,8 +181,23 @@ a:hover{
 
 /* Startpage */
 .page-column{
-    background-color: rgba(0, 0, 0, 0.8);
+
     border: 4px white solid;
     height: 220px;
-    width: 100%
+    width: 100%;
+}
+
+.map-bg{background-image: url('./../Style/images/mapbg.png')};
+.map-stats{background-image: url('./../Style/images/statsbg.png')};
+.map-participants{background-image: url('./../images/divbg.png')};
+
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu{
+    margin: 0;
+    border: none;
+    border-radius: 0 0 3px 3px;
 }

@@ -4,39 +4,62 @@
     <!--metadata-->
     <title>Redigera Vapenkarta</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./../Style/bootstrap-grid.min.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="./../Style/bootstrap-reboot.min.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/jquery-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
     <!--metadata ends-->
 </head>
 <body>
     <div class="container h-100">
-        <div class="row">
-                <div class="col-lg-12">
-                    <h1>Redigering Vapenkarta</h1>
+        <div class="row h-100">
+            <div class="col-lg-12">
+                <h1>Redigering Vapenkarta</h1>
+            </div>
+            <div class="col-lg-4">
+                <div class="dropdown">
+                    <div class="page-column map-bg" aria-haspopup="true" aria-expanded="false">
+                        <img></img>
+                    </div>
+    
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Lägg till land</a>
+                        <a class="dropdown-item" href="#">Redigera land</a>
+                        <a class="dropdown-item" href="#">Ta bort land</a>
+                    </div>
                 </div>
-        </div>
-        <div class="row align-self-center">
+            </div>
 
-            <div class="col-lg-4 mx-auto">
-                <div class="page-column">
-                    
+            <div class="col-lg-4">
+                <div class="dropdown">
+                    <div class="page-column stats-bg" aria-haspopup="true" aria-expanded="false">
+                        <img></img>
+                    </div>
+        
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Lägg till årtal</a>
+                        <a class="dropdown-item" href="#">Redigera årtal</a>
+                        <a class="dropdown-item" href="#">Ta bort årtal</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="page-column">
-
+                <div class="dropdown">
+                    <div class="page-column participants-bg" aria-haspopup="true" aria-expanded="false">
+                        <img></img>
+                    </div>
+        
+                    <div class="dropdown-menu w-100" style="display: block"aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Lägg till aktör</a>
+                        <a class="dropdown-item" href="#">Redigera aktör</a>
+                        <a class="dropdown-item" href="#">Ta bort aktör</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="page-column">
-
-                </div>
-            </div>
-            
+            </div>         
         </div>
     </div>
 </body>
