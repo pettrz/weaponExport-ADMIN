@@ -187,9 +187,9 @@ span {
     width: 100%;
 }
 
-.map-bg{background-image: url('./../Style/images/mapbg.png')};
-.map-stats{background-image: url('./../Style/images/statsbg.png')};
-.map-participants{background-image: url('./../images/divbg.png')};
+.map-bg{background-image: url('./../Style/images/map-bg.png')};
+.stats-bg{background-image: url('./../Style/images/stats-bg.png')};
+.participants-bg{background-image: url('./../images/map-bg.png')};
 
 
 .dropdown:hover>.dropdown-menu {
