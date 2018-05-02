@@ -78,7 +78,7 @@
                             <div class="form-group col-md-8" data-bind="visible: selectedCollection">
                                 <p data-bind="css: {error: selectedCountry.hasError}">
                                     <label for="country">Land</label>
-                                    <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" /></select>
+                                    <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" ></select>
                                     <span data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                                 </p>
                             </div>
