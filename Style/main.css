@@ -63,8 +63,8 @@ h3 {
 }
 #textBox{
     max-width: 100%;
-    min-width: 420px;
-    min-height: 580px;
+    min-width: 100%;
+    min-height: 558px;
 }
 
 /* Informationbox for each webb */
