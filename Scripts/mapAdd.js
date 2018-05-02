@@ -6,7 +6,7 @@ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 //Define request to get mapcontent from database with api
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        alert('Country has been added!')
+        alert('Ett land har lagts till')
         viewModel.country('');
         viewModel.code('');
         viewModel.selectedFHstatus('');
