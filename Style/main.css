@@ -8,16 +8,17 @@ html, body {
     color: white;
     font-family: 'Merriweather', serif;
 }
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Oswald', sans-serif;
+}
+
+
 #countryForm{
     background-color: #C0C0C0;
     padding: 30px 50px;
     border-radius: 10px;
 }
-
-h1,h2,h3{
-    font-family: 'Oswald', sans-serif;
-}
-
 
 #headerForm{
     text-align: center;
@@ -81,7 +82,6 @@ h1,h2,h3{
 .buttonLinks{
     background-color: #C0C0C0;
     color: white;
-
     border: none;
 }
 
@@ -195,13 +195,12 @@ span {
 .map-bg, .stats-bg, .participants-bg{
     background-position: center;
 }
-
 .map-bg{background-image: url('./../Style/images/map-bg.png');}
 .stats-bg{background-image: url('./../Style/images/stats-bg.png');}
-.participants-bg{background-image: url('./../images/participants-bg.png');}
+.participants-bg{background-image: url('./../Style/images/participants-bg.png');}
 
 .dropdown:hover > .dropdown-menu {
-    display: block;
+    display: block;  
 }
 
 .dropdown-menu{
@@ -211,7 +210,6 @@ span {
     border: none;
     border-radius: 0 0 3px 3px;
     font-family: 'Merriweather Sans', sans-serif;
-
 }
 .dropdown-menu a{
     line-height: 50px;
