@@ -51,7 +51,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
     }
 
     validate(target());
@@ -66,7 +66,7 @@ var viewModel = {
     self: this,
     countries: ko.observableArray(),
     visibleCountries: ko.observableArray(),
-    selectedCountry: ko.observable().extend({required: "Please enter a country"}),
+    selectedCountry: ko.observable().extend({required: "Fyll i ett land"}),
     collections: ko.observableArray([
         new Collection('AF', 'Afrika'),
         new Collection('AS', 'Asien'),
@@ -75,7 +75,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Please enter continent"}),
+    selectedCollection: ko.observable().extend({required: "Fyll i en kontinent"}),
     deleteCountry: function() {
         if(noErrors()) {
             requestPrep();
@@ -110,7 +110,7 @@ viewModel.selectedCollection.subscribe(function(value) {
 function noErrors() {
     if (viewModel.selectedCountry.hasError() ||
         viewModel.selectedCollection.hasError()) {
-            alert('Please check required fields')
+            alert('Vänligen kolla igenom de obligatoriska fälten')
             return false;
         }
     else {

@@ -22,12 +22,12 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
                             <!--navbar items-->
                             <li class="nav-item dropdown">
                                 <!--map -->
-                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kartan</a>
+                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item active" href="mapUpdate.html">Redigera</a>
@@ -36,7 +36,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <!--statistics-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Statistik</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
@@ -45,7 +45,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <!--participants-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aktörer</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
@@ -82,9 +82,12 @@
                                     <span data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                                 </p>
                             </div>
+                            <hr style="width:800px; height: 1px; background-color:white;">
+                            </div>
                             <!--country edit-->
                             <div data-bind="visible: selectedCountry">
-                                <div class="form-group col-md-8">
+                                <div class="row">
+                                <div class="form-group col-md-6">
                                     <p data-bind="css: {error: country.hasError}">
                                         <label for="country">Land</label>
                                         <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
@@ -92,15 +95,17 @@
                                     </p>
                                 </div>
                                 <!--country code edit-->
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <p data-bind="css: {error: code.hasError}">
                                         <label for="countryCode">Landskod</label>
                                         <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
                                         <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
                                     </p>
                                 </div>
+                                </div>
+                                <div class="row">
                                 <!--Freedom House edit-->
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <p data-bind="css: {error: selectedFHstatus.hasError}">
                                         <label for="FHstatus">Freedom House status</label>
                                         <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
@@ -108,21 +113,23 @@
                                     </p>
                                 </div>
                                 <!--GPI edit-->
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <p data-bind="css: {error: gpi.hasError}">
                                         <label for="GPI">GPI Rankning</label>
                                         <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
                                         <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                                     </p>
                                 </div>
+                                </div>
                                 <!--infotext in infobox edit-->
                                 <div id="info-wrapper" class="col-lg-12">
                                     <div class="row">
+                                        <hr style="width:800px; height: 1px; background-color:white;">
                                         <!--links-->
                                         <div class="col-md-4" style="text-align: center">
                                             <div class="optionBox">
                                                 <!--edit links-->
-                                                <div class="block" style="background-color: yellow">
+                                                <div class="block">
                                                     <div class="add" data-bind="click: function() {links.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
                                                 </div>
                                                 <!--edit links ends-->
@@ -132,7 +139,7 @@
                                                             <div id="linkCard" class="card">
                                                                 <div class="card-header" style="text-align: center;">
                                                                     <p>Länk</p>
-                                                                    <div style="background-color: yellow" class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                                    <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
                                                                         <i class="far fa-minus-square fa-2x"></i>
                                                                     </div>
                                                                 </div>
@@ -153,26 +160,30 @@
                                             </div>
                                         </div>
                                         <!--links ends-->
-                                    </div>
-                                    <!--infotext edit-->
+                                         <!--infotext edit-->
+                                    <div class="col-md-8">  
+                                    <br/>   
                                     <div class="form-group">
                                         <p data-bind="css: {error: info.hasError}">
+                                            <label>Information</label>
                                             <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
                                             <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                         </p>
                                     </div>
                                     <!--infotext edit ends-->
+                                    </div>
+                                    </div> 
                                     <!--uppdate button-->
-                                    <div class="col-md-8">
+                                    <div class="row">
+                                    <div class="col-md-12">
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Uppdatera" data-bind="click: updateCountry" />
                                         </div>
                                     </div>
                                     <!--uppdate button ends-->
-                                </div>
+                                    </div>
                                 <!--info in infobox edit ends-->
                             </div>
-                        </div>
                     </div>
                 </form>
             </div>

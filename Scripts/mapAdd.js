@@ -6,7 +6,7 @@ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 //Define request to get mapcontent from database with api
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        alert('Country has been added!')
+        alert('Ett land har lagts till!')
         viewModel.country('');
         viewModel.code('');
         viewModel.selectedFHstatus('');
@@ -33,7 +33,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "This field is required");
+        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
     }
 
     validate(target());
@@ -47,16 +47,16 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     //Requires content in each input 
-    country: ko.observable().extend({required: "Please enter a country"}),
-    code: ko.observable().extend({required: "Please enter a code"}),
+    country: ko.observable().extend({required: "Fyll i ett land"}),
+    code: ko.observable().extend({required: "Fyll i en landskod"}),
     FHstatuses: ko.observableArray([
         'Fri',
         'Delvis fri',
         'Inte fri',
     ]),
-    selectedFHstatus: ko.observable().extend({required: "Please enter FH status"}),
-    gpi: ko.observable().extend({required: "Please enter a gpi"}),
-    info: ko.observable().extend({required: "Please enter info"}),
+    selectedFHstatus: ko.observable().extend({required: "Fyll i FH status"}),
+    gpi: ko.observable().extend({required: "Fyll i GPI"}),
+    info: ko.observable().extend({required: "Fyll i info-texten"}),
     links: ko.observableArray([
         {title:'', link:''},
     ]),
@@ -69,7 +69,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Please enter continent"}),
+    selectedCollection: ko.observable().extend({required: "Fyll i kontinent"}),
     postCountry: function() {
 
         //Checks validation - if not: sends content
@@ -91,7 +91,7 @@ function noErrors() {
         viewModel.gpi.hasError() ||
         viewModel.info.hasError() ||
         viewModel.selectedCollection.hasError()) {
-            alert('Please check required fields')
+            alert('Vänligen kolla igenom de obligatoriska fälten')
             return false
         }
     else {

@@ -1,19 +1,19 @@
 //init request
 xhttp = new XMLHttpRequest();
 //Change this line if api url changes, routes should be the same
-xhttp.open('POST', 'http://localhost:1137/addstats', true);
+xhttp.open('POST', 'http://localhost:1137/addpart', true);
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        alert('Point has been added!')
+        alert('Aktör har blivit tillagd!')
         //clear VM
-        viewModel.year('');
-        viewModel.code('');
-        viewModel.value('');
+        viewModel.img('');
+        viewModel.title('');
         viewModel.info('');
+        viewModel.links([{logoTitle:'', logoLink:''}]);
         //open a new request when the last one finished to prep
-        xhttp.open('POST', 'http://localhost:1137/addstats', true);
+        xhttp.open('POST', 'http://localhost:1137/addpart', true);
      }
 }
 
@@ -38,15 +38,14 @@ ko.extenders.required = function(target, overrideMessage) {
 //the required prop contains the message to be shown
 var viewModel = {
     self: this,
-    year: ko.observable().extend({required: "Fyll i ett år"}),
-    code: ko.observable().extend({required: "Fyll i en landskod"}),
-    value: ko.observable().extend({required: "Fyll i ett värde"}),
+    img: ko.observable().extend({required: "Fyll i en bildlänk"}),
+    title: ko.observable().extend({required: "Fyll i en bildtitel"}),
     info: ko.observable().extend({required: "Fyll i info-texten"}),
-    links: ko.observableArray([{statLink:'', statTitle:''}]),
-    postStat: function() {
+    links: ko.observableArray([{logoTitle:'', logoLink:''}]),
+    postPart: function() {
         if (noErrors()) {
-            console.log(prepPoint());
-            xhttp.send(prepPoint());
+            console.log(prepPart());
+            xhttp.send(prepPart());
         }
     },
 }
@@ -55,10 +54,9 @@ ko.applyBindings(viewModel);
 
 //Checks if inputs have errors, this could be improved
 function noErrors() {
-    if (viewModel.year.hasError() ||
-        viewModel.code.hasError() ||
-        viewModel.info.hasError() ||
-        viewModel.value.hasError()) {
+    if (viewModel.img.hasError() ||
+        viewModel.title.hasError() ||
+        viewModel.info.hasError()) {
             alert('Vänligen kolla igenom de obligatoriska fälten')
             return false
         }
@@ -68,11 +66,10 @@ function noErrors() {
 }
 
 //preps point to be sent
-function prepPoint() {
+function prepPart() {
     return (
-        'year=' + viewModel.year() +
-        '&code=' + viewModel.code().toUpperCase() +
-        '&weapons=' + viewModel.value() +
+        'img=' + viewModel.img() +
+        '&title=' + viewModel.title() +
         '&info=' + viewModel.info() +
         '&links=' + JSON.stringify(viewModel.links())
     )

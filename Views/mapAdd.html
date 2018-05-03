@@ -22,7 +22,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
                             <!--navbar items-->
                             <li class="nav-item dropdown">
@@ -125,7 +125,7 @@
                                                             <div class="card-header" style="text-align: center;">
                                                                 <p>Länk</p>
                                                                 <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                                    <i id="removeLink"class="remove far fa-minus-square fa-lg"></i>
+                                                                    <i class="remove far fa-minus-square fa-lg removeLink"></i>
                                                                 </div>
                                                             </div>
                                                             <ul class="list-group list-group-flush">
@@ -147,16 +147,20 @@
                                     <!--links ends-->
                                     <!--infotext-->
                                     <div class="col-md-8">
+                                        <br/>
                                         <div class="form-group">
                                             <p data-bind="css: {error: info.hasError}">
+                                                <label>Information</label>
                                                 <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
                                                 <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                             </p>
                                         </div>
                                         <!--send button-->
+                                        <div class="col-md-12">
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
                                         </div>
+                                    </div>
                                         <!--send button ends-->
                                     </div>
                                     <!--infotext ends-->

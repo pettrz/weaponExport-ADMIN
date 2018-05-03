@@ -22,12 +22,12 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav mx-auto">
                             <!--navbar items-->
                             <li class="nav-item dropdown"> 
                                   <!--map -->
-                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kartan</a>
+                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
@@ -36,7 +36,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <!--statistics-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Statistik</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
@@ -45,7 +45,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                  <!--participants-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aktörer</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
@@ -78,14 +78,14 @@
                             <div class="form-group col-md-8" data-bind="visible: selectedCollection">
                                 <p data-bind="css: {error: selectedCountry.hasError}">
                                     <label for="country">Land</label>
-                                    <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" /></select>
+                                    <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" ></select>
                                     <span data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                                 </p>
                             </div>
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
                                     <!--delete button-->
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
                                         <div id="buttonPadding" >
                                             <input class="button" type="submit" value="Ta bort" data-bind="click: deleteCountry" />
                                         </div>

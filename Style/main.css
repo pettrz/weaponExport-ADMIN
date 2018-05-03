@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6{
     padding-top: 120px;
 }
 
-#removeLink{
+.removeLink{
    position: absolute; 
    right: 10px;
   bottom: 80px;
@@ -59,7 +59,7 @@ h1,h2,h3,h4,h5,h6{
 #textBox{
     max-width: 100%;
     min-width: 100%;
-    min-height: 250px;
+    min-height: 558px;
 }
 
 /* Informationbox for each webb */
