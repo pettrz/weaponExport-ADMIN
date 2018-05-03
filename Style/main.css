@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Oswald');
+
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #333131;
+    background-color: #333138;
     text-align: center;
     color: white;
+    font-family: 'Merriweather', serif;
 }
 #countryForm{
     background-color: #C0C0C0;
     padding: 30px 50px;
     border-radius: 10px;
 }
-body {
-    font-family: "Verdana", Geneva, sans-serif;
+
+h1,h2,h3{
+    font-family: 'Oswald', sans-serif;
 }
 
 
@@ -135,7 +139,6 @@ span {
     font-weight: bold;
     color:white !important;
     padding:10px;
-    font-family: "Verdana", Geneva, sans-serif;
     border-radius: 10px;
     font-size: 18px;
 }
@@ -202,9 +205,19 @@ span {
 }
 
 .dropdown-menu{
+    background-color: white;
+    padding: 0;
     margin: 0;
     border: none;
     border-radius: 0 0 3px 3px;
+    font-family: 'Merriweather Sans', sans-serif;
+
+}
+.dropdown-menu a{
+    line-height: 50px;
+}
+.dropdown-menu a:hover{
+    background-color: #BAB9BD;
 }
 
 #admin-header{

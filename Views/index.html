@@ -12,62 +12,58 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
-    <!--metadata ends-->
+    <!--/metadata-->
 </head>
 <body>
     <div class="container h-100">
         <div class="row h-100">
+            <h1 id="admin-header">Redigering Vapenkarta</h1>
+            <div class="col-lg-4 align-self-center">
+                <div class="dropdown">
+                    <div class="page-column-overlay">
+                        <h2>Karta</h2>
+                    </div>
+                    <div class="page-column map-bg">
+                    </div>
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
+                        <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
+                        <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
+                    </div>
+                </div>
+            </div>
 
-                <h1 id="admin-header">Redigering Vapenkarta</h1>
-    
-                    <div class="col-lg-4 align-self-center">
-                        <div class="dropdown">
-                            <div class="page-column-overlay">
-                                <h2>Karta</h2>
-                            </div>
-                            <div class="page-column map-bg" aria-haspopup="true" aria-expanded="false">
-                            </div>
+            <div class="col-lg-4 align-self-center">
+                <div class="dropdown">
+                    <div class="page-column-overlay">
+                        <h2>Statistik</h2>
+                    </div>
+                    <div class="page-column map-bg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   
+                    </div>     
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
+                        <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
+                        <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
+                    </div>
+                </div>
+            </div>
+
             
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Lägg till</a>
-                                <a class="dropdown-item" href="#">Redigera</a>
-                                <a class="dropdown-item" href="#">Ta bort</a>
-                            </div>
-                        </div>
+            <div class="col-lg-4 align-self-center">
+                <div class="dropdown">
+                    <div class="page-column-overlay">
+                        <h2>Aktörer</h2>
                     </div>
-
-                    <div class="col-lg-4 align-self-center">
-                        <div class="dropdown">
-                            <div class="page-column-overlay">
-                                <h2>Statistik</h2>
-                            </div>
-                            <div class="page-column map-bg" aria-haspopup="true" aria-expanded="false">   
-                            </div>
-                            
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Lägg till</a>
-                                <a class="dropdown-item" href="#">Redigera</a>
-                                <a class="dropdown-item" href="#">Ta bort</a>
-                            </div>
-                        </div>
+                    <div class="page-column map-bg">
                     </div>
-                    <div class="col-lg-4 align-self-center">
-                        <div class="dropdown">
-                            <div class="page-column-overlay">
-                                <h2>Aktörer</h2>
-                            </div>
-                            <div class="page-column map-bg" aria-haspopup="true" aria-expanded="false">
-                            </div>
-                
-                            <div class="dropdown-menu w-100" style="display: block"aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Lägg till</a>
-                                <a class="dropdown-item" href="#">Redigera</a>
-                                <a class="dropdown-item" href="#">Ta bort</a>
-                            </div>
-                        </div>
-                    </div> 
-            </div>      
-        </div>
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
+                        <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
+                        <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
+                    </div>
+                </div>
+            </div> 
+        </div>      
     </div>
 </body>
 </html>
