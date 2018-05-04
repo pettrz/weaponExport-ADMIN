@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <!--metadata-->
@@ -27,7 +28,7 @@
                             <li class="nav-item dropdown">
                                 <!--map -->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
                                     <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
@@ -36,7 +37,7 @@
                             <li class="nav-item dropdown">
                                 <!--statistics-->
                                 <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item active" href="statisticsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
                                     <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
@@ -45,7 +46,7 @@
                             <li class="nav-item dropdown">
                                 <!--participants-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
                                     <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
@@ -57,8 +58,8 @@
                 <!--navbar ends-->
             </div>
             <!--title-->
-            <div id="headerForm" class="col-lg-12">
-                LÄGG TILL ETT ÅRTAL
+            <div class="header-form col-lg-12">
+                <h1>LÄGG TILL ETT ÅRTAL</h1>
             </div>
             <!--add form-->
             <div id="countryForm" class="col-lg-8 offset-lg-2">
@@ -133,6 +134,7 @@
                                         <br/>
                                         <div class="form-group">
                                             <p data-bind="css: {error: info.hasError}">
+                                                <label>Information</label>
                                                 <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
                                                 <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                             </p>
