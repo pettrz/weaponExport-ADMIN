@@ -69,7 +69,7 @@
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedPart.hasError}">
                                     <label for="title">Bildtitel</label>
-                                    <select class="form-control" id="title" type="text" data-bind="options: parts, optionsText: 'Title', value: selectedPart, valueUpdate: 'afterkeydown'"></select>
+                                    <select class="form-control" id="title" type="text" data-bind="options: parts, optionsText: 'Title', value: selectedPart, valueUpdate: 'afterkeydown', optionsCaption:'-- Välj Aktör --'"></select>
                                     <span data-bind="visible: selectedPart.hasError, text: selectedPart.validationMessage"></span>
                                 </p>
                             </div>
