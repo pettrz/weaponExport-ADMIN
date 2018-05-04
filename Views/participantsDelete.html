@@ -8,7 +8,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
-    <script src="./../Scripts/partsAdd.js" defer="defer"></script>
+    <script src="./../Scripts/partsDelete.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
     <!--metadata ends-->
 </head>
@@ -65,19 +65,11 @@
                 <form>
                     <div class="form">
                         <div class="row">
-                            <!--image-->
-                            <div class="form-group col-md-8">
-                                <p data-bind="css: {error: img.hasError}">
-                                    <label for="img">Bildlänk</label>
-                                    <input class="form-control" id="img" type="text" placeholder="Bildlänk" data-bind="value: img, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: img.hasError, text: img.validationMessage"></span>
-                                </p>
-                            </div>
                             <!--title-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: selectedPart.hasError}">
                                     <label for="title">Bildtitel</label>
-                                    <select class="form-control" id="title" type="text" data-bind="options: parts, optionsText: participantTitle value: selectedPart, valueUpdate: 'afterkeydown'" />
+                                    <select class="form-control" id="title" type="text" data-bind="options: parts, optionsText: 'Title', value: selectedPart, valueUpdate: 'afterkeydown'"></select>
                                     <span data-bind="visible: selectedPart.hasError, text: selectedPart.validationMessage"></span>
                                 </p>
                             </div>
@@ -85,53 +77,12 @@
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
                                     <hr style="width:800px; height: 1px; background-color:white;">
-                                    <!--links-->
-                                    <div class="col-md-4" style="text-align: center">
-                                        <div class="optionBox">
-                                            <!--add links-->
-                                            <div class="block">
-                                                <div class="add" data-bind="click: function() {links.push({logoTitle:'', logoLink:''});}"><i class="far fa-plus-square fa-2x"></i></div>
-                                            </div>
-                                            <!--add links ends-->
-                                            <div data-bind="foreach: links">
-                                                <div class="block">
-                                                    <div id="card-wrapper">
-                                                        <div id="linkCard" class="card">
-                                                            <div class="card-header" style="text-align: center;">
-                                                                <p>Länk</p>
-                                                                <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                                    <i class="remove far fa-minus-square fa-lg removeLink" style="position: absolute; right: 10px;"></i>
-                                                                </div>
-                                                            </div>
-                                                            <ul class="list-group list-group-flush">
-                                                                <!--title-->
-                                                                <li class="list-group-item">
-                                                                    <input class="form-control" type="text" placeholder="Titel" data-bind="value: logoTitle, valueUpdate: 'afterkeydown'" />
-                                                                </li>
-                                                                <!--link url-->
-                                                                <li class="list-group-item">
-                                                                    <input class="form-control" type="text" placeholder="Länk" data-bind="value: logoLink, valueUpdate: 'afterkeydown'" />
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--links ends-->
                                     <!--infotext-->
                                     <div class="col-md-8">
                                         <br/>
-                                        <div class="form-group">
-                                            <p data-bind="css: {error: info.hasError}">
-                                                <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
-                                                <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
-                                            </p>
-                                        </div>
                                         <!--send button-->
                                         <div id="buttonPadding" >
-                                            <input class="button" type="submit" value="Lägg till" data-bind="click: postPart" />
+                                            <input class="button" type="submit" value="Ta bort" data-bind="click: deletePart" />
                                         </div>
                                         <!--send button ends-->
                                     </div>
