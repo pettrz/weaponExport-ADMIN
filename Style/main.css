@@ -14,29 +14,42 @@ h1,h2,h3,h4,h5,h6, .navbar a{
     font-family: 'Oswald', sans-serif;
 }
 
+.form-group input{
+    font-family: sans-serif;
+}
+
 /* navbar links */
-.navbar .nav-link {
-    color:white;
-    font-size:26px;
+.navbar .nav-link, .navbar-brand { 
+    color:white !important;
+    font-size: 20px;
+}
+.navbar-brand:hover{
+    color: white;
 }
 .navbar .nav-link > a:hover{
-    color: #C0C0C0;
+    color: white;
+}
+
+.brand-img{
+    margin-right: 5px;
+}
+.navbar-nav > li{
+    margin-left:20px;
 }
 
 /* dropdown menu */
 .dropdown-menu{
     background-color: white;
-    padding: 0;
     margin: 0;
     border: none;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px !important;
     font-size: 18px;
 }
 .dropdown-menu a{
-    line-height: 50px;
+    line-height: 40px;
 }
 .dropdown-menu a:hover{
-    background-color: #BAB9BD;
+    background-color: #ECEBEE;
 }
 
 
@@ -126,24 +139,15 @@ button:focus{
 .block {
     display: block;
 }
-input {
-    width: 50%;
-    display: inline-block;
-}
+
 span {
-    display: inline-block;
     cursor: pointer;
     text-decoration: underline;
 }
 
-.navbar-nav li{
-    padding-left:20px;
-    padding-right:20px;
-}
-
 .dropdown-item.active, .dropdown-item:active{
-    background-color: #C0C0C0;
-    color:black;
+    background-color: #ECEBEE;
+    color: #333138;
 }
 
 .activeTab{

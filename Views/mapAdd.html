@@ -2,6 +2,7 @@
 <html>
 <head>
     <!--metadata-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Lägg till data</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
@@ -15,18 +16,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <!--navbar-->
-                <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+                        
+                    <a class="navbar-brand" href="index.html"><img class="brand-img" src="./../Style/images/svenska_freds-logo.png" height="60" > Vapenkarta Admin</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
                             <!--navbar items-->
                             <li class="nav-item dropdown">
-                                <!--map -->
                                 <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
@@ -35,7 +34,6 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <!--statistics-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
@@ -44,7 +42,6 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <!--participants-->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
@@ -55,6 +52,10 @@
                         </ul>
                     </div>
                 </nav>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!--navbar-->
+                
                 <!--navbar ends-->
             </div>
             <!--title-->
@@ -63,49 +64,39 @@
                 <h1>LÄGG TILL LAND</h1>
             </div>
             <!--add form-->
-            <div id="countryForm" class="col-lg-8 offset-lg-2">
+            <div id="countryForm" class="col-lg-8">
                 <form>
                     <div class="form">
                         <div class="row">
                             <!--country-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: country.hasError}">
+                            <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
                                     <label for="country">Land</label>
                                     <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
                                     <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
-                                </p>
                             </div>
                             <!--continent-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: selectedCollection.hasError}">
+                            <div class="form-group col-md-4" data-bind="css: {error: selectedCollection.hasError}">
                                     <label for="continent">Kontinent</label>
                                     <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
                                     <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
-                                </p>
                             </div>
                             <!--country code-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: code.hasError}">
+                            <div class="form-group col-md-4" data-bind="css: {error: code.hasError}">
                                     <label for="countryCode">Landskod</label>
                                     <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
                                     <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
-                                </p>
                             </div>
                              <!--GPI-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: gpi.hasError}">
+                            <div class="form-group col-md-4" data-bind="css: {error: gpi.hasError}">     
                                     <label for="GPI">GPI Rankning</label>
                                     <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
                                     <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
-                                </p>
                             </div>
                             <!--Freedom House-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: selectedFHstatus.hasError}">
+                            <div class="form-group col-md-4" data-bind="css: {error: selectedFHstatus.hasError}">
                                     <label for="FHstatus">Freedom House status</label>
-                                    <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'"></select>
+                                    <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
                                     <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
-                                </p>
                             </div>
                             <!--infotext in infobox-->
                             <div id="info-wrapper" class="col-lg-12">
@@ -120,7 +111,7 @@
                                             </div>
                                             <!--add links ends-->
                                             <div data-bind="foreach: links">
-                                                <div class="block">
+                                                
                                                     <div id="card-wrapper">
                                                         <div id="linkCard" class="card">
                                                             <div class="card-header" style="text-align: center;">
@@ -141,7 +132,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -149,19 +140,17 @@
                                     <!--infotext-->
                                     <div class="col-md-8">
                                         <br/>
-                                        <div class="form-group">
-                                            <p data-bind="css: {error: info.hasError}">
+                                        <div class="form-group col-md-12" data-bind="css: {error: info.hasError}">
                                                 <label>Information</label>
                                                 <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
                                                 <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
-                                            </p>
                                         </div>
                                         <!--send button-->
                                         <div class="col-md-12">
-                                        <div id="buttonPadding" >
-                                            <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
+                                            <div id="buttonPadding" >
+                                                <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
+                                            </div>
                                         </div>
-                                    </div>
                                         <!--send button ends-->
                                     </div>
                                     <!--infotext ends-->
