@@ -5,7 +5,7 @@ html, body {
     height: 100%;
     background-color: #333138;
     text-align: center;
-    color: white;
+    color: #333138;
     font-family: 'Merriweather Sans', sans-serif;
     text-align: center;
 }
@@ -13,6 +13,10 @@ html, body {
 h1,h2,h3,h4,h5,h6, .navbar a{
     font-family: 'Oswald', sans-serif;
 }
+h1,h2,h3,h4,h5,h6{
+    color:white;
+}
+
 
 .form-group input{
     font-family: sans-serif;
@@ -22,6 +26,9 @@ h1,h2,h3,h4,h5,h6, .navbar a{
 .navbar .nav-link, .navbar-brand { 
     color:white !important;
     font-size: 20px;
+}
+.navbar .nav-link:hover{
+    color: #ECEBEE !important;
 }
 .navbar-brand:hover{
     color: white;
