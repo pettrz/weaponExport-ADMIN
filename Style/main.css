@@ -14,8 +14,9 @@ html, body {
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu{   /* Headers, navbar & dropdown*/
-    font-family: 'Oswald', sans-serif;  
+h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar & dropdown*/
+    font-family: 'Oswald', sans-serif;
+    color:white !important;
 }
 
 #admin-form{    /*Form*/  
