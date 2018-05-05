@@ -1,3 +1,8 @@
+/*!
+VAPENKARTA ADMIN
+Created by Team Chaos - 2018
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Oswald');
 
 html, body {
@@ -5,25 +10,26 @@ html, body {
     height: 100%;
     background-color: #333138;
     text-align: center;
-    color: #333138;
+    color: white;
     font-family: 'Merriweather Sans', sans-serif;
-    text-align: center;
 }
 
-h1,h2,h3,h4,h5,h6, .navbar a{
-    font-family: 'Oswald', sans-serif;
-}
-h1,h2,h3,h4,h5,h6{
-    color:white;
+h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu{   /* Headers, navbar & dropdown*/
+    font-family: 'Oswald', sans-serif;  
 }
 
-
-.form-group input{
-    font-family: sans-serif;
+#admin-form{    /*Form*/  
+    color: #333138;
 }
 
-/* navbar links */
-.navbar .nav-link, .navbar-brand { 
+#admin-form input, select, textarea{ /*Form elements*/
+    font-family: sans-serif; 
+}
+
+/**********
+ * Navbar *
+ **********/
+.navbar  .nav-link, .navbar-brand { 
     color:white !important;
     font-size: 20px;
 }
@@ -36,19 +42,16 @@ h1,h2,h3,h4,h5,h6{
 .navbar .nav-link > a:hover{
     color: white;
 }
-
-.brand-img{
-    margin-right: 5px;
-}
 .navbar-nav > li{
-    margin-left:20px;
+    margin-left: 20px;
 }
 
-/* dropdown menu */
+/************
+ * Dropdown *
+ ************/
 .dropdown-menu{
-    background-color: white;
-    margin: 0;
     border: none;
+    margin: 0;
     border-radius: 0 0 3px 3px !important;
     font-size: 18px;
 }
@@ -58,129 +61,103 @@ h1,h2,h3,h4,h5,h6{
 .dropdown-menu a:hover{
     background-color: #ECEBEE;
 }
-
-
-#countryForm{
-    background-color: #C0C0C0;
-    padding: 30px 50px;
-    border-radius: 10px;
-}
-
-.header-form{
-
-    padding-bottom: 50px;
-    font-weight: bold;
-    padding-top: 10%;
-}
-
-#removeLink{
-   position: absolute; 
-   right: 10px;
-   bottom: 80px;
-}
-
-.button {
-    background-color: #C0C0C0;
-    color: black;
-    width: 300px;
-    border: 3px solid #FFFFFF !important;
-}
-.button:hover {
-    background-color: #808080;
-}
-#buttonPadding{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    line-height: 50px;
-}
-
-#fillTextbox {
-    color: #ba0000;
-}
-#confirm {
-    color: #008800;
-}
-#textBox{
-    min-width: 100%;
-    min-height: 250px;
-    max-height: 500px;
-}
-
-.buttonLinks{
-    background-color: #C0C0C0;
-    color: white;
-    border: none;
-}
-
-button:focus{
-    outline: none !important;
-}
-
-.list-group-item{
-    padding: 0;
-    border: none;
-}
-
-.list-group-item input{
-    border: none;
-}
-
-#info-wrapper{
-    padding-top: 50px;
-}
-
-/* Link cards */
-.card{
-    margin-top: 20px !important;
-}
-#card-wrapper{
-    max-height: 500px;
-    overflow: auto;
-}
-
-.form-group{
-    padding-left: 10px;
-    text-align: left !important;
-}
-
-.block {
-    display: block;
-}
-
-span {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
 .dropdown-item.active, .dropdown-item:active{
     background-color: #ECEBEE;
     color: #333138;
 }
 
-.activeTab{
-    text-decoration: underline;
+.dropdown-start:hover > .dropdown-menu {
+    display: block;  
 }
 
+/**********
+ *  Form  *
+ **********/
+.header-form{
+    padding-bottom: 45px;
+    padding-top: 6vh;
+}
+#admin-form{
+    background-color: #ECEBEE;
+    padding: 30px;
+    border-radius: 5px;
+}
+.validation-error{
+    color: #dc3545;
+    position: absolute;
+    font-size: 80%;
+}
 
-/* Startpage */
+.link-icon:hover{
+    color: #9E9DA2;
+    cursor: pointer;
+}
+.icon-remove{
+   position: absolute; 
+   right: 10px;
+}
+#button-form{
+    background-color: #C0C0C0;
+    width: 300px; 
+}
+#button-form:hover {
+    background-color: #808080;
+}
+#textarea-admin{
+    min-width: 100%;
+    min-height: 250px;
+    max-height: 500px;
+}
+.form-group{
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+/**************
+ * Link cards *
+ **************/
+#card-wrapper{
+    max-height: 500px;
+    overflow-y: auto;
+    text-align: center;
+}
+.card .form-control{
+    padding: 0;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.card .list-group-item{
+    border: none;
+}
+
+/*************
+ * Startpage *
+ *************/
+#admin-header{
+    top: 5em;
+    right: 0;
+    left: 0;
+    position: absolute;
+}
+
+/* Columns */
 .page-column{
     height: 220px;
 }
-
 .page-column-overlay{
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    border: 4px white solid;
-    color: white;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 4px white solid;
 }
 
+/* Column background */
 .map-bg, .stats-bg, .participants-bg{
     background-position: center;
 }
@@ -188,13 +165,23 @@ span {
 .stats-bg{background-image: url('./../Style/images/stats-bg.png');}
 .participants-bg{background-image: url('./../Style/images/participants-bg.png');}
 
-.dropdown-start:hover > .dropdown-menu {
-    display: block;  
-}
 
-#admin-header{
-    top: 5em;
-    right: 0;
-    left: 0;
-    position: absolute;
+
+
+/* ? */
+/* #fillTextbox {
+    color: #ba0000;
+}
+#confirm {
+    color: #008800;
+}
+.activeTab{
+    text-decoration: underline;
+} */
+
+.icon-plus-square-o:before {
+    content: "\e900";
+}
+.icon-minus-square-o:before {
+    content: "\e903";
 }

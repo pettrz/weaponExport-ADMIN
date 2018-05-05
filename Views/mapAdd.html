@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--metadata-->
+    <!-- Metadata -->
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no" charset="utf-8">
-    <title>Lägg till data</title>
+    <title>Lägg till land</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./../Style/fa-regular.min.css" type="text/css" media="screen" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/mapAdd.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
-    <!--metadata ends-->
+    <!-- /Metadata-->
+
 </head>
 <body>
+    <!-- Container -->
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark ">
-                        
-                    <a class="navbar-brand" href="index.html"><img class="brand-img" src="./../Style/images/svenska_freds-logo.png" height="60" > Vapenkarta Admin</a>
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="index.html"><img class="mr-2" src="./../Style/images/svenska_freds-logo.png" height="65" > Vapenkarta Admin</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto">
-                            <!--navbar items-->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
@@ -52,117 +54,111 @@
                         </ul>
                     </div>
                 </nav>
+                <!-- /Navbar -->
+
+
+        <!-- Row -->
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <!--navbar-->
-                
-                <!--navbar ends-->
-            </div>
-            <!--title-->
-            
+
+            <!-- Form header -->
             <div class="header-form col-lg-12">
                 <h1>LÄGG TILL LAND</h1>
             </div>
-            <!--add form-->
-            <div id="countryForm" class="col-lg-8">
-                <form>
-                    <div class="form">
+            <!-- /Form header -->
+        
+            <!--Form wrapper-->
+            <div id="admin-form" class="col-md-8 col-lg-8">
+                <!-- Form with knockout.js validation-->
+                    <form>
+                        <!-- Form row 1 -->
                         <div class="row">
-                            <!--country-->
+                            <!--Country input-->
                             <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
                                     <label for="country">Land</label>
-                                    <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: country.hasError, text: country.validationMessage"></span>
+                                    <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'">
+                                    <span class="validation-error" data-bind="visible: country.hasError, text: country.validationMessage"></span>
                             </div>
-                            <!--continent-->
-                            <div class="form-group col-md-4" data-bind="css: {error: selectedCollection.hasError}">
+                            <!--/Country input-->
+                            <!--Continent select-->
+                            <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
                                     <label for="continent">Kontinent</label>
                                     <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
-                                    <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
+                                    <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                             </div>
-                            <!--country code-->
+                            <!--/Continent select-->
+                            <!--Country code input-->
                             <div class="form-group col-md-4" data-bind="css: {error: code.hasError}">
                                     <label for="countryCode">Landskod</label>
-                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'" />
-                                    <span data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'">
+                                    <span class="validation-error" class="validation-error" data-bind="visible: code.hasError, text: code.validationMessage"></span>
                             </div>
-                             <!--GPI-->
+                            <!--/Country code input-->
+                            <!--GPI input-->
                             <div class="form-group col-md-4" data-bind="css: {error: gpi.hasError}">     
                                     <label for="GPI">GPI Rankning</label>
-                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'" />
-                                    <span data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'">
+                                    <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                             </div>
-                            <!--Freedom House-->
+                            <!--/GPI input-->
+                            <!--FH-status input-->
                             <div class="form-group col-md-4" data-bind="css: {error: selectedFHstatus.hasError}">
                                     <label for="FHstatus">Freedom House status</label>
                                     <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
-                                    <span data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
+                                    <span class="validation-error" data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
                             </div>
-                            <!--infotext in infobox-->
-                            <div id="info-wrapper" class="col-lg-12">
-                                <div class="row">
-                                    <hr style="width:800px; height: 1px; background-color:white;">
-                                    <!--links-->
-                                    <div class="col-md-4" style="text-align: center">
-                                        <div class="optionBox">
-                                            <!--add links-->
-                                            <div class="block">
-                                                <div class="add" data-bind="click: function() {links.push({title:'', link:''});}"><i class="far fa-plus-square fa-2x"></i></div>
-                                            </div>
-                                            <!--add links ends-->
-                                            <div data-bind="foreach: links">
-                                                
-                                                    <div id="card-wrapper">
-                                                        <div id="linkCard" class="card">
-                                                            <div class="card-header" style="text-align: center;">
-                                                                <p>Länk</p>
-                                                                <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                                    <i class="remove far fa-minus-square fa-lg removeLink"></i>
-                                                                </div>
-                                                            </div>
-                                                            <ul class="list-group list-group-flush">
-                                                                <!--title-->
-                                                                <li class="list-group-item">
-                                                                    <input class="form-control" type="text" placeholder="Titel" data-bind="value: title, valueUpdate: 'afterkeydown'" />
-                                                                </li>
-                                                                <!--link url-->
-                                                                <li class="list-group-item">
-                                                                    <input class="form-control" type="text" placeholder="Länk" data-bind="value: link, valueUpdate: 'afterkeydown'" />
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--links ends-->
-                                    <!--infotext-->
-                                    <div class="col-md-8">
-                                        <br/>
-                                        <div class="form-group col-md-12" data-bind="css: {error: info.hasError}">
-                                                <label>Information</label>
-                                                <textarea class="form-control" id="textBox" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
-                                                <span data-bind="visible: info.hasError, text: info.validationMessage"></span>
-                                        </div>
-                                        <!--send button-->
-                                        <div class="col-md-12">
-                                            <div id="buttonPadding" >
-                                                <input class="button" type="submit" value="Lägg till" data-bind="click: postCountry" /> <span id="confirm"></span>
-                                            </div>
-                                        </div>
-                                        <!--send button ends-->
-                                    </div>
-                                    <!--infotext ends-->
-                                </div>
-                            </div> 
-                            <!--info in infobox ends-->
+                            <!--/FH-status input-->
                         </div>
-                    </div>
+                        <!-- /Form row 1 -->
+
+                        <!-- Form row 2 -->
+                        <div class="row pt-5">
+                                <!--Hyperlink cards-->
+                                <div class="col-md-4">
+                                    <label class="link-icon" data-bind="click: function() {links.push({title:'', link:''});}">
+                                        Länk<i class="link-icon far fa-plus-square fa-lg mx-2"></i>
+                                    </label>
+                                        <div id="card-wrapper" data-bind="foreach: links">
+                                            <div class="card mb-2">
+                                                <div class="card-header">
+                                                    Länk
+                                                    <span class="link-icon icon-remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                        <i class="far fa-minus-square fa-lg"></i>
+                                                    </span>        
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <input class="form-control" type="text" placeholder="Titel" data-bind="value: title, valueUpdate: 'afterkeydown'">
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input class="form-control" type="text" placeholder="Länk" data-bind="value: link, valueUpdate: 'afterkeydown'">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                </div>
+                                <!-- /HyperLink cards-->
+                                <!--Textbox + button-->
+                                <div class="col-md-8">
+                                    <div class="form-group" data-bind="css: {error: info.hasError}">
+                                        <label>Information</label>
+                                        <textarea class="form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
+                                        <span class="validation-error" data-bind="visible: info.hasError, text: info.validationMessage"></span>
+                                    </div>
+                                    <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: postCountry">Lägg till<span id="confirm"></span></button>
+                                </div>
+                                <div class="col-md-12">
+                                        <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: postCountry">Lägg till<span id="confirm"></span></button>
+                                </div>
+                                <!-- /Textbox + button -->
+                        </div>
+                        <!-- /Form row 2 -->
                 </form>
+                <!-- /Form -->
             </div>
-            <!--add form ends-->
+            <!-- /Form wrapper-->
         </div>
-    </div>        
+        <!-- /row -->
+    </div>   
+    <!-- /Container-->
 </body>
 </html>
