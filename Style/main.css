@@ -99,7 +99,7 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 }
 #button-form{
     background-color: #C0C0C0;
-    width: 300px; 
+    width: 70%; 
 }
 #button-form:hover {
     background-color: #808080;
@@ -137,7 +137,7 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
  * Startpage *
  *************/
 #admin-header{
-    top: 5em;
+    top: 18vh;
     right: 0;
     left: 0;
     position: absolute;
