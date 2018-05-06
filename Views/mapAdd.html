@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Metadata -->
+    <!--Metadata-->
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Lägg till land</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <!-- SVG icons -->
+    <!--SVG icons-->
         <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
             <symbol id="icon-question-circle" viewBox="0 0 24 28">
@@ -31,9 +31,9 @@
             </defs>
         </svg>
 
-    <!-- Main Content -->
+    <!--Main Content-->
     <div class="container">
-                <!-- Navbar -->
+                <!--Navbar-->
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand" href="index.html"><img class="mr-2" src="./../Style/images/svenska_freds-logo.png" height="65" > Vapenkarta Admin</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
+                                    <a class="dropdown-item" href="mapDelete.html">Radera</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -54,7 +54,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
+                                    <a class="dropdown-item" href="statisticsDelete.html">Radera</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -62,7 +62,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
                                     <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
+                                    <a class="dropdown-item" href="participantsDelete.html">Radera</a>
                                 </div>
                             </li>
                         </ul>
@@ -70,82 +70,82 @@
                 </nav>
 
         <div class="row justify-content-center">
-            <!-- Form header -->
+            <!--Form header-->
             <div class="header-form col-lg-12">
                 <h1>LÄGG TILL LAND</h1>
             </div>
         
             <!--Form wrapper-->
             <div id="admin-form" class="col-md-8 col-lg-8">
-                <!-- Form with knockout.js validation-->
-                    <form>
-                        <div class="row">
-                            <!--Country input-->
-                            <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
-                                    <label for="country">Land</label>
-                                    <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'">
-                                    <span class="validation-error" data-bind="visible: country.hasError, text: country.validationMessage"></span>
-                            </div>
-                            <!--Continent select-->
-                            <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
-                                    <label for="continent">Kontinent</label>
-                                    <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
-                                    <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
-                            </div>
-                            <!--Country code input-->
-                            <div class="form-group col-md-4" data-bind="css: {error: code.hasError}">
-                                    <label for="countryCode">Landskod</label>
-                                    <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'">
-                                    <span class="validation-error" class="validation-error" data-bind="visible: code.hasError, text: code.validationMessage"></span>
-                            </div>
-                            <!--GPI input-->
-                            <div class="form-group col-md-4" data-bind="css: {error: gpi.hasError}">     
-                                    <label for="GPI">GPI Rankning</label>
-                                    <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'">
-                                    <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
-                            </div>
-                            <!--FH-status input-->
-                            <div class="form-group col-md-4" data-bind="css: {error: selectedFHstatus.hasError}">
-                                    <label for="FHstatus">Freedom House status</label>
-                                    <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
-                                    <span class="validation-error" data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
-                            </div>
+                <!--Form with knockout.js validation-->
+                <form>
+                    <div class="row">
+                        <!--Country input-->
+                        <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
+                                <label for="country">Land</label>
+                                <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'">
+                                <span class="validation-error" data-bind="visible: country.hasError, text: country.validationMessage"></span>
                         </div>
-                        <div class="row pt-5">
-                                <!--Hyperlink cards-->
-                                <div class="col-md-4">
-                                    <div class="link-icon mb-2" data-bind="click: function() {links.push({title:'', link:''});}">
-                                        Länk<svg class="icon icon-question-circle ml-1"><use xlink:href="#icon-plus-square-o"></use></svg>
-                                    </div>
-                                        <div id="card-wrapper" data-bind="foreach: links">
-                                            <div class="card mb-2">
-                                                <div class="card-header">
-                                                    Länk
-                                                    <span class="link-icon icon-remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                        <svg class="icon icon-question-circle"><use xlink:href="#icon-minus-square-o"></use></svg>
-                                                    </span>        
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">
-                                                        <input class="form-control" type="text" placeholder="Titel" data-bind="value: title, valueUpdate: 'afterkeydown'">
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input class="form-control" type="text" placeholder="Länk" data-bind="value: link, valueUpdate: 'afterkeydown'">
-                                                    </li>
-                                                </ul>
+                        <!--Continent select-->
+                        <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
+                                <label for="continent">Kontinent</label>
+                                <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
+                                <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
+                        </div>
+                        <!--Country code input-->
+                        <div class="form-group col-md-4" data-bind="css: {error: code.hasError}">
+                                <label for="countryCode">Landskod</label>
+                                <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'">
+                                <span class="validation-error" class="validation-error" data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                        </div>
+                        <!--GPI input-->
+                        <div class="form-group col-md-4" data-bind="css: {error: gpi.hasError}">     
+                                <label for="GPI">GPI Rankning</label>
+                                <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'">
+                                <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                        </div>
+                        <!--FH-status input-->
+                        <div class="form-group col-md-4" data-bind="css: {error: selectedFHstatus.hasError}">
+                                <label for="FHstatus">Freedom House status</label>
+                                <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
+                                <span class="validation-error" data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                            <!--Hyperlink cards-->
+                            <div class="col-md-4">
+                                <div class="link-icon mb-2" data-bind="click: function() {links.push({title:'', link:''});}">
+                                    Länk<svg class="icon icon-question-circle ml-1"><use xlink:href="#icon-plus-square-o"></use></svg>
+                                </div>
+                                    <div id="card-wrapper" data-bind="foreach: links">
+                                        <div class="card mb-2">
+                                            <div class="card-header">
+                                                Länk
+                                                <span class="link-icon icon-remove" data-bind="click: function() {viewModel.links.remove($data);}">
+                                                    <svg class="icon icon-question-circle"><use xlink:href="#icon-minus-square-o"></use></svg>
+                                                </span>        
                                             </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <input class="form-control" type="text" placeholder="Titel" data-bind="value: title, valueUpdate: 'afterkeydown'">
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <input class="form-control" type="text" placeholder="Länk" data-bind="value: link, valueUpdate: 'afterkeydown'">
+                                                </li>
+                                            </ul>
                                         </div>
-                                </div>
-                                <!--Textbox + button-->
-                                <div class="col-md-8">
-                                    <div class="form-group" data-bind="css: {error: info.hasError}">
-                                        <label>Information</label>
-                                        <textarea class="form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
-                                        <span class="validation-error" data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                     </div>
-                                    <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: postCountry">Lägg till<span id="confirm"></span></button>
+                            </div>
+                            <!--Textbox + button-->
+                            <div class="col-md-8">
+                                <div class="form-group" data-bind="css: {error: info.hasError}">
+                                    <label>Information</label>
+                                    <textarea class="form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
+                                    <span class="validation-error" data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                 </div>
-                        </div>
+                                <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: postCountry">Lägg till<span id="confirm"></span></button>
+                            </div>
+                    </div>
                 </form>
             </div>
         </div>

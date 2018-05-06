@@ -117,8 +117,11 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
     min-height: 250px;
     max-height: 500px;
 }
+.textarea-edit{
+    height: 500px;
+}
 .form-group {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     text-align: left;
 }
 
