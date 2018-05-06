@@ -49,11 +49,11 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     years: ko.observableArray(),
-    selectedYear: ko.observable().extend({required: "Välj ett årtal"}),
-    year: ko.observable().extend({required: "Fyll i ett årtal"}),
-    code: ko.observable().extend({required: "Fyll i en landskod"}),
-    weapons: ko.observable().extend({required: "Fyll i ett värde"}),
-    info: ko.observable().extend({required: "Fyll i info-texten"}),
+    selectedYear: ko.observable().extend({required: "Ange ett årtal"}),
+    year: ko.observable().extend({required: "Ange ett årtal"}),
+    code: ko.observable().extend({required: "Ange en landskod"}),
+    weapons: ko.observable().extend({required: "Ange ett värde"}),
+    info: ko.observable().extend({required: "Ange en informationstext"}),
     statLinks: ko.observableArray([{statLink:'', statTitle:''}]),
     updateStat: function() {
         if (noErrors()) {
@@ -82,7 +82,7 @@ function noErrors() {
         viewModel.code.hasError() ||
         viewModel.weapons.hasError() ||
         viewModel.info.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten.')
             return false;
         }
     else {

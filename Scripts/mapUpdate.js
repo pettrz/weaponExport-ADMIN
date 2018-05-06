@@ -60,17 +60,17 @@ var viewModel = {
     //Requires content in each input 
     countries: ko.observableArray(),
     visibleCountries: ko.observableArray(),
-    selectedCountry: ko.observable().extend({required: "Välj ett land"}),
-    country: ko.observable().extend({required: "Fyll i ett land"}),
-    code: ko.observable().extend({required: "Fyll i en landskod"}),
-    gpi: ko.observable().extend({required: "Fyll i GPI"}),
-    info: ko.observable().extend({required: "Fyll i info-texten"}),
+    selectedCountry: ko.observable().extend({required: "Ange ett land"}),
+    country: ko.observable().extend({required: "Ange ett land"}),
+    code: ko.observable().extend({required: "Ange en landskod"}),
+    gpi: ko.observable().extend({required: "Ange GPI-rank"}),
+    info: ko.observable().extend({required: "Ange en informationstext"}),
     FHstatuses: ko.observableArray([
         'Fri',
         'Delvis fri',
         'Inte fri',
     ]),
-    selectedFHstatus: ko.observable().extend({required: "Fyll i FH status"}),
+    selectedFHstatus: ko.observable().extend({required: "Ange FH-status"}),
     links: ko.observableArray([
         {title:'', link:''},
     ]),
@@ -83,7 +83,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Välj en kontinent"}),
+    selectedCollection: ko.observable().extend({required: "Ange en kontinent"}),
     //Checks validation - if not: sends content
     updateCountry: function() {
         if(noErrors()) {
@@ -132,7 +132,7 @@ function noErrors() {
         viewModel.selectedFHstatus.hasError() ||
         viewModel.gpi.hasError() ||
         viewModel.info.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten')
             return false;
         }
     else {

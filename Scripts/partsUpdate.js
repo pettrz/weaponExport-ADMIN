@@ -49,10 +49,10 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     parts: ko.observableArray(),
-    selectedPart: ko.observable().extend({required: "Välj en aktör"}),
-    img: ko.observable().extend({required: "Fyll i en bildlänk"}),
-    title: ko.observable().extend({required: "Fyll i en bildtitel"}),
-    info: ko.observable().extend({required: "Fyll i info-texten"}),
+    selectedPart: ko.observable().extend({required: "Ange en aktör"}),
+    img: ko.observable().extend({required: "Ange en bildlänk"}),
+    title: ko.observable().extend({required: "Ange en bildtitel"}),
+    info: ko.observable().extend({required: "Ange en informationstext"}),
     links: ko.observableArray([{logoTitle:'', logoLink:''}]),
     updatePart: function() {
         if (noErrors()) {
@@ -80,7 +80,7 @@ function noErrors() {
         viewModel.title.hasError() ||
         viewModel.img.hasError() ||
         viewModel.info.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten')
             return false;
         }
     else {

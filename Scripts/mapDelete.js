@@ -66,7 +66,7 @@ var viewModel = {
     self: this,
     countries: ko.observableArray(),
     visibleCountries: ko.observableArray(),
-    selectedCountry: ko.observable().extend({required: "Fyll i ett land"}),
+    selectedCountry: ko.observable().extend({required: "Ange ett land"}),
     collections: ko.observableArray([
         new Collection('AF', 'Afrika'),
         new Collection('AS', 'Asien'),
@@ -75,7 +75,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Fyll i en kontinent"}),
+    selectedCollection: ko.observable().extend({required: "Ange en kontinent"}),
     deleteCountry: function() {
         if(noErrors()) {
             requestPrep();
@@ -110,7 +110,7 @@ viewModel.selectedCollection.subscribe(function(value) {
 function noErrors() {
     if (viewModel.selectedCountry.hasError() ||
         viewModel.selectedCollection.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten.')
             return false;
         }
     else {

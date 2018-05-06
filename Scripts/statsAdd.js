@@ -6,7 +6,7 @@ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        alert('Point has been added!')
+        alert('Årtalet har lagts till!')
         //clear VM
         viewModel.year('');
         viewModel.code('');
@@ -14,7 +14,7 @@ xhttp.onreadystatechange = function() {
         viewModel.info('');
         //open a new request when the last one finished to prep
         xhttp.open('POST', 'http://localhost:1137/addstats', true);
-     }
+    }
 }
 
 //Error checking via knockout
@@ -38,10 +38,10 @@ ko.extenders.required = function(target, overrideMessage) {
 //the required prop contains the message to be shown
 var viewModel = {
     self: this,
-    year: ko.observable().extend({required: "Fyll i ett år"}),
-    code: ko.observable().extend({required: "Fyll i en landskod"}),
-    value: ko.observable().extend({required: "Fyll i ett värde"}),
-    info: ko.observable().extend({required: "Fyll i info-texten"}),
+    year: ko.observable().extend({required: "Ange ett år"}),
+    code: ko.observable().extend({required: "Ange en landskod"}),
+    value: ko.observable().extend({required: "Ange ett värde"}),
+    info: ko.observable().extend({required: "Ange en informationstext"}),
     links: ko.observableArray([{statLink:'', statTitle:''}]),
     postStat: function() {
         if (noErrors()) {
@@ -59,7 +59,7 @@ function noErrors() {
         viewModel.code.hasError() ||
         viewModel.info.hasError() ||
         viewModel.value.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten')
             return false
         }
     else {

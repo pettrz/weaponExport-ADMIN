@@ -1,104 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--metadata-->
-    <title>Ta bort data</title>
+    <!--Metadata-->
+    <title>Radera land</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/mapDelete.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
-      <!--metadata ends-->
 </head>
 <body>
+    <!-- Main Content -->
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <!--navbar-->
-                <nav class="navbar navbar-expand-lg  " id="navbarStyle">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html"><img class="mr-2" src="./../Style/images/svenska_freds-logo.png" height="65" > Vapenkarta Admin</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
-                            <!--navbar items-->
-                            <li class="nav-item dropdown"> 
-                                  <!--map -->
-                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
-                                    <a class="dropdown-item active" href="mapDelete.html">Ta bort</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <!--statistics-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                 <!--participants-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!--navbar ends-->
-            </div>
-            <!--title-->
-            <div class="header-form col-lg-12">
-                <h1>TA BORT LAND</h1>
-            </div>
-            <!--delete form-->
-            <div id="countryForm" class="col-lg-8 offset-lg-2">
-                <form>
-                    <div class="form">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
+                                <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
+                                <a class="dropdown-item active" href="mapDelete.html">Radera</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
+                                <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
+                                <a class="dropdown-item" href="statisticsDelete.html">Radera</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
+                                <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
+                                <a class="dropdown-item" href="participantsDelete.html">Radera</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="row justify-content-center">   
+                <!--Form header-->
+                <div class="header-form col-lg-12">
+                    <h1>RADERA LAND</h1>
+                </div>
+                <!--Form wrapper-->
+                <div id="admin-form" class="col-md-8 col-lg-8">
+                    <!--Form with knockout.js validation-->
+                    <form>
                         <div class="row">
-                            <!--continent-->
-                            <div class="form-group col-md-4">
-                                <p data-bind="css: {error: selectedCollection.hasError}">
-                                    <label for="continent">Kontinent</label>
+                            <!--Continent select-->
+                            <div class="form-group col-md-4" data-bind="css: {error: selectedCollection.hasError}">
+                                    <label for="continent">Välj kontinent</label>
                                     <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'Name', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
-                                    <span data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
-                                </p>
+                                    <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                             </div>
-                            <!--country-->
-                            <div class="form-group col-md-8" data-bind="visible: selectedCollection">
-                                <p data-bind="css: {error: selectedCountry.hasError}">
-                                    <label for="country">Land</label>
+                            <!--Country select-->
+                            <div class="form-group col-md-8" data-bind="visible: selectedCollection, css: {error: selectedCountry.hasError}">
+                                    <label for="country">Välj land</label>
                                     <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" ></select>
-                                    <span data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
-                                </p>
+                                    <span class="validation-error" data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                             </div>
-                            <div id="info-wrapper" class="col-lg-12">
-                                <div class="row">
-                                    <!--delete button-->
-                                    <div class="col-md-12">
-                                        <div id="buttonPadding" >
-                                            <input class="button" type="submit" value="Ta bort" data-bind="click: deleteCountry" />
-                                        </div>
-                                    </div>
-                                    <!--delete button ends-->
-                                </div>
-                            </div> 
+                            <!-- Button -->
+                            <div class="col-md-12">
+                                <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: deleteCountry">Radera land</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-            <!--delete form ends-->
-        </div>
     </div>        
 </body>
 </html>

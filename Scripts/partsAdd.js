@@ -38,9 +38,9 @@ ko.extenders.required = function(target, overrideMessage) {
 //the required prop contains the message to be shown
 var viewModel = {
     self: this,
-    img: ko.observable().extend({required: "Fyll i en bildlänk"}),
-    title: ko.observable().extend({required: "Fyll i en bildtitel"}),
-    info: ko.observable().extend({required: "Fyll i info-texten"}),
+    img: ko.observable().extend({required: "Ange en bildlänk"}),
+    title: ko.observable().extend({required: "Ange en bildtitel"}),
+    info: ko.observable().extend({required: "Ange en informationstext"}),
     links: ko.observableArray([{logoTitle:'', logoLink:''}]),
     postPart: function() {
         if (noErrors()) {
@@ -57,7 +57,7 @@ function noErrors() {
     if (viewModel.img.hasError() ||
         viewModel.title.hasError() ||
         viewModel.info.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten.')
             return false
         }
     else {

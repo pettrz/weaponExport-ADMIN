@@ -33,7 +33,7 @@ ko.extenders.required = function(target, overrideMessage) {
 
     function validate(newValue) {
         target.hasError(newValue ? false : true);
-        target.validationMessage(newValue ? '' : overrideMessage || "Den här rutan måste fyllas i");
+        target.validationMessage(newValue ? '' : overrideMessage || "Det här fältet måste fyllas i");
     }
 
     validate(target());
@@ -47,16 +47,16 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     //Requires content in each input 
-    country: ko.observable().extend({required: "Fyll i ett land"}),
-    code: ko.observable().extend({required: "Fyll i en landskod"}),
+    country: ko.observable().extend({required: "Ange ett land"}),
+    code: ko.observable().extend({required: "Ange en landskod"}),
     FHstatuses: ko.observableArray([
         'Fri',
         'Delvis fri',
         'Inte fri',
     ]),
-    selectedFHstatus: ko.observable().extend({required: "Fyll i FH status"}),
-    gpi: ko.observable().extend({required: "Fyll i GPI"}),
-    info: ko.observable().extend({required: "Fyll i info-texten"}),
+    selectedFHstatus: ko.observable().extend({required: "Ange en FH-status"}),
+    gpi: ko.observable().extend({required: "Ange en GPI-rank"}),
+    info: ko.observable().extend({required: "Ange en informationstext"}),
     links: ko.observableArray([
         {title:'', link:''},
     ]),
@@ -69,7 +69,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Fyll i kontinent"}),
+    selectedCollection: ko.observable().extend({required: "Ange en kontinent"}),
     postCountry: function() {
 
         //Checks validation - if not: sends content
@@ -91,7 +91,7 @@ function noErrors() {
         viewModel.gpi.hasError() ||
         viewModel.info.hasError() ||
         viewModel.selectedCollection.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten.')
             return false
         }
     else {
