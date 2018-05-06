@@ -60,7 +60,7 @@ var viewModel = {
     //Requires content in each input 
     countries: ko.observableArray(),
     visibleCountries: ko.observableArray(),
-    selectedCountry: ko.observable().extend({required: "Välj ett land"}),
+    selectedCountry: ko.observable().extend({required: "Ange ett land"}),
     country: ko.observable().extend({required: "Ange ett land"}),
     code: ko.observable().extend({required: "Ange en landskod"}),
     gpi: ko.observable().extend({required: "Ange GPI-rank"}),
@@ -83,7 +83,7 @@ var viewModel = {
         new Collection('OC', 'Oceanien'),
         new Collection('SA', 'Sydamerika'),
     ]),
-    selectedCollection: ko.observable().extend({required: "Välj en kontinent"}),
+    selectedCollection: ko.observable().extend({required: "Ange en kontinent"}),
     //Checks validation - if not: sends content
     updateCountry: function() {
         if(noErrors()) {
@@ -132,7 +132,7 @@ function noErrors() {
         viewModel.selectedFHstatus.hasError() ||
         viewModel.gpi.hasError() ||
         viewModel.info.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten')
             return false;
         }
     else {

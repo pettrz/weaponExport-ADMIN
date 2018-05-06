@@ -81,21 +81,20 @@
                     <div class="row">
                         <!--Continent select-->
                         <div class="form-group col-md-4" data-bind="css: {error: selectedCollection.hasError}">
-                                <label for="continent">Kontinent</label>
+                                <label for="continent">Välj kontinent</label>
                                 <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'Name', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
                                 <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                         </div>
                         <!--Country select-->
                         <div class="form-group col-md-8" data-bind="visible: selectedCollection, css: {error: selectedCountry.hasError}">
-                                <label for="country">Land</label>
+                                <label for="country">Välj land</label>
                                 <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'country', value: selectedCountry, optionsCaption: '-- Välj Land --'" /></select>
                                 <span class="validation-error" data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
-                        </div>
-                        
+                        </div>    
                     </div>
-                    <hr>
                     <!--Country Edit-->
                     <div data-bind="visible: selectedCountry">
+                        <hr>
                         <div class="row" data-bind="visible: selectedCountry">
                             <!--Country input-->
                             <div class="form-group col-md-6" data-bind="css: {error: country.hasError}">
@@ -122,7 +121,7 @@
                                     <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                             </div>
                         </div>
-                        <div class="row pt-5">
+                        <div class="row pt-4">
                             <!--Hyperlink cards-->
                             <div class="col-md-4">
                                 <div class="link-icon mb-2" data-bind="click: function() {links.push({title:'', link:''});}">

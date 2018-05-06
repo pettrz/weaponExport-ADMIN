@@ -91,7 +91,7 @@ function noErrors() {
         viewModel.gpi.hasError() ||
         viewModel.info.hasError() ||
         viewModel.selectedCollection.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten.')
             return false
         }
     else {

@@ -70,7 +70,7 @@
         <div class="row justify-content-center">
             <!--Form header-->
             <div class="header-form col-lg-12">
-                <h1>REDIGERA ETT ÅRTAL</h1>
+                <h1>REDIGERA ÅRTAL</h1>
             </div>
             <!--Form wrapper-->
             <div id="admin-form" class="col-md-8 col-lg-8">
@@ -78,15 +78,15 @@
                     <div class="row">
                         <!--Year select-->
                         <div class="form-group col-md-12" data-bind="css: {error: selectedYear.hasError}">
-                                <label for="year">Välj årtal för redigering</label>
+                                <label for="year">Välj årtal</label>
                                 <select class="form-control" id="year" data-bind="options: years, optionsText: 'year', value: selectedYear, optionsCaption:'-- Välj Årtal --'" ></select>
                                 <span class="validation-error" data-bind="visible: selectedYear.hasError, text: selectedYear.validationMessage"></span>
                         </div>
                     </div>
-                    <hr/>
                     <!--Year Edit-->
                     <div data-bind="visible: selectedYear">
-                        <div class="row pt-5">
+                        <hr>
+                        <div class="row">
                             <!--Year input-->
                             <div class="form-group col-md-4" data-bind="css: {error: year.hasError}">
                                     <label for="year">Årtal</label>
@@ -108,7 +108,7 @@
                         </div>
                         
 
-                        <div class="row pt-5">
+                        <div class="row pt-4">
                             <div class="col-md-4">
                                 <div class="link-icon mb-2" data-bind="click: function() {statLinks.push({title:'', link:''});}">
                                     Länk<svg class="icon icon-question-circle ml-1"><use xlink:href="#icon-plus-square-o"></use></svg>

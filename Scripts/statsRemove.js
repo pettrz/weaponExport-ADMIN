@@ -56,7 +56,7 @@ ko.extenders.required = function(target, overrideMessage) {
 var viewModel = {
     self: this,
     years: ko.observableArray(),
-    selectedYear: ko.observable().extend({required: "Fyll i ett år"}),
+    selectedYear: ko.observable().extend({required: "Ange ett år"}),
     deleteStat: function() {
         if (noErrors()) {
             requestPrep();
@@ -70,7 +70,7 @@ ko.applyBindings(viewModel);
 //Checks if inputs have errors, this could be improved
 function noErrors() {
     if (viewModel.selectedYear.hasError()) {
-            alert('Vänligen kolla igenom de obligatoriska fälten')
+            alert('Vänligen kontrollera de obligatoriska fälten.')
             return false
         }
     else {

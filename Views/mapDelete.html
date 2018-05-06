@@ -52,7 +52,7 @@
             <div class="row justify-content-center">   
                 <!--Form header-->
                 <div class="header-form col-lg-12">
-                    <h1>TA BORT LAND</h1>
+                    <h1>RADERA LAND</h1>
                 </div>
                 <!--Form wrapper-->
                 <div id="admin-form" class="col-md-8 col-lg-8">
@@ -61,13 +61,13 @@
                         <div class="row">
                             <!--Continent select-->
                             <div class="form-group col-md-4" data-bind="css: {error: selectedCollection.hasError}">
-                                    <label for="continent">Kontinent</label>
+                                    <label for="continent">Välj kontinent</label>
                                     <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'Name', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
                                     <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                             </div>
                             <!--Country select-->
                             <div class="form-group col-md-8" data-bind="visible: selectedCollection, css: {error: selectedCountry.hasError}">
-                                    <label for="country">Land</label>
+                                    <label for="country">Välj land</label>
                                     <select class="form-control" id="country" data-bind="options: visibleCountries, optionsText: 'Name', value: selectedCountry, optionsCaption: '-- Välj Land --'" ></select>
                                     <span class="validation-error" data-bind="visible: selectedCountry.hasError, text: selectedCountry.validationMessage"></span>
                             </div>
