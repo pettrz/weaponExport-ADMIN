@@ -121,7 +121,7 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
     height: 500px;
 }
 .form-group {
-    padding-bottom: 15px;
+    margin-bottom: 30px;
     text-align: left;
 }
 
