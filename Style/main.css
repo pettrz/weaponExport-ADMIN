@@ -14,16 +14,16 @@ html, body {
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar & dropdown*/
+h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar & dropdown*/
     font-family: 'Oswald', sans-serif;
     color:white !important;
 }
 
-#admin-form{    /*Form*/  
+#admin-form {    /*Form*/  
     color: #333138;
 }
 
-#admin-form input, select, textarea{ /*Form elements*/
+#admin-form input, select, textarea { /*Form elements*/
     font-family: sans-serif; 
 }
 
@@ -34,35 +34,35 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
     color:white !important;
     font-size: 20px;
 }
-.navbar .nav-link:hover{
+.navbar .nav-link:hover {
     color: #ECEBEE !important;
 }
-.navbar-brand:hover{
+.navbar-brand:hover {
     color: white;
 }
-.navbar .nav-link > a:hover{
+.navbar .nav-link > a:hover {
     color: white;
 }
-.navbar-nav > li{
+.navbar-nav > li {
     margin-left: 20px;
 }
 
 /************
  * Dropdown *
  ************/
-.dropdown-menu{
+.dropdown-menu {
     border: none;
     margin: 0;
     border-radius: 0 0 3px 3px !important;
     font-size: 18px;
 }
-.dropdown-menu a{
+.dropdown-menu a {
     line-height: 40px;
 }
-.dropdown-menu a:hover{
+.dropdown-menu a:hover {
     background-color: #ECEBEE;
 }
-.dropdown-item.active, .dropdown-item:active{
+.dropdown-item.active, .dropdown-item:active {
     background-color: #ECEBEE;
     color: #333138;
 }
@@ -74,42 +74,50 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 /**********
  *  Form  *
  **********/
-.header-form{
+.header-form {
     padding-bottom: 45px;
     padding-top: 6vh;
 }
-#admin-form{
+#admin-form {
     background-color: #ECEBEE;
     padding: 30px;
     border-radius: 5px;
 }
-.validation-error{
+.validation-error {
     color: #dc3545;
     position: absolute;
     font-size: 80%;
 }
-
-.link-icon:hover{
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    fill: currentColor;
+    font-size: 24px;
+    vertical-align: top;
+}
+.link-icon:hover {
     color: #9E9DA2;
     cursor: pointer;
 }
-.icon-remove{
+.icon-remove {
    position: absolute; 
    right: 10px;
 }
-#button-form{
+#button-form {
     background-color: #C0C0C0;
     width: 70%; 
 }
 #button-form:hover {
     background-color: #808080;
 }
-#textarea-admin{
+#textarea-admin {
     min-width: 100%;
     min-height: 250px;
     max-height: 500px;
 }
-.form-group{
+.form-group {
     padding-bottom: 20px;
     text-align: left;
 }
@@ -117,26 +125,26 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 /**************
  * Link cards *
  **************/
-#card-wrapper{
+#card-wrapper {
     max-height: 500px;
     overflow-y: auto;
     text-align: center;
 }
-.card .form-control{
+.card .form-control {
     padding: 0;
     border: none;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.card .list-group-item{
+.card .list-group-item {
     border: none;
 }
 
 /*************
  * Startpage *
  *************/
-#admin-header{
+#admin-header {
     top: 18vh;
     right: 0;
     left: 0;
@@ -144,10 +152,10 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 }
 
 /* Columns */
-.page-column{
+.page-column {
     height: 220px;
 }
-.page-column-overlay{
+.page-column-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -159,7 +167,7 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 }
 
 /* Column background */
-.map-bg, .stats-bg, .participants-bg{
+.map-bg, .stats-bg, .participants-bg {
     background-position: center;
 }
 .map-bg{background-image: url('./../Style/images/map-bg.png');}
@@ -167,8 +175,9 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 .participants-bg{background-image: url('./../Style/images/participants-bg.png');}
 
 
+  
 
-
+  
 /* ? */
 /* #fillTextbox {
     color: #ba0000;
@@ -179,10 +188,3 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand{   /* Headers, navbar 
 .activeTab{
     text-decoration: underline;
 } */
-
-.icon-plus-square-o:before {
-    content: "\e900";
-}
-.icon-minus-square-o:before {
-    content: "\e903";
-}

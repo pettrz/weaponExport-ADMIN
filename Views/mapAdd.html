@@ -6,16 +6,32 @@
     <title>Lägg till land</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
-    <script src="./../Scripts/mapAdd.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
-    <!-- /Metadata-->
+    <script src="./../Scripts/mapAdd.js" defer="defer"></script>
 
 </head>
 <body>
-    <!-- Container -->
+    <!-- SVG icons -->
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+            <symbol id="icon-question-circle" viewBox="0 0 24 28">
+            <title>question-circle</title>
+            <path d="M14 21.5v-3c0-0.281-0.219-0.5-0.5-0.5h-3c-0.281 0-0.5 0.219-0.5 0.5v3c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5zM18 11c0-2.859-3-5-5.688-5-2.547 0-4.453 1.094-5.797 3.328-0.141 0.219-0.078 0.5 0.125 0.656l2.063 1.563c0.078 0.063 0.187 0.094 0.297 0.094 0.141 0 0.297-0.063 0.391-0.187 0.734-0.938 1.047-1.219 1.344-1.437 0.266-0.187 0.781-0.375 1.344-0.375 1 0 1.922 0.641 1.922 1.328 0 0.812-0.422 1.219-1.375 1.656-1.109 0.5-2.625 1.797-2.625 3.313v0.562c0 0.281 0.219 0.5 0.5 0.5h3c0.281 0 0.5-0.219 0.5-0.5v0c0-0.359 0.453-1.125 1.188-1.547 1.188-0.672 2.812-1.578 2.812-3.953zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"></path>
+            </symbol>
+            <symbol id="icon-minus-square-o" viewBox="0 0 22 28">
+            <title>minus-square-o</title>
+            <path d="M18 12.5v1c0 0.281-0.219 0.5-0.5 0.5h-13c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h13c0.281 0 0.5 0.219 0.5 0.5zM20 19.5v-13c0-1.375-1.125-2.5-2.5-2.5h-13c-1.375 0-2.5 1.125-2.5 2.5v13c0 1.375 1.125 2.5 2.5 2.5h13c1.375 0 2.5-1.125 2.5-2.5zM22 6.5v13c0 2.484-2.016 4.5-4.5 4.5h-13c-2.484 0-4.5-2.016-4.5-4.5v-13c0-2.484 2.016-4.5 4.5-4.5h13c2.484 0 4.5 2.016 4.5 4.5z"></path>
+            </symbol>
+            <symbol id="icon-plus-square-o" viewBox="0 0 22 28">
+            <title>plus-square-o</title>
+            <path d="M18 12.5v1c0 0.281-0.219 0.5-0.5 0.5h-5.5v5.5c0 0.281-0.219 0.5-0.5 0.5h-1c-0.281 0-0.5-0.219-0.5-0.5v-5.5h-5.5c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h5.5v-5.5c0-0.281 0.219-0.5 0.5-0.5h1c0.281 0 0.5 0.219 0.5 0.5v5.5h5.5c0.281 0 0.5 0.219 0.5 0.5zM20 19.5v-13c0-1.375-1.125-2.5-2.5-2.5h-13c-1.375 0-2.5 1.125-2.5 2.5v13c0 1.375 1.125 2.5 2.5 2.5h13c1.375 0 2.5-1.125 2.5-2.5zM22 6.5v13c0 2.484-2.016 4.5-4.5 4.5h-13c-2.484 0-4.5-2.016-4.5-4.5v-13c0-2.484 2.016-4.5 4.5-4.5h13c2.484 0 4.5 2.016 4.5 4.5z"></path>
+            </symbol>
+            </defs>
+        </svg>
+
+    <!-- Main Content -->
     <div class="container">
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-dark">
@@ -52,23 +68,18 @@
                         </ul>
                     </div>
                 </nav>
-                <!-- /Navbar -->
 
-
-        <!-- Row -->
         <div class="row justify-content-center">
 
             <!-- Form header -->
             <div class="header-form col-lg-12">
                 <h1>LÄGG TILL LAND</h1>
             </div>
-            <!-- /Form header -->
         
             <!--Form wrapper-->
             <div id="admin-form" class="col-md-8 col-lg-8">
                 <!-- Form with knockout.js validation-->
                     <form>
-                        <!-- Form row 1 -->
                         <div class="row">
                             <!--Country input-->
                             <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
@@ -76,51 +87,43 @@
                                     <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'">
                                     <span class="validation-error" data-bind="visible: country.hasError, text: country.validationMessage"></span>
                             </div>
-                            <!--/Country input-->
                             <!--Continent select-->
                             <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
                                     <label for="continent">Kontinent</label>
                                     <select class="form-control" id="continent" data-bind="options: collections, optionsText: 'collectionName', value: selectedCollection, optionsCaption:'-- Välj Kontinent --'"></select>
                                     <span class="validation-error" data-bind="visible: selectedCollection.hasError, text: selectedCollection.validationMessage"></span>
                             </div>
-                            <!--/Continent select-->
                             <!--Country code input-->
                             <div class="form-group col-md-4" data-bind="css: {error: code.hasError}">
                                     <label for="countryCode">Landskod</label>
                                     <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'">
                                     <span class="validation-error" class="validation-error" data-bind="visible: code.hasError, text: code.validationMessage"></span>
                             </div>
-                            <!--/Country code input-->
                             <!--GPI input-->
                             <div class="form-group col-md-4" data-bind="css: {error: gpi.hasError}">     
                                     <label for="GPI">GPI Rankning</label>
                                     <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'">
                                     <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                             </div>
-                            <!--/GPI input-->
                             <!--FH-status input-->
                             <div class="form-group col-md-4" data-bind="css: {error: selectedFHstatus.hasError}">
                                     <label for="FHstatus">Freedom House status</label>
                                     <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
                                     <span class="validation-error" data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
                             </div>
-                            <!--/FH-status input-->
                         </div>
-                        <!-- /Form row 1 -->
-
-                        <!-- Form row 2 -->
                         <div class="row pt-5">
                                 <!--Hyperlink cards-->
                                 <div class="col-md-4">
-                                    <label class="link-icon" data-bind="click: function() {links.push({title:'', link:''});}">
-                                        Länk<i class="link-icon far fa-plus-square fa-lg mx-2"></i>
-                                    </label>
+                                    <div class="link-icon mb-2" data-bind="click: function() {links.push({title:'', link:''});}">
+                                        Länk<svg class="icon icon-question-circle ml-1"><use xlink:href="#icon-plus-square-o"></use></svg>
+                                    </div>
                                         <div id="card-wrapper" data-bind="foreach: links">
                                             <div class="card mb-2">
                                                 <div class="card-header">
                                                     Länk
                                                     <span class="link-icon icon-remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                                        <i class="far fa-minus-square fa-lg"></i>
+                                                        <svg class="icon icon-question-circle"><use xlink:href="#icon-minus-square-o"></use></svg>
                                                     </span>        
                                                 </div>
                                                 <ul class="list-group list-group-flush">
@@ -134,7 +137,6 @@
                                             </div>
                                         </div>
                                 </div>
-                                <!-- /HyperLink cards-->
                                 <!--Textbox + button-->
                                 <div class="col-md-8">
                                     <div class="form-group" data-bind="css: {error: info.hasError}">
@@ -144,16 +146,10 @@
                                     </div>
                                     <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: postCountry">Lägg till<span id="confirm"></span></button>
                                 </div>
-                                <!-- /Textbox + button -->
                         </div>
-                        <!-- /Form row 2 -->
                 </form>
-                <!-- /Form -->
             </div>
-            <!-- /Form wrapper-->
         </div>
-        <!-- /row -->
     </div>   
-    <!-- /Container-->
 </body>
 </html>
