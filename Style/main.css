@@ -107,10 +107,11 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
 }
 #button-form {
     background-color: #C0C0C0;
-    width: 70%; 
+    width: 70%;
+    color: inherit; 
 }
 #button-form:hover {
-    background-color: #808080;
+    background-color: #9E9DA2;
 }
 #textarea-admin {
     min-width: 100%;

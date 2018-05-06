@@ -28,7 +28,7 @@
         </symbol>
         </defs>
     </svg>
-    
+
     <!--Main Content-->
     <div class="container">
         <!--Navbar-->
@@ -77,18 +77,16 @@
                 <form>
                     <div class="row">
                         <!--Year select-->
-                        <div class="form-group col-md-12">
-                            <p data-bind="css: {error: selectedYear.hasError}">
-                                <label for="year">Årtal</label>
+                        <div class="form-group col-md-12" data-bind="css: {error: selectedYear.hasError}">
+                                <label for="year">Välj årtal för redigering</label>
                                 <select class="form-control" id="year" data-bind="options: years, optionsText: 'year', value: selectedYear, optionsCaption:'-- Välj Årtal --'" ></select>
                                 <span class="validation-error" data-bind="visible: selectedYear.hasError, text: selectedYear.validationMessage"></span>
-                            </p>
                         </div>
                     </div>
                     <hr/>
                     <!--Year Edit-->
                     <div data-bind="visible: selectedYear">
-                        <div class="row">
+                        <div class="row pt-5">
                             <!--Year input-->
                             <div class="form-group col-md-4" data-bind="css: {error: year.hasError}">
                                     <label for="year">Årtal</label>
@@ -107,44 +105,44 @@
                                     <input class="form-control" id="value" type="number" placeholder="Värde" data-bind="value: weapons, valueUpdate: 'afterkeydown'">
                                     <span class="validation-error" data-bind="visible: weapons.hasError, text: weapons.validationMessage"></span>
                             </div>
-                    </div>
+                        </div>
                         
 
-                    <div class="row pt-5">
-                        <div class="col-md-4">
-                            <div class="link-icon mb-2" data-bind="click: function() {statLinks.push({title:'', link:''});}">
-                                Länk<svg class="icon icon-question-circle ml-1"><use xlink:href="#icon-plus-square-o"></use></svg>
-                            </div>
+                        <div class="row pt-5">
+                            <div class="col-md-4">
+                                <div class="link-icon mb-2" data-bind="click: function() {statLinks.push({title:'', link:''});}">
+                                    Länk<svg class="icon icon-question-circle ml-1"><use xlink:href="#icon-plus-square-o"></use></svg>
+                                </div>
 
-                            <div id="card-wrapper" data-bind="foreach: statLinks">
-                                <div class="card mb-2">
-                                    <div class="card-header">
-                                        Länk
-                                        <span class="link-icon icon-remove" data-bind="click: function() {viewModel.links.remove($data);}">
-                                            <svg class="icon icon-question-circle"><use xlink:href="#icon-minus-square-o"></use></svg>
-                                        </span> 
+                                <div id="card-wrapper" data-bind="foreach: statLinks">
+                                    <div class="card mb-2">
+                                        <div class="card-header">
+                                            Länk
+                                            <span class="link-icon icon-remove" data-bind="click: function() {viewModel.statLinks.remove($data);}">
+                                                <svg class="icon icon-question-circle"><use xlink:href="#icon-minus-square-o"></use></svg>
+                                            </span> 
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <input class="form-control" type="text" placeholder="Titel" data-bind="value: statTitle, valueUpdate: 'afterkeydown'">
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input class="form-control" type="text" placeholder="Länk" data-bind="value: statLink, valueUpdate: 'afterkeydown'">
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">
-                                            <input class="form-control" type="text" placeholder="Titel" data-bind="value: statTitle, valueUpdate: 'afterkeydown'">
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-control" type="text" placeholder="Länk" data-bind="value: statLink, valueUpdate: 'afterkeydown'">
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
-                        </div>
 
-                        <!--Textbox + button-->
-                        <div class="col-md-8">
-                            <div class="form-group" data-bind="css: {error: info.hasError}">
-                                    <label>Information</label>
-                                    <textarea class="textarea-edit form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
-                                    <span class="validation-error" data-bind="visible: info.hasError, text: info.validationMessage"></span>
+                            <!--Textbox + button-->
+                            <div class="col-md-8">
+                                <div class="form-group" data-bind="css: {error: info.hasError}">
+                                        <label>Information</label>
+                                        <textarea class="textarea-edit form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
+                                        <span class="validation-error" data-bind="visible: info.hasError, text: info.validationMessage"></span>
+                                </div>
+                                <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: updateStat" />Uppdatera årtal<span id="confirm"></span></button>
                             </div>
-                            <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: updateStat" />Uppdatera årtal<span id="confirm"></span></button>
-                        </div>
                     </div>
                 </form>
             </div>

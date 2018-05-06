@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--metadata-->
+    <!--Metadata-->
     <title>Lägg till aktör</title>
     <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./../Style/bootstrap-grid.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/partsAdd.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
-    <!--metadata ends-->
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-               <!--navbar--> 
-                <nav class="navbar navbar-expand-lg  " id="navbarStyle">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html"><img class="mr-2" src="./../Style/images/svenska_freds-logo.png" height="65" > Vapenkarta Admin</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
-                            <!--navbar items-->
-                            <li class="nav-item dropdown">
-                                <!--map -->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
-                                    <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="mapDelete.html">Ta bort</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <!--statistics-->
-                                <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
-                                    <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="statisticsDelete.html">Ta bort</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <!--participants-->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdownStyle">
-                                    <a class="dropdown-item active" href="participantsAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="participantsDelete.html">Ta bort</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!--navbar ends-->
-            </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="mapAdd.html">Lägg till</a>
+                                <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
+                                <a class="dropdown-item" href="mapDelete.html">Radera</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
+                            <div class="dropdown-menu active" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
+                                <a class="dropdown-item active" href="statisticsUpdate.html">Redigera</a>
+                                <a class="dropdown-item" href="statisticsDelete.html">Radera</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
+                                <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
+                                <a class="dropdown-item" href="participantsDelete.html">Radera</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
 
-            <!--title-->
+        
+        <div class="row justify-content-center">
+            <!--Form header-->
             <div class="header-form col-lg-12">
                 <h1>LÄGG TILL EN AKTÖR</h1>
             </div>
-            <!--add form-->
-            <div id="countryForm" class="col-lg-8 offset-lg-2">
+            <!--Form wrapper-->
+            <div id="admin-form" class="col-md-8 col-lg-8">
                 <form>
-                    <div class="form">
+
                         <div class="row">
-                            <!--image-->
+                            <!--Image URL input-->
                             <div class="form-group col-md-8">
                                 <p data-bind="css: {error: img.hasError}">
                                     <label for="img">Bildlänk</label>
@@ -75,7 +67,7 @@
                                     <span data-bind="visible: img.hasError, text: img.validationMessage"></span>
                                 </p>
                             </div>
-                            <!--title-->
+                            <!--Image title input-->
                             <div class="form-group col-md-4">
                                 <p data-bind="css: {error: title.hasError}">
                                     <label for="title">Bildtitel</label>
@@ -83,41 +75,35 @@
                                     <span data-bind="visible: title.hasError, text: title.validationMessage"></span>
                                 </p>
                             </div>
-                            <!--infotext in infobox-->
+                        </div>
+
                             <div id="info-wrapper" class="col-lg-12">
                                 <div class="row">
-                                    <hr style="width:800px; height: 1px; background-color:white;">
                                     <!--links-->
                                     <div class="col-md-4" style="text-align: center">
                                         <div class="optionBox">
-                                            <!--add links-->
                                             <div class="block">
                                                 <div class="add" data-bind="click: function() {links.push({logoTitle:'', logoLink:''});}"><i class="far fa-plus-square fa-2x"></i></div>
                                             </div>
-                                            <!--add links ends-->
                                             <div data-bind="foreach: links">
-                                                <div class="block">
                                                     <div id="card-wrapper">
-                                                        <div id="linkCard" class="card">
-                                                            <div class="card-header" style="text-align: center;">
+                                                        <div class="card mb-2">
+                                                            <div class="card-header">
                                                                 <p>Länk</p>
                                                                 <div class="remove" data-bind="click: function() {viewModel.links.remove($data);}">
                                                                     <i class="remove far fa-minus-square fa-lg removeLink" style="position: absolute; right: 10px;"></i>
                                                                 </div>
                                                             </div>
                                                             <ul class="list-group list-group-flush">
-                                                                <!--title-->
                                                                 <li class="list-group-item">
                                                                     <input class="form-control" type="text" placeholder="Titel" data-bind="value: logoTitle, valueUpdate: 'afterkeydown'" />
                                                                 </li>
-                                                                <!--link url-->
                                                                 <li class="list-group-item">
                                                                     <input class="form-control" type="text" placeholder="Länk" data-bind="value: logoLink, valueUpdate: 'afterkeydown'" />
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +129,6 @@
                             </div> 
                             <!--info in infobox ends-->
                         </div>
-                    </div>
                 </form>
             </div>
             <!--add form ends-->
