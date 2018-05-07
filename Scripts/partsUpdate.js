@@ -12,6 +12,18 @@ getRequest.onreadystatechange = function() {
         console.log('returned all participants');
         var response = JSON.parse(this.response);
         
+        //sorts countrylist in alphabetical order
+        response.sort(function(a, b) { 
+            var partA = a.participantTitle.toUpperCase();
+            var partB = b.participantTitle.toUpperCase();
+            if (partA < partB) {
+            return -1;
+            }
+            if (partA > partB) {
+            return 1;
+            }
+        });
+
         //Creates list from viewModel
         for (var i = 0; i < response.length; i++) {  
             viewModel.parts.push(response[i]);
