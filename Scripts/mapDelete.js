@@ -101,6 +101,17 @@ viewModel.selectedCollection.subscribe(function(value) {
             if (viewModel.countries()[i].Collection ==  viewModel.selectedCollection().Code)
                 list.push(viewModel.countries()[i]);
         }
+        //sorts countrylist in alphabetical order
+        list.sort(function(a, b) { 
+            var countryA = a.Name.toUpperCase();
+            var countryB = b.Name.toUpperCase();
+            if (countryA < countryB) {
+            return -1;
+            }
+            if (countryA > countryB) {
+            return 1;
+            }
+        });
         viewModel.visibleCountries(list);
     } else { 
         viewModel.visibleCountries([]);
