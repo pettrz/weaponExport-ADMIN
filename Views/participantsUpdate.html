@@ -133,7 +133,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group" data-bind="css: {error: info.hasError}">
                                             <label>Information</label>
-                                            <textarea class="form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
+                                            <textarea class="textarea-edit form-control" id="textarea-admin" type="text" placeholder="Information" data-bind="value: info, valueUpdate: 'afterkeydown'"></textarea>
                                             <span class="validation-error" data-bind="visible: info.hasError, text: info.validationMessage"></span>
                                     </div>
                                     <button id="button-form" class="mt-3 btn" type="submit" data-bind="click: updatePart" />Uppdatera aktör<span id="confirm"></span></button>
