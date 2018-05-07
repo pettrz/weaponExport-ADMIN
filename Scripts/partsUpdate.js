@@ -113,7 +113,7 @@ var requestPrep = function() {
 }
 
 //Collects variables from viewModel
-var prepPart = () => {
+var prepPart = function() {
     return (
         'img=' + viewModel.img() +
         '&title=' + viewModel.title() +
