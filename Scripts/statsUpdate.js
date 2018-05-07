@@ -103,7 +103,7 @@ var requestPrep = function() {
 }
 
 //Collects variables from viewModel
-var prepPoint = () => {
+var prepPoint = function() {
     return (
         'year=' + viewModel.year() +
         '&weapons=' + viewModel.weapons() +

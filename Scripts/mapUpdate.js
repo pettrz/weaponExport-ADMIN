@@ -154,7 +154,7 @@ var requestPrep = function() {
 }
 
 //Collects variables from viewModel
-var prepCountry = () => {
+var prepCountry = function () {
     return (
         'country=' + viewModel.country() +
         '&code=' + viewModel.code().toUpperCase() +
