@@ -1,3 +1,11 @@
+// VAPENKARTA ADMIN
+// Created by Team Chaos - 2018
+
+// Petter Knutsson - petterknutsson5@gmail.com
+// Viola Turesson - violaturesson@gmail.com
+// Jenny Miderkvist - jenny.miderkvist@gmail.com
+// Joakim Linna - joakimlinna1998@gmail.com
+
 //init request
 xhttp = new XMLHttpRequest();
 //Change this line if api url changes, routes should be the same
