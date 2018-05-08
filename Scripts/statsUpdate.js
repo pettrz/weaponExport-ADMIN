@@ -20,6 +20,18 @@ getRequest.onreadystatechange = function() {
         console.log('returned all years');
         var response = JSON.parse(this.response);
         
+        //sorts countrylist in alphabetical order
+        response.sort(function(a, b) { 
+            var yearA = a.year;
+            var yearB = b.year;
+            if (yearA < yearB) {
+            return -1;
+            }
+            if (yearA > yearB) {
+            return 1;
+            }
+        });
+
         //Creates list from viewModel
         for (var i = 0; i < response.length; i++) {  
             viewModel.years.push(response[i]);
@@ -111,7 +123,7 @@ var requestPrep = function() {
 }
 
 //Collects variables from viewModel
-var prepPoint = () => {
+var prepPoint = function() {
     return (
         'year=' + viewModel.year() +
         '&weapons=' + viewModel.weapons() +

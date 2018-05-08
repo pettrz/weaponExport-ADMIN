@@ -22,13 +22,10 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
     color:white !important;
 }
 
-#admin-form {    /*Form*/  
-    color: #333138;
-}
-
 #admin-form input, select, textarea { /*Form elements*/
     font-family: sans-serif; 
 }
+
 
 /**********
  * Navbar *
@@ -49,6 +46,10 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
 .navbar-nav > li {
     margin-left: 20px;
 }
+.activeTab{
+    background-color: #9E9DA2;
+}
+
 
 /************
  * Dropdown *
@@ -82,6 +83,7 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
     padding-top: 6vh;
 }
 #admin-form {
+    color: #333138;
     background-color: #ECEBEE;
     padding: 30px;
     border-radius: 5px;
@@ -109,7 +111,7 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
    right: 10px;
 }
 #button-form {
-    background-color: #C0C0C0;
+    background-color: #BAB9BD;
     width: 70%;
     color: inherit; 
 }
@@ -180,18 +182,3 @@ h1,h2,h3,h4,h5,h6, .navbar, .dropdown-menu, .navbar-brand {   /* Headers, navbar
 .map-bg{background-image: url('./../Style/images/map-bg.png');}
 .stats-bg{background-image: url('./../Style/images/stats-bg.png');}
 .participants-bg{background-image: url('./../Style/images/participants-bg.png');}
-
-
-  
-
-  
-/* ? */
-/* #fillTextbox {
-    color: #ba0000;
-}
-#confirm {
-    color: #008800;
-}
-.activeTab{
-    text-decoration: underline;
-} */

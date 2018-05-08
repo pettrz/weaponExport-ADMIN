@@ -18,9 +18,8 @@ Joakim Linna - joakimlinna1998@gmail.com -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" defer="defer"></script>
     <script src="./../Scripts/bootstrap.min.js"></script>
     <script src="./../Scripts/mapAdd.js" defer="defer"></script>
-
 </head>
-<body>
+<body lang="sv">
     <!--SVG icons-->
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -37,41 +36,41 @@ Joakim Linna - joakimlinna1998@gmail.com -->
 
     <!--Main Content-->
     <div class="container">
-                <!--Navbar-->
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand" href="index.html"><img class="mr-2" src="./../Style/images/svenska_freds-logo.png" height="65" > Vapenkarta Admin</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="mapDelete.html">Radera</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="statisticsDelete.html">Radera</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
-                                    <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
-                                    <a class="dropdown-item" href="participantsDelete.html">Radera</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html"><img class="mr-2" src="./../Style/images/svenska_freds-logo.png" height="65" > Vapenkarta Admin</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle activeTab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KARTA</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item active" href="mapAdd.html">Lägg till</a>
+                            <a class="dropdown-item" href="mapUpdate.html">Redigera</a>
+                            <a class="dropdown-item" href="mapDelete.html">Radera</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATISTIK</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="statisticsAdd.html">Lägg till</a>
+                            <a class="dropdown-item" href="statisticsUpdate.html">Redigera</a>
+                            <a class="dropdown-item" href="statisticsDelete.html">Radera</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKTÖRER</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="participantsAdd.html">Lägg till</a>
+                            <a class="dropdown-item" href="participantsUpdate.html">Redigera</a>
+                            <a class="dropdown-item" href="participantsDelete.html">Radera</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <div class="row justify-content-center">
             <!--Form header-->
@@ -86,9 +85,9 @@ Joakim Linna - joakimlinna1998@gmail.com -->
                     <div class="row">
                         <!--Country input-->
                         <div class="form-group col-md-4" data-bind="css: {error: country.hasError}">
-                                <label for="country">Land</label>
-                                <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'">
-                                <span class="validation-error" data-bind="visible: country.hasError, text: country.validationMessage"></span>
+                            <label for="country">Land</label>
+                            <input class="form-control" id="country" type="text" placeholder="Land" data-bind="value: country, valueUpdate: 'afterkeydown'">
+                            <span class="validation-error" data-bind="visible: country.hasError, text: country.validationMessage"></span>
                         </div>
                         <!--Continent select-->
                         <div class="form-group col-md-4" data-bind="css: {error: selectedCollection.hasError}">
@@ -98,21 +97,21 @@ Joakim Linna - joakimlinna1998@gmail.com -->
                         </div>
                         <!--Country code input-->
                         <div class="form-group col-md-4" data-bind="css: {error: code.hasError}">
-                                <label for="countryCode">Landskod</label>
-                                <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'">
-                                <span class="validation-error" class="validation-error" data-bind="visible: code.hasError, text: code.validationMessage"></span>
+                            <label for="countryCode">Landskod </label>
+                            <input class="form-control" id="countryCode" maxlength="2" type="text" placeholder="Landskod" data-bind="value: code, valueUpdate: 'afterkeydown'">
+                            <span class="validation-error" class="validation-error" data-bind="visible: code.hasError, text: code.validationMessage"></span>
                         </div>
                         <!--GPI input-->
                         <div class="form-group col-md-4" data-bind="css: {error: gpi.hasError}">     
-                                <label for="GPI">GPI Rankning</label>
-                                <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'">
-                                <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
+                            <label for="GPI">GPI Rankning</label>
+                            <input class="form-control" id="GPI" type="number" min="1" max="163" placeholder="GPI Rankning" data-bind="value: gpi, valueUpdate:'afterkeydown'">
+                            <span class="validation-error" data-bind="visible: gpi.hasError, text: gpi.validationMessage"></span>
                         </div>
                         <!--FH-status input-->
                         <div class="form-group col-md-4" data-bind="css: {error: selectedFHstatus.hasError}">
-                                <label for="FHstatus">Freedom House status</label>
-                                <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
-                                <span class="validation-error" data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
+                            <label for="FHstatus">Freedom House status</label>
+                            <select class="form-control" id="FHstatus" data-bind="options: FHstatuses, optionsText: $data, value: selectedFHstatus, optionsCaption:'-- Välj FH status --'" ></select>
+                            <span class="validation-error" data-bind="visible: selectedFHstatus.hasError, text: selectedFHstatus.validationMessage"></span>
                         </div>
                     </div>
                     <div class="row pt-5">
