@@ -38,6 +38,7 @@ Adobe Photoshop  |
 [Slack](https://www.slack.com/) (Kommunikationskanal) |
 Visual Studio Code (Textredigerare) |
 Scrum (Ramverk för projektarbeten) |
+Visual Studio Team Services |
 
 ### Tillgänglighet
 http://map-admin.netlify.com/views
