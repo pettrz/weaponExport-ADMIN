@@ -2,7 +2,7 @@
 
 Adminsida för vapenexportskartan. Sidan innehåller redigeringsformulär för karta, statistik och aktörer. I formuläret har man möjlighet att ta bort, redigera och lägga till data.
 
-# Min roll i weaponExport-ADMIN
+### Min roll i weaponExport-ADMIN
  
  Jag gjorde mesta delen av gränssnittet här. 
  
@@ -14,7 +14,7 @@ Adminsida för vapenexportskartan. Sidan innehåller redigeringsformulär för k
  * En bra, lätt och simpel navigering.
  * Kontinuerligt förbättra, rensa eller förenkla kod.
  
- # Språk och bibliotek
+ ### Språk och bibliotek
  
  Dessa språk och bibliotek har jag använt mig av i ADMIN.
  
@@ -39,11 +39,11 @@ Adobe Photoshop  |
 Visual Studio Code (Textredigerare) |
 Scrum (Ramverk för projektarbeten) |
 
-# Tillgänglighet
+### Tillgänglighet
 http://map-admin.netlify.com/views
 (Ta hänsyn till att servern inte är igång och inget från databasen laddas in.)
 
-# Övriga noteringar
+### Övriga noteringar
 
 Den sista delen vi arbetade på i vårt projekt. Inte perfekt pga. en brist på tid, men fortfarande nöjda med resultatet.
  
